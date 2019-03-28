@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Level Up!</name>
+  <author>krafs</author>
+  <supportedVersions>
+    <li>1.0</li>
+  </supportedVersions>
+  <description>&lt;b&gt;Get notified when pawns level up!&lt;/b&gt;</description>
+</ModMetaData>
