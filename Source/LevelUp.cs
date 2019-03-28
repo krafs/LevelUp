@@ -23,16 +23,29 @@ namespace LevelUp
         // Puts message on screen for this level up.
         void Notify_LevelUp()
         {
-            Color color = Color.red;
+            Color color = Color.white;
             string pawn = Pawn.Label.Colored(color);
-            string skill = SkillRecord.def.skillLabel;
-            int level = SkillRecord.levelInt;
+            string skill = SkillRecord.def.skillLabel.Italic();
+            string level = SkillRecord.levelInt.ToString().Bold();
             string label = "LevelUpLabel".Translate(pawn, level, skill);
+
             LookTargets lookTargets = new LookTargets(Pawn);
             Messages.Message(label, lookTargets, MessageTypeDefOf.SilentInput);
-            // Temporary sound.
-            SoundDef sound = SoundDefOf.EnergyShield_AbsorbDamage;
+
+            SoundDef sound = DefHandler.LevelUp;
             sound.PlayOneShot(SoundInfo.InMap(new TargetInfo(Pawn)));
+
+            // Mote
+            Vector3 loc = Pawn.Drawer.DrawPos;
+            Map map = Pawn.Map;
+            if (!loc.ToIntVec3().ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
+                return;
+
+            Mote mote = (Mote)ThingMaker.MakeThing(ThingDefOf.Mote_Heart, null);
+
+            mote.Scale = 1.5f;
+            mote.exactPosition = loc;
+            GenSpawn.Spawn(mote, loc.ToIntVec3(), map);
         }
 
         // Checks for new level ups for drawing on screen.

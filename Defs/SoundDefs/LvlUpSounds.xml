@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<SoundDef>
+		<defName>LevelUp</defName>
+		<context>MapOnly</context>
+		<eventNames />
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>LevelUp/LvlUp</clipPath>
+					</li>
+				</grains>
+				<volumeRange>
+					<min>8</min>
+					<max>8</max>
+				</volumeRange>
+				<distRange>
+					<min>0</min>        
+					<max>50.27907</max>
+				</distRange>      
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+  
+</Defs>

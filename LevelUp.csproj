@@ -50,6 +50,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Source\DefHandler.cs" />
     <Compile Include="Source\Extensions.cs" />
     <Compile Include="Source\LevelUp.cs" />
     <Compile Include="Source\Controller.cs" />
@@ -57,11 +58,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+    <None Include="Sounds\LevelUp\LvlUp.ogg" />
+    <None Include="Sounds\LevelUp\LvlUp2.ogg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="About\About.xml" />
     <Content Include="About\Preview.png" />
     <Content Include="backlog.txt" />
+    <Content Include="Defs\SoundDefs\LvlUpSounds.xml" />
     <Content Include="Languages\English\Keyed\LevelUp.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +75,8 @@
   <PropertyGroup>
     <PreBuildEvent>rmdir "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\" /s /q
 xcopy /i /s /y "$(SolutionDir)About" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\About\"
-xcopy /i /s /y "$(SolutionDir)Languages" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\Languages\"</PreBuildEvent>
+xcopy /i /s /y "$(SolutionDir)Defs" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\Defs\"
+xcopy /i /s /y "$(SolutionDir)Languages" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\Languages\"
+xcopy /i /s /y "$(SolutionDir)Sounds" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\Sounds\"</PreBuildEvent>
   </PropertyGroup>
 </Project>
