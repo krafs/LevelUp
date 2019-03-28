@@ -1,5 +1,6 @@
 [Bb]in/
 [Oo]bj/
+Unused/
 backlog.txt
 *.vs
 *.csproj.user

@@ -50,12 +50,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Source\Controller.cs" />
     <Compile Include="Source\Extensions.cs" />
-    <Compile Include="Source\Loader.cs" />
-    <Compile Include="Source\ModHandler.cs" />
+    <Compile Include="Source\LevelUp.cs" />
+    <Compile Include="Source\Controller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\Patch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -64,10 +62,15 @@
     <Content Include="About\About.xml" />
     <Content Include="About\Preview.png" />
     <Content Include="backlog.txt" />
+    <Content Include="Languages\English\Keyed\LevelUp.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Unused\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>rmdir "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\" /s /q
-xcopy /i /s /y "$(SolutionDir)About" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\About\"</PreBuildEvent>
+xcopy /i /s /y "$(SolutionDir)About" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\About\"
+xcopy /i /s /y "$(SolutionDir)Languages" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\Languages\"</PreBuildEvent>
   </PropertyGroup>
 </Project>

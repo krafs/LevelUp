@@ -1,21 +1,26 @@
 ﻿using Harmony;
-using System.Linq;
-using System.Reflection;
-using UnityEngine;
 using Verse;
 
 namespace LevelUp
 {
-    [StaticConstructorOnStartup]
-    class Controller
+    class Controller : GameComponent
     {
-        internal static Texture2D tex = ContentFinder<Texture2D>.Get("UI/Widgets/FillChangeArrowRight");
-
-        static Controller()
+        public Controller(Game game)
         {
-            // Do patches
+            // Initialize harmony patches.
             HarmonyInstance harmony = HarmonyInstance.Create("LevelUp");
-            harmony.PatchAll(Assembly.GetExecutingAssembly());
+            LevelUp.ApplyPatches(harmony);
+        }
+        public override void FinalizeInit()
+        {
+            base.FinalizeInit();
+            LevelUp.Clear();
+        }
+
+        public override void GameComponentOnGUI()
+        {
+            base.GameComponentOnGUI();
+            LevelUp.LevelUpOnGUI();
         }
     }
 }
