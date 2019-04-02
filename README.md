@@ -6,12 +6,15 @@ A RimWorld mod adding notifications when a colonist levels up a skill.
 
 
 ## Download
-[Steam Workshop]()
+[Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=1701592470)
 
 [GitHub](https://github.com/krafs/LevelUp/releases)
 
 ## Compatibility
-* Save game safe.
+* Safe to add and remove from saves.
+
+## Notes
+Does not work when a pawn gets an instant level up, as when using _Neurotrainer mech serum_.
 
 # Instructions
 Add _Level Up!_ anywhere in your load order. If you're experiencing issues or missing features, try putting it further towards the end.
