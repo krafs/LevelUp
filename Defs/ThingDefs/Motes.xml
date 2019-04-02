@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_LevelBeamInner</defName>
+    <graphicData>
+      <texPath>Things/Mote/LevelBeamInner</texPath>
+    </graphicData>
+    <thingClass>MoteThrownAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <fadeInTime>0.4</fadeInTime>
+      <solidTime>2</solidTime>
+      <fadeOutTime>2</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_LevelBeamMiddle</defName>
+    <graphicData>
+      <texPath>Things/Mote/LevelBeamMiddle</texPath>
+    </graphicData>
+    <thingClass>MoteThrownAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <fadeInTime>1</fadeInTime>
+      <solidTime>1.4</solidTime>
+      <fadeOutTime>2</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_LevelBeamOuter</defName>
+    <graphicData>
+      <texPath>Things/Mote/LevelBeamOuter</texPath>
+    </graphicData>
+    <thingClass>MoteThrownAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <fadeInTime>1.4</fadeInTime>
+      <solidTime>1</solidTime>
+      <fadeOutTime>2</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+</Defs>
