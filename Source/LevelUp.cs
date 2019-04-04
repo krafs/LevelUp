@@ -24,19 +24,28 @@ namespace LevelUp
         // Puts message on screen for this level up.
         void Notify_LevelUp()
         {
-            Color color = Color.yellow;
-            string pawn = CurrentPawn.LabelShortCap.Bold();
-            string skill = SkillRecord.def.skillLabel.Italic();
-            string level = SkillRecord.levelInt.ToString().Bold().Colored(color);
-            string label = "LevelUpLabel".Translate(pawn, level, skill);
+            // Do text message on screen on level up.
+            if (Settings.allowTextMessage)
+            {
+                Color color = Color.yellow;
+                string pawn = CurrentPawn.LabelShortCap.Bold();
+                string skill = SkillRecord.def.skillLabel.Italic();
+                string level = SkillRecord.levelInt.ToString().Bold().Colored(color);
+                string label = "LevelUpLabel".Translate(pawn, level, skill);
 
-            LookTargets lookTargets = new LookTargets(CurrentPawn);
-            Messages.Message(label, lookTargets, MessageTypeDefOf.SilentInput);
+                LookTargets lookTargets = new LookTargets(CurrentPawn);
+                Messages.Message(label, lookTargets, MessageTypeDefOf.SilentInput);
+            }
 
-            SoundDef sound = DefHandler.LevelUp;
-            sound.PlayOneShot(SoundInfo.InMap(new TargetInfo(CurrentPawn)));
+            // Do sound effect on level up.
+            if (Settings.allowSoundEffect)
+                DefHandler.LevelUp.PlayOneShot(SoundInfo.InMap(new TargetInfo(CurrentPawn)));
 
-            // Motes. Using three similar ones on top of each other.
+            // Do animation on pawn levelling up.
+            if (!Settings.allowAnimation)
+                return;
+
+            // Animation motes. Using three similar ones on top of each other to achieve stretch effect.
             Vector3 pawnPosition = CurrentPawn.Drawer.DrawPos;
             Map map = CurrentPawn.Map;
 
@@ -44,16 +53,24 @@ namespace LevelUp
                 return;
 
             MoteThrown innerMote = MakeMote(DefHandler.Mote_LevelBeamInner, CurrentPawn);
-            innerMote.SetVelocity(0, 1f);
+            innerMote.SetVelocity(0, 0.6f);
             GenSpawn.Spawn(innerMote, pawnPosition.ToIntVec3(), map);
 
-            MoteThrown middleMote = MakeMote(DefHandler.Mote_LevelBeamMiddle, CurrentPawn);
-            middleMote.SetVelocity(0, 0.5f);
-            GenSpawn.Spawn(middleMote, pawnPosition.ToIntVec3(), map);
+            MoteThrown middleMote1 = MakeMote(DefHandler.Mote_LevelBeamMiddle, CurrentPawn);
+            middleMote1.SetVelocity(0, 0.3f);
+            GenSpawn.Spawn(middleMote1, pawnPosition.ToIntVec3(), map);
 
-            MoteThrown outerMote = MakeMote(DefHandler.Mote_LevelBeamOuter, CurrentPawn);
-            outerMote.SetVelocity(0, 0.1f);
-            GenSpawn.Spawn(outerMote, pawnPosition.ToIntVec3(), map);
+            MoteThrown middleMote2 = MakeMote(DefHandler.Mote_LevelBeamMiddle, CurrentPawn);
+            middleMote2.SetVelocity(0, 0.5f);
+            GenSpawn.Spawn(middleMote2, pawnPosition.ToIntVec3(), map);
+
+            MoteThrown outerMote1 = MakeMote(DefHandler.Mote_LevelBeamOuter, CurrentPawn);
+            outerMote1.SetVelocity(0, 0.15f);
+            GenSpawn.Spawn(outerMote1, pawnPosition.ToIntVec3(), map);
+
+            MoteThrown outerMote2 = MakeMote(DefHandler.Mote_LevelBeamOuter, CurrentPawn);
+            outerMote2.SetVelocity(0, 0.25f);
+            GenSpawn.Spawn(outerMote2, pawnPosition.ToIntVec3(), map);
         }
 
         // Make basic setup of motes the same.

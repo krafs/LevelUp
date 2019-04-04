@@ -55,6 +55,8 @@
     <Compile Include="Source\LevelUp.cs" />
     <Compile Include="Source\Controller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\ModHandler.cs" />
+    <Compile Include="Source\Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
