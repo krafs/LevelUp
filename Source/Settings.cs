@@ -7,13 +7,13 @@ namespace LevelUp
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref allowTextMessage, "AllowTextMessage", true);
-            Scribe_Values.Look(ref allowSoundEffect, "AllowSoundEffect", true);
-            Scribe_Values.Look(ref allowAnimation, "AllowAnimation", true);
+            Scribe_Values.Look(ref allowLevelUpTextMessage, "AllowLevelUpTextMessage", true);
+            Scribe_Values.Look(ref allowLevelUpSoundEffect, "AllowLevelUpSoundEffect", true);
+            Scribe_Values.Look(ref allowLevelUpAnimation, "AllowLevelUpAnimation", true);
         }
 
-        public static bool allowTextMessage;
-        public static bool allowSoundEffect;
-        public static bool allowAnimation;
+        public static bool allowLevelUpTextMessage;
+        public static bool allowLevelUpSoundEffect;
+        public static bool allowLevelUpAnimation;
     }
 }

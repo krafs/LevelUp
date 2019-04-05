@@ -3,12 +3,11 @@
 
   <LevelUpLabel>Level Up! {0} reached level {1} in {2}.</LevelUpLabel>
 
-  <SettingsExplanationLabel>Toggle mod features on or off:</SettingsExplanationLabel>
-  <TextMessageLabel>Text Message</TextMessageLabel>
-  <TextMessageLabelTooltip>Show text message on levelling up.</TextMessageLabelTooltip>
-  <SoundEffectLabel>Sound Effect</SoundEffectLabel>
-  <SoundEffectLabelTooltip>Play sound effect when levelling up.</SoundEffectLabelTooltip>
-  <AnimationLabel>Animation</AnimationLabel>
-  <AnimationLabelTooltip>Do animation on pawn when levelling up.</AnimationLabelTooltip>
+  <LevelUpTextMessageLabel>Text Message</LevelUpTextMessageLabel>
+  <LevelUpTextMessageLabelTooltip>Show text message on levelling up.</LevelUpTextMessageLabelTooltip>
+  <LevelUpSoundEffectLabel>Sound Effect</LevelUpSoundEffectLabel>
+  <LevelUpSoundEffectLabelTooltip>Play sound effect when levelling up.</LevelUpSoundEffectLabelTooltip>
+  <LevelUpAnimationLabel>Animation</LevelUpAnimationLabel>
+  <LevelUpAnimationLabelTooltip>Do animation on pawn when levelling up.</LevelUpAnimationLabelTooltip>
 
 </LanguageData>

@@ -18,11 +18,9 @@ namespace LevelUp
             Listing_Standard view = new Listing_Standard();
             view.Begin(inRect);
             view.ColumnWidth = 220f;
-            view.Label("SettingsExplanationLabel".Translate().Bold());
-            view.Gap();
-            view.CheckboxLabeled("TextMessageLabel".Translate(), ref Settings.allowTextMessage, "TextMessageLabelTooltip".Translate());
-            view.CheckboxLabeled("SoundEffectLabel".Translate(), ref Settings.allowSoundEffect, "SoundEffectLabelTooltip".Translate());
-            view.CheckboxLabeled("AnimationLabel".Translate(), ref Settings.allowAnimation, "AnimationLabelTooltip".Translate());
+            view.CheckboxLabeled("LevelUpTextMessageLabel".Translate(), ref Settings.allowLevelUpTextMessage, "LevelUpTextMessageLabelTooltip".Translate());
+            view.CheckboxLabeled("LevelUpSoundEffectLabel".Translate(), ref Settings.allowLevelUpSoundEffect, "LevelUpSoundEffectLabelTooltip".Translate());
+            view.CheckboxLabeled("LevelUpAnimationLabel".Translate(), ref Settings.allowLevelUpAnimation, "LevelUpAnimationLabelTooltip".Translate());
             view.End();
         }
     }

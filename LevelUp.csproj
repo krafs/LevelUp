@@ -66,6 +66,7 @@
   <ItemGroup>
     <Content Include="About\About.xml" />
     <Content Include="About\Preview.png" />
+    <Content Include="About\PublishedFileId.txt" />
     <Content Include="backlog.txt" />
     <Content Include="Defs\SoundDefs\LvlUpSounds.xml" />
     <Content Include="Defs\ThingDefs\Motes.xml">

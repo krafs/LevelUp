@@ -25,7 +25,7 @@ namespace LevelUp
         void Notify_LevelUp()
         {
             // Do text message on screen on level up.
-            if (Settings.allowTextMessage)
+            if (Settings.allowLevelUpTextMessage)
             {
                 Color color = Color.yellow;
                 string pawn = CurrentPawn.LabelShortCap.Bold();
@@ -38,11 +38,11 @@ namespace LevelUp
             }
 
             // Do sound effect on level up.
-            if (Settings.allowSoundEffect)
+            if (Settings.allowLevelUpSoundEffect)
                 DefHandler.LevelUp.PlayOneShot(SoundInfo.InMap(new TargetInfo(CurrentPawn)));
 
             // Do animation on pawn levelling up.
-            if (!Settings.allowAnimation)
+            if (!Settings.allowLevelUpAnimation)
                 return;
 
             // Animation motes. Using three similar ones on top of each other to achieve stretch effect.
