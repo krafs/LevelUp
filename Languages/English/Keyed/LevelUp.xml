@@ -2,5 +2,12 @@
 <LanguageData>
 
   <LevelUpLabel>Level Up! {0} reached level {1} in {2}.</LevelUpLabel>
-   
+
+  <LevelUpTextMessageLabel>Text Message</LevelUpTextMessageLabel>
+  <LevelUpTextMessageLabelTooltip>Show text message on levelling up.</LevelUpTextMessageLabelTooltip>
+  <LevelUpSoundEffectLabel>Sound Effect</LevelUpSoundEffectLabel>
+  <LevelUpSoundEffectLabelTooltip>Play sound effect when levelling up.</LevelUpSoundEffectLabelTooltip>
+  <LevelUpAnimationLabel>Animation</LevelUpAnimationLabel>
+  <LevelUpAnimationLabelTooltip>Do animation on pawn when levelling up.</LevelUpAnimationLabelTooltip>
+
 </LanguageData>
