@@ -2,9 +2,9 @@
 <Defs>
 
   <ThingDef ParentName="MoteBase">
-    <defName>Mote_LevelBeamInner</defName>
+    <defName>Mote_LevelUpBeamInner</defName>
     <graphicData>
-      <texPath>Things/Mote/LevelBeamInner</texPath>
+      <texPath>Things/Mote/LevelUpBeamInner</texPath>
     </graphicData>
     <thingClass>MoteThrownAttached</thingClass>
     <altitudeLayer>MetaOverlays</altitudeLayer>
@@ -16,9 +16,9 @@
   </ThingDef>
 
   <ThingDef ParentName="MoteBase">
-    <defName>Mote_LevelBeamMiddle</defName>
+    <defName>Mote_LevelUpBeamMiddle</defName>
     <graphicData>
-      <texPath>Things/Mote/LevelBeamMiddle</texPath>
+      <texPath>Things/Mote/LevelUpBeamMiddle</texPath>
     </graphicData>
     <thingClass>MoteThrownAttached</thingClass>
     <altitudeLayer>MetaOverlays</altitudeLayer>
@@ -30,9 +30,37 @@
   </ThingDef>
 
   <ThingDef ParentName="MoteBase">
-    <defName>Mote_LevelBeamOuter</defName>
+    <defName>Mote_LevelUpBeamOuter</defName>
     <graphicData>
-      <texPath>Things/Mote/LevelBeamOuter</texPath>
+      <texPath>Things/Mote/LevelUpBeamOuter</texPath>
+    </graphicData>
+    <thingClass>MoteThrownAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <fadeInTime>1</fadeInTime>
+      <solidTime>5</solidTime>
+      <fadeOutTime>3</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_LevelDownBeamTop</defName>
+    <graphicData>
+      <texPath>Things/Mote/LevelDownBeamTop</texPath>
+    </graphicData>
+    <thingClass>MoteThrownAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <fadeInTime>1</fadeInTime>
+      <solidTime>5</solidTime>
+      <fadeOutTime>3</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_LevelDownBeamBottom</defName>
+    <graphicData>
+      <texPath>Things/Mote/LevelDownBeamBottom</texPath>
     </graphicData>
     <thingClass>MoteThrownAttached</thingClass>
     <altitudeLayer>MetaOverlays</altitudeLayer>
