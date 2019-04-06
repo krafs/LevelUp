@@ -36,8 +36,8 @@
           </li>
         </grains>
         <volumeRange>
-          <min>8</min>
-          <max>8</max>
+          <min>9</min>
+          <max>10</max>
         </volumeRange>
         <distRange>
           <min>0</min>
