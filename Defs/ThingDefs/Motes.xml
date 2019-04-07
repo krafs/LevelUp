@@ -51,8 +51,8 @@
     <thingClass>MoteThrownAttached</thingClass>
     <altitudeLayer>MetaOverlays</altitudeLayer>
     <mote>
-      <fadeInTime>1</fadeInTime>
-      <solidTime>5</solidTime>
+      <fadeInTime>2</fadeInTime>
+      <solidTime>3</solidTime>
       <fadeOutTime>3</fadeOutTime>
     </mote>
   </ThingDef>
@@ -66,7 +66,7 @@
     <altitudeLayer>MetaOverlays</altitudeLayer>
     <mote>
       <fadeInTime>1</fadeInTime>
-      <solidTime>5</solidTime>
+      <solidTime>3</solidTime>
       <fadeOutTime>3</fadeOutTime>
     </mote>
   </ThingDef>

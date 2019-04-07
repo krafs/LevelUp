@@ -7,11 +7,12 @@ using static LevelUp.LevelEvent;
 
 namespace LevelUp
 {
+    [StaticConstructorOnStartup]
     class Learn_Patch
     {
-        // Harmony.
-        internal static void ApplyPatches(HarmonyInstance harmony)
+        static Learn_Patch()
         {
+            HarmonyInstance harmony = HarmonyInstance.Create("LevelUp");
             MethodInfo original = AccessTools.Method(typeof(SkillRecord), "Learn", new[] { typeof(float), typeof(bool) });
             HarmonyMethod prefix = new HarmonyMethod(AccessTools.Method(typeof(Learn_Patch), "Prefix"));
             HarmonyMethod postfix = new HarmonyMethod(AccessTools.Method(typeof(Learn_Patch), "Postfix"));

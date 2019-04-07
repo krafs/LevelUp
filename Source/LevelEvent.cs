@@ -108,10 +108,19 @@ namespace LevelUp
             if (!pawnPosition.ToIntVec3().ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
                 return;
 
-            MoteThrown topMote = MakeMote(DefHandler.Mote_LevelDownBeamTop, CurrentPawn);
-            topMote.exactPosition.y += 100f;
-            topMote.SetVelocity(180, 0.6f);
+            MoteThrown topMote = (MoteThrown)ThingMaker.MakeThing(DefHandler.Mote_LevelDownBeamTop);
+            topMote.Attach(new TargetInfo(CurrentPawn));
+            topMote.Scale = 1.5f;
+            topMote.exactPosition = CurrentPawn.Drawer.DrawPos;
+            topMote.SetVelocity(180, 0.1f);
             GenSpawn.Spawn(topMote, pawnPosition.ToIntVec3(), map);
+
+            MoteThrown bottomMote = (MoteThrown)ThingMaker.MakeThing(DefHandler.Mote_LevelDownBeamBottom);
+            bottomMote.Attach(new TargetInfo(CurrentPawn));
+            bottomMote.Scale = 1.5f;
+            bottomMote.exactPosition = CurrentPawn.Drawer.DrawPos;
+            bottomMote.SetVelocity(180, 0.1f);
+            GenSpawn.Spawn(bottomMote, pawnPosition.ToIntVec3(), map);
         }
 
         // Make basic setup of level up motes.

@@ -1,5 +1,4 @@
-﻿using Harmony;
-using RimWorld;
+﻿using RimWorld;
 using System.Linq;
 using Verse;
 using static LevelUp.LevelEvent;
@@ -9,11 +8,7 @@ namespace LevelUp
     class Controller : GameComponent
     {
         public Controller(Game game)
-        {
-            // Initialize harmony patches.
-            HarmonyInstance harmony = HarmonyInstance.Create("LevelUp");
-            Learn_Patch.ApplyPatches(harmony);
-        }
+        { }
 
         public override void GameComponentOnGUI()
         {
@@ -37,7 +32,7 @@ namespace LevelUp
             }
         }
 
-        bool debug = true;
+        bool debug = false;
 
         // DEBUG. Buttons for instantly giving or taking pawn xp.
         void DrawDebugButtons()
