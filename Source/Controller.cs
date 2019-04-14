@@ -26,7 +26,6 @@ namespace LevelUp
                     break;
 
                 case LevelEventType.LevelDown:
-                    Log.Message("LevelDown");
                     levelEvent.NotifyLevelDown();
                     break;
             }

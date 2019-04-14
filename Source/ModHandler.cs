@@ -7,8 +7,10 @@ namespace LevelUp
     {
         public ModHandler(ModContentPack content) : base(content)
         {
-            GetSettings<Settings>();
+            settings = GetSettings<Settings>();
         }
+
+        public static Settings settings;
 
         public override string SettingsCategory() => "LevelUp";
 
