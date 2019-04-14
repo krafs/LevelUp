@@ -104,17 +104,14 @@ namespace LevelUp
                 LevelRecord.Add(___pawn, new Dictionary<SkillDef, int>());
 
             if (!LevelRecord[___pawn].ContainsKey(__instance.def))
-            {
                 LevelRecord[___pawn].Add(__instance.def, ___levelInt);
-            }
-            else
-            {
-                if (LevelRecord[___pawn][__instance.def] == ___levelInt)
-                    return;
-                LevelRecord[___pawn][__instance.def] = ___levelInt;
-            }
+            else if (LevelRecord[___pawn][__instance.def] == ___levelInt)
+                return;
 
-            LevelEventQueue.Enqueue(new LevelEvent(___pawn, __instance, __state < ___levelInt ? LevelEventType.LevelUp : LevelEventType.LevelDown));
+            LevelRecord[___pawn][__instance.def] = ___levelInt;
+            LevelEventType levelEventType = __state < ___levelInt ? LevelEventType.LevelUp : LevelEventType.LevelDown;
+
+            LevelEventQueue.Enqueue(new LevelEvent(___pawn, __instance, levelEventType));
         }
     }
 }
