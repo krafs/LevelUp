@@ -20,10 +20,10 @@ namespace LevelUp
 
         // Level Up
 
-        public static bool allowLevelUpTextMessage;
+        public static bool allowLevelUpTextMessage = true;
         public static bool allowLevelUpLetter;
-        public static bool allowLevelUpSoundEffect;
-        public static bool allowLevelUpAnimation;
+        public static bool allowLevelUpSoundEffect = true;
+        public static bool allowLevelUpAnimation = true;
 
         // Level Down
 
