@@ -3,10 +3,13 @@
 
   <!--Level Up Options-->
   <LevelUpLabel>Level Up! {0} reached level {1} in {2}.</LevelUpLabel>
+  <LevelUpLabelShort>{0} leveled up!</LevelUpLabelShort>
 
   <LevelUpSettingsLabel>Level Up</LevelUpSettingsLabel>
   <LevelUpTextMessageLabel>Text Message</LevelUpTextMessageLabel>
   <LevelUpTextMessageLabelTooltip>Show text message on levelling up.</LevelUpTextMessageLabelTooltip>
+  <LevelUpLetterLabel>Letter</LevelUpLetterLabel>
+  <LevelUpLetterLabelTooltip>Receive letter when levelling up.</LevelUpLetterLabelTooltip>
   <LevelUpSoundEffectLabel>Sound Effect</LevelUpSoundEffectLabel>
   <LevelUpSoundEffectLabelTooltip>Play sound effect when levelling up.</LevelUpSoundEffectLabelTooltip>
   <LevelUpAnimationLabel>Animation</LevelUpAnimationLabel>
@@ -14,10 +17,13 @@
 
   <!--Level Down Options-->
   <LevelDownLabel>Level Down! {0} dropped to level {1} in {2}.</LevelDownLabel>
+  <LevelDownLabelShort>{0} leveled down</LevelDownLabelShort>
 
   <LevelDownSettingsLabel>Level Down</LevelDownSettingsLabel>
   <LevelDownTextMessageLabel>Text Message</LevelDownTextMessageLabel>
   <LevelDownTextMessageLabelTooltip>Show text message on levelling down.</LevelDownTextMessageLabelTooltip>
+  <LevelDownLetterLabel>Letter</LevelDownLetterLabel>
+  <LevelDownLetterLabelTooltip>Receive letter when levelling down.</LevelDownLetterLabelTooltip>
   <LevelDownSoundEffectLabel>Sound Effect</LevelDownSoundEffectLabel>
   <LevelDownSoundEffectLabelTooltip>Play sound effect when levelling down.</LevelDownSoundEffectLabelTooltip>
   <LevelDownAnimationLabel>Animation</LevelDownAnimationLabel>

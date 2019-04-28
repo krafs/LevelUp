@@ -23,6 +23,7 @@ namespace LevelUp
 
             view.Label("LevelUpSettingsLabel".Translate());
             view.CheckboxLabeled("LevelUpTextMessageLabel".Translate(), ref Settings.allowLevelUpTextMessage, "LevelUpTextMessageLabelTooltip".Translate());
+            view.CheckboxLabeled("LevelUpLetterLabel".Translate(), ref Settings.allowLevelUpLetter, "LevelUpLetterLabelTooltip".Translate());
             view.CheckboxLabeled("LevelUpSoundEffectLabel".Translate(), ref Settings.allowLevelUpSoundEffect, "LevelUpSoundEffectLabelTooltip".Translate());
             view.CheckboxLabeled("LevelUpAnimationLabel".Translate(), ref Settings.allowLevelUpAnimation, "LevelUpAnimationLabelTooltip".Translate());
 
@@ -30,6 +31,7 @@ namespace LevelUp
 
             view.Label("LevelDownSettingsLabel".Translate());
             view.CheckboxLabeled("LevelDownTextMessageLabel".Translate(), ref Settings.allowLevelDownTextMessage, "LevelDownTextMessageLabelTooltip".Translate());
+            view.CheckboxLabeled("LevelDownLetterLabel".Translate(), ref Settings.allowLevelDownLetter, "LevelDownLetterLabelTooltip".Translate());
             view.CheckboxLabeled("LevelDownSoundEffectLabel".Translate(), ref Settings.allowLevelDownSoundEffect, "LevelDownSoundEffectLabelTooltip".Translate());
             view.CheckboxLabeled("LevelDownAnimationLabel".Translate(), ref Settings.allowLevelDownAnimation, "LevelDownAnimationLabelTooltip".Translate());
 
