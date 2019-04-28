@@ -42,6 +42,18 @@ namespace LevelUp
                 Messages.Message(label, lookTargets, MessageTypeDefOf.SilentInput);
             }
 
+            if (Settings.allowLevelUpLetter)
+            {
+                string pawn = CurrentPawn.LabelShortCap;
+                string skill = SkillRecord.def.skillLabel;
+                string level = SkillRecord.levelInt.ToString();
+                string labelShort = "LevelUpLabelShort".Translate(pawn);
+                string label = "LevelUpLabel".Translate(pawn, level, skill);
+                LookTargets lookTargets = new LookTargets(CurrentPawn);
+
+                Find.LetterStack.ReceiveLetter(labelShort, label, LetterDefOf.PositiveEvent, lookTargets);
+            }
+
             // Do sound effect on level up.
             if (Settings.allowLevelUpSoundEffect)
                 DefHandler.LevelUp.PlayOneShot(SoundInfo.InMap(new TargetInfo(CurrentPawn)));
@@ -91,6 +103,18 @@ namespace LevelUp
 
                 LookTargets lookTargets = new LookTargets(CurrentPawn);
                 Messages.Message(label, lookTargets, MessageTypeDefOf.SilentInput);
+            }
+
+            if (Settings.allowLevelDownLetter)
+            {
+                string pawn = CurrentPawn.LabelShortCap;
+                string skill = SkillRecord.def.skillLabel;
+                string level = SkillRecord.levelInt.ToString();
+                string labelShort = "LevelDownLabelShort".Translate(pawn);
+                string label = "LevelDownLabel".Translate(pawn, level, skill);
+                LookTargets lookTargets = new LookTargets(CurrentPawn);
+
+                Find.LetterStack.ReceiveLetter(labelShort, label, LetterDefOf.NegativeEvent, lookTargets);
             }
 
             // Do sound effect on level down.

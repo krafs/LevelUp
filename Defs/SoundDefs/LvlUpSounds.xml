@@ -3,7 +3,6 @@
 	<SoundDef>
 		<defName>LevelUp</defName>
 		<context>MapOnly</context>
-		<eventNames />
 		<subSounds>
 			<li>
 				<grains>
@@ -12,13 +11,9 @@
 					</li>
 				</grains>
 				<volumeRange>
-					<min>8</min>
-					<max>8</max>
-				</volumeRange>
-				<distRange>
-					<min>0</min>        
-					<max>50.27907</max>
-				</distRange>      
+					<min>20</min>
+					<max>20</max>
+				</volumeRange>   
 				<sustainLoop>False</sustainLoop>
 			</li>
 		</subSounds>
@@ -27,7 +22,6 @@
   <SoundDef>
     <defName>LevelDown</defName>
     <context>MapOnly</context>
-    <eventNames />
     <subSounds>
       <li>
         <grains>
@@ -36,13 +30,9 @@
           </li>
         </grains>
         <volumeRange>
-          <min>9</min>
-          <max>10</max>
+          <min>20</min>
+          <max>20</max>
         </volumeRange>
-        <distRange>
-          <min>0</min>
-          <max>50.27907</max>
-        </distRange>
         <sustainLoop>False</sustainLoop>
       </li>
     </subSounds>
