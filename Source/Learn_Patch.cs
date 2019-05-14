@@ -100,6 +100,11 @@ namespace LevelUp
             if (!___pawn.Faction.IsPlayer)
                 return;
 
+            // Ignores level downs 10 -> 9. Fix for some pawns immediately leveling down again after lvl 10.
+            if (__state == 10 && ___levelInt == 9)
+                if(Settings.ignoreLvl10To9)
+                    return;
+
             if (!LevelRecord.ContainsKey(___pawn))
                 LevelRecord.Add(___pawn, new Dictionary<SkillDef, int>());
 

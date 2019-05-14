@@ -35,6 +35,10 @@ namespace LevelUp
             view.CheckboxLabeled("LevelDownSoundEffectLabel".Translate(), ref Settings.allowLevelDownSoundEffect, "LevelDownSoundEffectLabelTooltip".Translate());
             view.CheckboxLabeled("LevelDownAnimationLabel".Translate(), ref Settings.allowLevelDownAnimation, "LevelDownAnimationLabelTooltip".Translate());
 
+            view.NewColumn();
+
+            view.CheckboxLabeled("Ignore10To9Label".Translate(), ref Settings.ignoreLvl10To9, "Ignore10To9LabelTooltip".Translate());
+
             view.End();
         }
     }
