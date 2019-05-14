@@ -16,6 +16,8 @@ namespace LevelUp
             Scribe_Values.Look(ref allowLevelDownLetter, "AllowLevelDownLetter", false, true);
             Scribe_Values.Look(ref allowLevelDownSoundEffect, "AllowLevelDownSoundEffect", false, true);
             Scribe_Values.Look(ref allowLevelDownAnimation, "AllowLevelDownAnimation", false, true);
+
+            Scribe_Values.Look(ref ignoreLvl10To9, "Ignore10To9Label", false, true);
         }
 
         // Level Up
@@ -31,5 +33,7 @@ namespace LevelUp
         public static bool allowLevelDownLetter;
         public static bool allowLevelDownSoundEffect;
         public static bool allowLevelDownAnimation;
+
+        public static bool ignoreLvl10To9;
     }
 }
