@@ -31,7 +31,7 @@ namespace LevelUp
             }
         }
 
-        bool debug = false;
+        bool debug = true;
 
         // DEBUG. Buttons for instantly giving or taking pawn xp.
         void DrawDebugButtons()

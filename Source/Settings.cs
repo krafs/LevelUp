@@ -1,4 +1,5 @@
 ﻿using Verse;
+using static LevelUp.DefHandler;
 
 namespace LevelUp
 {
@@ -18,14 +19,18 @@ namespace LevelUp
             Scribe_Values.Look(ref allowLevelDownAnimation, "AllowLevelDownAnimation", false, true);
 
             Scribe_Values.Look(ref ignoreLvl10To9, "Ignore10To9Label", false, true);
+
+            Scribe_Values.Look(ref LvlUpSound, "LevelUpSoundDef", Sound.LevelUp, true);
         }
 
         // Level Up
 
         public static bool allowLevelUpTextMessage = true;
         public static bool allowLevelUpLetter;
-        public static bool allowLevelUpSoundEffect = true;
         public static bool allowLevelUpAnimation = true;
+        public static bool allowLevelUpSoundEffect = true;
+
+        public static Sound LvlUpSound;
 
         // Level Down
 

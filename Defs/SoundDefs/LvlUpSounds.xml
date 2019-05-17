@@ -2,12 +2,13 @@
 <Defs>
 	<SoundDef>
 		<defName>LevelUp</defName>
+    <label>SoundLvlUp1</label>
 		<context>MapOnly</context>
 		<subSounds>
 			<li>
 				<grains>
 					<li Class="AudioGrain_Clip">
-						<clipPath>LevelUp/LvlUp</clipPath>
+						<clipPath>LevelUp/LvlUp2</clipPath>
 					</li>
 				</grains>
 				<volumeRange>
@@ -18,6 +19,26 @@
 			</li>
 		</subSounds>
 	</SoundDef>
+
+  <SoundDef>
+    <defName>LevelUp2</defName>
+    <label>SoundLvlUp2</label>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>LevelUp/LvlUp2</clipPath>
+          </li>
+        </grains>
+        <volumeRange>
+          <min>20</min>
+          <max>20</max>
+        </volumeRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
 
   <SoundDef>
     <defName>LevelDown</defName>
