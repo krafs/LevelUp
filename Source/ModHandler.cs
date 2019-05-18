@@ -40,23 +40,17 @@ namespace LevelUp
 
             view.Gap();
 
-            bool makeSound = false;
-
             List<FloatMenuOption> soundOptions = new List<FloatMenuOption>()
             {
-                new FloatMenuOption("Classic", delegate () { Settings.LvlUpSound = DefHandler.Sound.LevelUp; }, MenuOptionPriority.Default, delegate () { makeSound = true; }),
-                new FloatMenuOption("New", delegate () { Settings.LvlUpSound = DefHandler.Sound.LevelUp2; }, MenuOptionPriority.Default, delegate () { makeSound = true; })
+                new FloatMenuOption(DefHandler.LevelUp.label, delegate () { Settings.LvlUpSound = DefHandler.Sound.LevelUp; }),
+                new FloatMenuOption(DefHandler.LevelUp2.label, delegate () { Settings.LvlUpSound = DefHandler.Sound.LevelUp2; })
             };
 
-            if (view.ButtonTextLabeled("Sound", DefHandler.GetSound(Settings.LvlUpSound).label))
+            if (view.ButtonTextLabeled("SoundChooseLabel".Translate(), DefHandler.GetSound(Settings.LvlUpSound).label))
                 Find.WindowStack.Add(new FloatMenu(soundOptions));
 
-            if (makeSound)
-            {
-                //DefHandler.LevelUp.PlayOneShot(null);
-                SoundDefOf.Building_Complete.PlayOneShot(null);
-                makeSound = false;
-            }
+            if (view.ButtonText("TestPlaySound".Translate()))
+                DefHandler.GetSound(Settings.LvlUpSound).PlayOneShotOnCamera(null);
 
             view.NewColumn();
 

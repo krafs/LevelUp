@@ -19,7 +19,10 @@ namespace LevelUp
 
         static DefHandler() => DefOfHelper.EnsureInitializedInCtor(typeof(DefHandler));
 
+        // Classic
         public static SoundDef LevelUp;
+
+        // Punchy. Credit Scott Wilco.
         public static SoundDef LevelUp2;
         public static SoundDef LevelDown;
 

@@ -85,9 +85,7 @@
     <Content Include="Textures\Things\Mote\LevelBeamMiddle.png" />
     <Content Include="Textures\Things\Mote\LevelBeamOuter.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Unused\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>xcopy /i /s /y "$(SolutionDir)About" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\About\"

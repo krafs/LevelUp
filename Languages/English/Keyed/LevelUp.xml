@@ -32,4 +32,7 @@
   <Ignore10To9Label>Silent lvl 10-9</Ignore10To9Label>
   <Ignore10To9LabelTooltip>Ignore skills that lvl down from 10 to 9.\n\nFix for pawns that level a skill up to 10, and then immediately levels down to 9 again due to xp decay kicking in.</Ignore10To9LabelTooltip>
 
+  <SoundChooseLabel>Sound</SoundChooseLabel>
+  <TestPlaySound>Play Sound</TestPlaySound>
+  
 </LanguageData>

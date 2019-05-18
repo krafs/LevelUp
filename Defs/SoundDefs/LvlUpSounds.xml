@@ -2,13 +2,14 @@
 <Defs>
 	<SoundDef>
 		<defName>LevelUp</defName>
-    <label>SoundLvlUp1</label>
+    <label>Classic</label>
 		<context>MapOnly</context>
 		<subSounds>
 			<li>
-				<grains>
+        <onCamera>True</onCamera>
+        <grains>
 					<li Class="AudioGrain_Clip">
-						<clipPath>LevelUp/LvlUp2</clipPath>
+						<clipPath>LevelUp/LvlUp</clipPath>
 					</li>
 				</grains>
 				<volumeRange>
@@ -20,20 +21,22 @@
 		</subSounds>
 	</SoundDef>
 
+  <!--Sound Credit: Scott Wilco.-->
   <SoundDef>
     <defName>LevelUp2</defName>
-    <label>SoundLvlUp2</label>
+    <label>Punchy</label>
     <context>MapOnly</context>
     <subSounds>
       <li>
+        <onCamera>True</onCamera>
         <grains>
           <li Class="AudioGrain_Clip">
             <clipPath>LevelUp/LvlUp2</clipPath>
           </li>
         </grains>
         <volumeRange>
-          <min>20</min>
-          <max>20</max>
+          <min>30</min>
+          <max>30</max>
         </volumeRange>
         <sustainLoop>False</sustainLoop>
       </li>
