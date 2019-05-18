@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+﻿using RimWorld;
+using System.Collections.Generic;
+using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace LevelUp
 {
@@ -14,6 +17,14 @@ namespace LevelUp
 
         public override string SettingsCategory() => "LevelUp";
 
+        //static List<FloatMenuOption> soundOptions = new List<FloatMenuOption>()
+        //    {
+        //        new FloatMenuOption("Classic", delegate () { Settings.LvlUpSoundDef = DefHandler.LevelUp; }, MenuOptionPriority.Default, delegate () { DefHandler.LevelUp.PlayOneShotOnCamera(null); }),
+        //        new FloatMenuOption("New", delegate () { Settings.LvlUpSoundDef = DefHandler.LevelUp2; }, MenuOptionPriority.Default, delegate () { DefHandler.LevelUp2.PlayOneShotOnCamera(null); })
+        //    };
+
+        //static FloatMenu soundMenu = new FloatMenu(soundOptions);
+
         public override void DoSettingsWindowContents(Rect inRect)
         {
             base.DoSettingsWindowContents(inRect);
@@ -26,6 +37,20 @@ namespace LevelUp
             view.CheckboxLabeled("LevelUpLetterLabel".Translate(), ref Settings.allowLevelUpLetter, "LevelUpLetterLabelTooltip".Translate());
             view.CheckboxLabeled("LevelUpSoundEffectLabel".Translate(), ref Settings.allowLevelUpSoundEffect, "LevelUpSoundEffectLabelTooltip".Translate());
             view.CheckboxLabeled("LevelUpAnimationLabel".Translate(), ref Settings.allowLevelUpAnimation, "LevelUpAnimationLabelTooltip".Translate());
+
+            view.Gap();
+
+            List<FloatMenuOption> soundOptions = new List<FloatMenuOption>()
+            {
+                new FloatMenuOption(DefHandler.LevelUp.label, delegate () { Settings.LvlUpSound = DefHandler.Sound.LevelUp; }),
+                new FloatMenuOption(DefHandler.LevelUp2.label, delegate () { Settings.LvlUpSound = DefHandler.Sound.LevelUp2; })
+            };
+
+            if (view.ButtonTextLabeled("SoundChooseLabel".Translate(), DefHandler.GetSound(Settings.LvlUpSound).label))
+                Find.WindowStack.Add(new FloatMenu(soundOptions));
+
+            if (view.ButtonText("TestPlaySound".Translate()))
+                DefHandler.GetSound(Settings.LvlUpSound).PlayOneShotOnCamera(null);
 
             view.NewColumn();
 

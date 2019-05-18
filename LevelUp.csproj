@@ -66,29 +66,29 @@
   <ItemGroup>
     <None Include="README.md" />
     <None Include="Sounds\LevelUp\LvlUp.ogg" />
-    <None Include="Sounds\LevelUp\LvlUp2.ogg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="About\About.xml" />
     <Content Include="About\Preview.png" />
     <Content Include="About\PublishedFileId.txt" />
     <Content Include="backlog.txt" />
-    <Content Include="Defs\SoundDefs\LvlUpSounds.xml" />
+    <Content Include="Defs\SoundDefs\LvlUpSounds.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\ThingDefs\Motes.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Languages\English\Keyed\LevelUp.xml" />
+    <None Include="Sounds\LevelUp\LvlDown.wav" />
+    <None Include="Sounds\LevelUp\LvlUp2.wav" />
     <Content Include="Textures\Things\Mote\LevelBeamInner.png" />
     <Content Include="Textures\Things\Mote\LevelBeamMiddle.png" />
     <Content Include="Textures\Things\Mote\LevelBeamOuter.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Unused\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>rmdir "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\" /s /q
-xcopy /i /s /y "$(SolutionDir)About" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\About\"
+    <PreBuildEvent>xcopy /i /s /y "$(SolutionDir)About" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\About\"
 xcopy /i /s /y "$(SolutionDir)Defs" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\Defs\"
 xcopy /i /s /y "$(SolutionDir)Languages" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\Languages\"
 xcopy /i /s /y "$(SolutionDir)Sounds" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\Sounds\"
