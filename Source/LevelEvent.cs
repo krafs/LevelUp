@@ -56,7 +56,7 @@ namespace LevelUp
 
             // Do sound effect on level up.
             if (Settings.allowLevelUpSoundEffect)
-                DefHandler.LevelUp.PlayOneShot(SoundInfo.InMap(new TargetInfo(CurrentPawn)));
+                DefHandler.GetSound(Settings.LvlUpSound).PlayOneShot(SoundInfo.InMap(new TargetInfo(CurrentPawn)));
 
             // Do animation on pawn levelling up.
             if (!Settings.allowLevelUpAnimation)
