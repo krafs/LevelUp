@@ -17,14 +17,6 @@ namespace LevelUp
 
         public override string SettingsCategory() => "LevelUp";
 
-        //static List<FloatMenuOption> soundOptions = new List<FloatMenuOption>()
-        //    {
-        //        new FloatMenuOption("Classic", delegate () { Settings.LvlUpSoundDef = DefHandler.LevelUp; }, MenuOptionPriority.Default, delegate () { DefHandler.LevelUp.PlayOneShotOnCamera(null); }),
-        //        new FloatMenuOption("New", delegate () { Settings.LvlUpSoundDef = DefHandler.LevelUp2; }, MenuOptionPriority.Default, delegate () { DefHandler.LevelUp2.PlayOneShotOnCamera(null); })
-        //    };
-
-        //static FloatMenu soundMenu = new FloatMenu(soundOptions);
-
         public override void DoSettingsWindowContents(Rect inRect)
         {
             base.DoSettingsWindowContents(inRect);
@@ -37,6 +29,7 @@ namespace LevelUp
             view.CheckboxLabeled("LevelUpLetterLabel".Translate(), ref Settings.allowLevelUpLetter, "LevelUpLetterLabelTooltip".Translate());
             view.CheckboxLabeled("LevelUpSoundEffectLabel".Translate(), ref Settings.allowLevelUpSoundEffect, "LevelUpSoundEffectLabelTooltip".Translate());
             view.CheckboxLabeled("LevelUpAnimationLabel".Translate(), ref Settings.allowLevelUpAnimation, "LevelUpAnimationLabelTooltip".Translate());
+            view.CheckboxLabeled("LevelUpLevelDesc".Translate(), ref Settings.levelDescLevelUpLabel, "LevelUpLevelDescTooltip".Translate());
 
             view.Gap();
 
@@ -59,6 +52,7 @@ namespace LevelUp
             view.CheckboxLabeled("LevelDownLetterLabel".Translate(), ref Settings.allowLevelDownLetter, "LevelDownLetterLabelTooltip".Translate());
             view.CheckboxLabeled("LevelDownSoundEffectLabel".Translate(), ref Settings.allowLevelDownSoundEffect, "LevelDownSoundEffectLabelTooltip".Translate());
             view.CheckboxLabeled("LevelDownAnimationLabel".Translate(), ref Settings.allowLevelDownAnimation, "LevelDownAnimationLabelTooltip".Translate());
+            view.CheckboxLabeled("LevelDownLevelDesc".Translate(), ref Settings.levelDescLevelDownLabel, "LevelDownLevelDescTooltip".Translate());
 
             view.NewColumn();
 

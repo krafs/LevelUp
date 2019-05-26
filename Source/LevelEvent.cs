@@ -36,7 +36,12 @@ namespace LevelUp
                 string pawn = CurrentPawn.LabelShortCap.Bold();
                 string skill = SkillRecord.def.skillLabel.Italic();
                 string level = SkillRecord.levelInt.ToString().Bold().Colored(color);
-                string label = "LevelUpLabel".Translate(pawn, level, skill);
+                string levelDesc = SkillRecord.LevelDescriptor;
+                string label;
+                if (Settings.levelDescLevelUpLabel)
+                    label = "LevelUpLabelLong".Translate(pawn, level, skill, levelDesc);
+                else
+                    label = "LevelUpLabel".Translate(pawn, level, skill);
 
                 LookTargets lookTargets = new LookTargets(CurrentPawn);
                 Messages.Message(label, lookTargets, MessageTypeDefOf.SilentInput);
@@ -99,7 +104,12 @@ namespace LevelUp
                 string pawn = CurrentPawn.LabelShortCap.Bold();
                 string skill = SkillRecord.def.skillLabel.Italic();
                 string level = SkillRecord.levelInt.ToString().Bold().Colored(color);
-                string label = "LevelDownLabel".Translate(pawn, level, skill);
+                string levelDesc = SkillRecord.LevelDescriptor;
+                string label;
+                if(Settings.levelDescLevelDownLabel)
+                    label = "LevelDownLabelLong".Translate(pawn, level, skill, levelDesc);
+                else
+                    label = "LevelDownLabel".Translate(pawn, level, skill);
 
                 LookTargets lookTargets = new LookTargets(CurrentPawn);
                 Messages.Message(label, lookTargets, MessageTypeDefOf.SilentInput);
