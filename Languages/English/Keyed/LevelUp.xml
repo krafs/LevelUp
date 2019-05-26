@@ -4,6 +4,7 @@
   <!--Level Up Options-->
   <LevelUpLabel>Level Up! {0} reached level {1} in {2}.</LevelUpLabel>
   <LevelUpLabelShort>{0} leveled up!</LevelUpLabelShort>
+  <LevelUpLabelLong>Level Up! {0} reached level {1} in {2} ({3}).</LevelUpLabelLong>
 
   <LevelUpSettingsLabel>Level Up</LevelUpSettingsLabel>
   <LevelUpTextMessageLabel>Text Message</LevelUpTextMessageLabel>
@@ -14,10 +15,14 @@
   <LevelUpSoundEffectLabelTooltip>Play sound effect when levelling up.</LevelUpSoundEffectLabelTooltip>
   <LevelUpAnimationLabel>Animation</LevelUpAnimationLabel>
   <LevelUpAnimationLabelTooltip>Do animation on pawn when levelling up.</LevelUpAnimationLabelTooltip>
+  <LevelUpLevelDesc>Level Description</LevelUpLevelDesc>
+  <LevelUpLevelDescTooltip>Include the RimWorld description for the achieved skill level in the message.</LevelUpLevelDescTooltip>
+  
 
   <!--Level Down Options-->
   <LevelDownLabel>Level Down! {0} dropped to level {1} in {2}.</LevelDownLabel>
   <LevelDownLabelShort>{0} leveled down</LevelDownLabelShort>
+  <LevelDownLabelLong>Level Down! {0} dropped to level {1} in {2} ({3}).</LevelDownLabelLong>
 
   <LevelDownSettingsLabel>Level Down</LevelDownSettingsLabel>
   <LevelDownTextMessageLabel>Text Message</LevelDownTextMessageLabel>
@@ -28,6 +33,8 @@
   <LevelDownSoundEffectLabelTooltip>Play sound effect when levelling down.</LevelDownSoundEffectLabelTooltip>
   <LevelDownAnimationLabel>Animation</LevelDownAnimationLabel>
   <LevelDownAnimationLabelTooltip>Do animation on pawn when levelling down.</LevelDownAnimationLabelTooltip>
+  <LevelDownLevelDesc>Level Description</LevelDownLevelDesc>
+  <LevelDownLevelDescTooltip>Include the RimWorld description for the achieved skill level in the message.</LevelDownLevelDescTooltip>
 
   <Ignore10To9Label>Silent lvl 10-9</Ignore10To9Label>
   <Ignore10To9LabelTooltip>Ignore skills that lvl down from 10 to 9.\n\nFix for pawns that level a skill up to 10, and then immediately levels down to 9 again due to xp decay kicking in.</Ignore10To9LabelTooltip>
