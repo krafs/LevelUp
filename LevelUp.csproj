@@ -71,7 +71,6 @@
     <Content Include="About\About.xml" />
     <Content Include="About\Preview.png" />
     <Content Include="About\PublishedFileId.txt" />
-    <Content Include="backlog.txt" />
     <Content Include="Defs\SoundDefs\LvlUpSounds.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -81,6 +80,7 @@
     <Content Include="Languages\English\Keyed\LevelUp.xml" />
     <None Include="Sounds\LevelUp\LvlDown.wav" />
     <None Include="Sounds\LevelUp\LvlUp2.wav" />
+    <Content Include="Languages\Russian\Keyed\LevelUp.xml" />
     <Content Include="Textures\Things\Mote\LevelBeamInner.png" />
     <Content Include="Textures\Things\Mote\LevelBeamMiddle.png" />
     <Content Include="Textures\Things\Mote\LevelBeamOuter.png" />
