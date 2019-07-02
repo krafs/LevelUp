@@ -80,6 +80,7 @@
     <Content Include="Languages\English\Keyed\LevelUp.xml" />
     <None Include="Sounds\LevelUp\LvlDown.wav" />
     <None Include="Sounds\LevelUp\LvlUp2.wav" />
+    <Content Include="Languages\German\Keyed\LevelUp.xml" />
     <Content Include="Languages\Russian\Keyed\LevelUp.xml" />
     <Content Include="Textures\Things\Mote\LevelBeamInner.png" />
     <Content Include="Textures\Things\Mote\LevelBeamMiddle.png" />
