@@ -21,6 +21,7 @@ namespace LevelUp
             Scribe_Values.Look(ref levelDescLevelDownLabel, "LevelDescLevelDownLabel", false, true);
 
             Scribe_Values.Look(ref ignoreLvl10To9, "Ignore10To9Label", false, true);
+            Scribe_Values.Look<int>(ref notificationTimer, "NotificationTimer", 0);
 
             Scribe_Values.Look(ref LvlUpSound, "LevelUpSoundDef", Sound.LevelUp, true);
         }
@@ -44,7 +45,6 @@ namespace LevelUp
         public static bool levelDescLevelDownLabel;
 
         public static bool ignoreLvl10To9;
-
-        
+        public static int notificationTimer = 0;
     }
 }

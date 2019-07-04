@@ -1,4 +1,6 @@
 ﻿using RimWorld;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Verse;
 using static LevelUp.LevelEvent;
@@ -36,6 +38,13 @@ namespace LevelUp
         // DEBUG. Buttons for instantly giving or taking pawn xp.
         void DrawDebugButtons()
         {
+            float num = 500f;
+            Widgets.Label(new UnityEngine.Rect(100f, 470f, 100f, 100f), "Notification timer: " + Settings.notificationTimer);
+            foreach (KeyValuePair<Pawn, Stopwatch> pawnTime in PawnTimers)
+            {
+                Widgets.Label(new UnityEngine.Rect(200f, num, 100f, 24f), pawnTime.Key.LabelShort.ToString() + " " + pawnTime.Value.ElapsedMilliseconds.ToString() + " ms.");
+                num += 24f;
+            }
             if (Widgets.ButtonText(new UnityEngine.Rect(100f, 100f, 100f, 30f), "-1000 xp"))
             {
                 int xp = -1000;
