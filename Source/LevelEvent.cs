@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
@@ -26,6 +27,7 @@ namespace LevelUp
         public LevelEventType LevelType { get; set; }
         public static Queue<LevelEvent> LevelEventQueue { get; } = new Queue<LevelEvent>();
         public static Dictionary<Pawn, Dictionary<SkillDef, int>> LevelRecord { get; } = new Dictionary<Pawn, Dictionary<SkillDef, int>>();
+        public static Dictionary<Pawn, Stopwatch> PawnTimers { get; } = new Dictionary<Pawn, Stopwatch>();
 
         public void NotifyLevelUp()
         {
@@ -106,7 +108,7 @@ namespace LevelUp
                 string level = SkillRecord.levelInt.ToString().Bold().Colored(color);
                 string levelDesc = SkillRecord.LevelDescriptor;
                 string label;
-                if(Settings.levelDescLevelDownLabel)
+                if (Settings.levelDescLevelDownLabel)
                     label = "LevelDownLabelLong".Translate(pawn, level, skill, levelDesc);
                 else
                     label = "LevelDownLabel".Translate(pawn, level, skill);

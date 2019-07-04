@@ -1,5 +1,4 @@
-﻿using RimWorld;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
@@ -16,6 +15,8 @@ namespace LevelUp
         public static Settings settings;
 
         public override string SettingsCategory() => "LevelUp";
+
+        static string editBuffer;
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
@@ -57,6 +58,11 @@ namespace LevelUp
             view.NewColumn();
 
             view.CheckboxLabeled("Ignore10To9Label".Translate(), ref Settings.ignoreLvl10To9, "Ignore10To9LabelTooltip".Translate());
+
+            view.Gap();
+
+            view.Label("NotificationTimerLabel".Translate(), -1, "NotificationTimerLabelTooltip".Translate());
+            view.IntEntry(ref Settings.notificationTimer, ref editBuffer);
 
             view.End();
         }

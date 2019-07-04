@@ -17,7 +17,6 @@
   <LevelUpAnimationLabelTooltip>Do animation on pawn when levelling up.</LevelUpAnimationLabelTooltip>
   <LevelUpLevelDesc>Level Description</LevelUpLevelDesc>
   <LevelUpLevelDescTooltip>Include the RimWorld description for the achieved skill level in the message.</LevelUpLevelDescTooltip>
-  
 
   <!--Level Down Options-->
   <LevelDownLabel>Level Down! {0} dropped to level {1} in {2}.</LevelDownLabel>
@@ -39,7 +38,9 @@
   <Ignore10To9Label>Silent lvl 10-9</Ignore10To9Label>
   <Ignore10To9LabelTooltip>Ignore skills that lvl down from 10 to 9.\n\nFix for pawns that level a skill up to 10, and then immediately levels down to 9 again due to xp decay kicking in.</Ignore10To9LabelTooltip>
 
+  <NotificationTimerLabel>Notification Timer (Experimental)</NotificationTimerLabel>
+  <NotificationTimerLabelTooltip>EXPERIMENTAL\n\nThis feature is still being tested, but should work just fine.\n\nMinimum number of seconds that have to pass between two level notifications for individual pawns.\n\nGeneral fix for receiving fewer notifications from the same pawn that rapidly levels up and down within a short amount of time.</NotificationTimerLabelTooltip>
+
   <SoundChooseLabel>Sound</SoundChooseLabel>
   <TestPlaySound>Play Sound</TestPlaySound>
-  
 </LanguageData>
