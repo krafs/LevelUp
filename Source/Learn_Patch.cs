@@ -3,6 +3,7 @@ using RimWorld;
 using static_quality_plus;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using Verse;
@@ -102,8 +103,11 @@ namespace LevelUp
 
             // Ignores level downs 10 -> 9. Fix for some pawns immediately leveling down again after lvl 10.
             if (__state == 10 && ___levelInt == 9)
-                if(Settings.ignoreLvl10To9)
+                if (Settings.ignoreLvl10To9)
                     return;
+
+            if (!TimerAllowsNotifications(___pawn))
+                return;
 
             if (!LevelRecord.ContainsKey(___pawn))
                 LevelRecord.Add(___pawn, new Dictionary<SkillDef, int>());
@@ -117,6 +121,35 @@ namespace LevelUp
             LevelEventType levelEventType = __state < ___levelInt ? LevelEventType.LevelUp : LevelEventType.LevelDown;
 
             LevelEventQueue.Enqueue(new LevelEvent(___pawn, __instance, levelEventType));
+        }
+
+        // Checks if enough time has passed since the last time there were level notification about this particular pawn.
+        static bool TimerAllowsNotifications(Pawn pawn)
+        {
+            var timerDict = PawnTimers;
+            Stopwatch timer;
+            if (timerDict.ContainsKey(pawn))
+            {
+                timer = timerDict[pawn];
+
+                if (timer.Elapsed.Seconds > Settings.notificationTimer)
+                {
+                    timer.Reset();
+                    timer.Start();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                timer = new Stopwatch();
+                timer.Start();
+                timerDict.Add(pawn, timer);
+                return true;
+            }
         }
     }
 }
