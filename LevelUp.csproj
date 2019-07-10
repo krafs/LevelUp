@@ -77,6 +77,7 @@
     <Content Include="Defs\ThingDefs\Motes.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Languages\ChineseSimplified\Keyed\LevelUp.xml" />
     <Content Include="Languages\English\Keyed\LevelUp.xml" />
     <None Include="Sounds\LevelUp\LvlDown.wav" />
     <None Include="Sounds\LevelUp\LvlUp2.wav" />
