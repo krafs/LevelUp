@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!--Level Up Options-->
+  <LevelUpLabel>Subiu de Nível! {0} chegou ao nível {1} em {2}.</LevelUpLabel>
+  <LevelUpLabelShort>{0} subiu de nível!</LevelUpLabelShort>
+  <LevelUpLabelLong>Subiu de Nível! {0} chegou ao nível {1} em {2} ({3}).</LevelUpLabelLong>
+
+  <LevelUpSettingsLabel>Subiu de Nível</LevelUpSettingsLabel>
+  <LevelUpTextMessageLabel>Mensagem de Texto</LevelUpTextMessageLabel>
+  <LevelUpTextMessageLabelTooltip>Exibir uma mensagem de texto ao subir de nível.</LevelUpTextMessageLabelTooltip>
+  <LevelUpLetterLabel>Carta</LevelUpLetterLabel>
+  <LevelUpLetterLabelTooltip>Receber uma carta ao subir de nível.</LevelUpLetterLabelTooltip>
+  <LevelUpSoundEffectLabel>Efeito Sonoro</LevelUpSoundEffectLabel>
+  <LevelUpSoundEffectLabelTooltip>Reproduzir efeito sonoro ao subir de nível.</LevelUpSoundEffectLabelTooltip>
+  <LevelUpAnimationLabel>Animação</LevelUpAnimationLabel>
+  <LevelUpAnimationLabelTooltip>Exibir animação no peão ao subir de nível.</LevelUpAnimationLabelTooltip>
+  <LevelUpLevelDesc>Descrição do Nível</LevelUpLevelDesc>
+  <LevelUpLevelDescTooltip>Incluir na mensagem a descrição do RimWorld para o nível de habilitado obtido.</LevelUpLevelDescTooltip>
+
+  <!--Level Down Options-->
+  <LevelDownLabel>Desceu de Nível! {0} desceu para o nível {1} em {2}.</LevelDownLabel>
+  <LevelDownLabelShort>{0} desceu de nível</LevelDownLabelShort>
+  <LevelDownLabelLong>Desceu de Nível! {0} desceu para o nível {1} em {2} ({3}).</LevelDownLabelLong>
+
+  <LevelDownSettingsLabel>Desceu de Nível</LevelDownSettingsLabel>
+  <LevelDownTextMessageLabel>Mensagem de Texto</LevelDownTextMessageLabel>
+  <LevelDownTextMessageLabelTooltip>Exibir uma mensagem de texto ao descer de nível.</LevelDownTextMessageLabelTooltip>
+  <LevelDownLetterLabel>Carta</LevelDownLetterLabel>
+  <LevelDownLetterLabelTooltip>Receber uma carta ao descer de nível.</LevelDownLetterLabelTooltip>
+  <LevelDownSoundEffectLabel>Efeito Sonoro</LevelDownSoundEffectLabel>
+  <LevelDownSoundEffectLabelTooltip>Reproduzir efeito sonoro ao descer de nível.</LevelDownSoundEffectLabelTooltip>
+  <LevelDownAnimationLabel>Animação</LevelDownAnimationLabel>
+  <LevelDownAnimationLabelTooltip>Exibir animação no peão ao descer de nível.</LevelDownAnimationLabelTooltip>
+  <LevelDownLevelDesc>Descrição do Nível</LevelDownLevelDesc>
+  <LevelDownLevelDescTooltip>Incluir na mensagem a descrição do RimWorld para o nível de habilitado obtido.</LevelDownLevelDescTooltip>
+
+  <Ignore10To9Label>Silenciar lvl 10-9</Ignore10To9Label>
+  <Ignore10To9LabelTooltip>Ignorar habilidades que descem do nível 10 para 9.\n\nCorreção para peões que sobem até nível 10 e depois descem para 9 devido à degradação da XP.</Ignore10To9LabelTooltip>
+
+  <NotificationTimerLabel>Temporizador de Notificação (Experimental)</NotificationTimerLabel>
+  <NotificationTimerLabelTooltip>EXPERIMENTAL\n\nEste recurso ainda está sendo testado, mas deve funcionar.\n\nNúmero mínimo de segundos que tem que passar entre duas notificações de níveis para peões individuais.\n\nCorreção geral para receber menos notificações do mesmo peão que sobe e desce rapidamente de nível num curto espaço de tempo.</NotificationTimerLabelTooltip>
+
+  <SoundChooseLabel>Som</SoundChooseLabel>
+  <TestPlaySound>Reproduzir Som</TestPlaySound>
+</LanguageData>
