@@ -1,20 +1,21 @@
-﻿using Harmony;
-using RimWorld;
-using static_quality_plus;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using Harmony;
+using RimWorld;
+using static_quality_plus;
 using Verse;
 using static LevelUp.LevelEvent;
 
 namespace LevelUp
 {
     [StaticConstructorOnStartup]
-    class Learn_Patch
+    internal class Learn_Patch
     {
-        static HarmonyInstance harmony;
+        private static HarmonyInstance harmony;
 
         static Learn_Patch()
         {
@@ -25,7 +26,12 @@ namespace LevelUp
 
             // Static Quality Plus mod uses old-fashioned detouring. Cannot patch the same method without one overriding the other.
             // Running custom pre- and postfixes if mod is in load order.
-            if (IsModActive("Static Quality Plus 1.1"))
+            bool isStaticQualityPlusActive = ModLister.AllInstalledMods
+                .Where(mod => mod.Active)
+                .Select(mod => mod.Name)
+                .Any(mod => mod.StartsWith("Static Quality Plus", StringComparison.OrdinalIgnoreCase));
+
+            if (isStaticQualityPlusActive)
             {
                 Type originalType = null;
                 Assembly sqpAssembly = null;
@@ -36,7 +42,7 @@ namespace LevelUp
                 }
                 catch (FileNotFoundException)
                 {
-                    Log.Error("[Level Up!] Expected to find mod 'Static Quality Plus 1.1', but could not find assembly 'static_quality_plus.'");
+                    Log.Error("[Level Up!] Expected to find mod 'Static Quality Plus', but could not find assembly 'static_quality_plus.'");
                 }
 
                 foreach (Type type in sqpAssembly.GetTypes())
@@ -62,35 +68,26 @@ namespace LevelUp
             harmony.Patch(original, new HarmonyMethod(prefix), new HarmonyMethod(postfix));
         }
 
-        // Checks if mod is in active load order.
-        static bool IsModActive(string modName)
-        {
-            foreach (ModMetaData modMetaData in ModLister.AllInstalledMods)
-                if (modMetaData.Active && modName.Equals(modMetaData.Name))
-                    return true;
-            return false;
-        }
-
         // Variant of regular prefix to adapt to SQP's detour.
-        static void Prefix_SQP(out int __state, SkillRecord _this)
+        private static void Prefix_SQP(out int __state, SkillRecord _this)
         {
             __state = _this.levelInt;
         }
 
         // Repackages variables from SQP detour and sends on to regular postfix.
-        static void Postfix_SQP(int __state, SkillRecord _this)
+        private static void Postfix_SQP(int __state, SkillRecord _this)
         {
             Postfix(__state, _this.levelInt, _this.GetPawn(), _this);
         }
 
         // Prefix passes the value of skill level before level change.
-        static void Prefix(out int __state, int ___levelInt)
+        private static void Prefix(out int __state, int ___levelInt)
         {
             __state = ___levelInt;
         }
 
         // If original method increased or decreased skill level, add it to queue for level event notifications.
-        static void Postfix(int __state, int ___levelInt, Pawn ___pawn, SkillRecord __instance)
+        private static void Postfix(int __state, int ___levelInt, Pawn ___pawn, SkillRecord __instance)
         {
             if (__state == ___levelInt)
                 return;
@@ -124,7 +121,7 @@ namespace LevelUp
         }
 
         // Checks if enough time has passed since the last time there were level notification about this particular pawn.
-        static bool TimerAllowsNotifications(Pawn pawn)
+        private static bool TimerAllowsNotifications(Pawn pawn)
         {
             var timerDict = PawnTimers;
             Stopwatch timer;
