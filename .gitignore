@@ -4,3 +4,4 @@ Unused/
 backlog.txt
 *.vs
 *.csproj.user
+packages/
