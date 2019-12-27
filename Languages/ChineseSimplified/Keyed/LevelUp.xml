@@ -18,7 +18,6 @@
   <LevelUpLevelDesc>技能等级描述</LevelUpLevelDesc>
   <LevelUpLevelDescTooltip>提示信息中包含RimWorld的技能等级描述。</LevelUpLevelDescTooltip>
 
-
   <!--Level Down Options-->
   <LevelDownLabel>降级! {0} 的{2}技能降至{1}级。</LevelDownLabel>
   <LevelDownLabelShort>{0} 技能降级了!</LevelDownLabelShort>
@@ -38,6 +37,9 @@
 
   <Ignore10To9Label>忽视10-9</Ignore10To9Label>
   <Ignore10To9LabelTooltip>技能从10级降至9级时不提示。\n\n这是为了修复角色的技能升到10级但因为经验衰退的原因马上降到9级的问题。</Ignore10To9LabelTooltip>
+
+  <NotificationTimerLabel>通知计时器(试验功能)</NotificationTimerLabel>
+  <NotificationTimerLabelTooltip>试验功能\n\n该功能处于测试戒断，但运行良好。\n\n为个体设置最低秒数以忽略技能升降之间的消息通知。\n\n一般用以修复某个个体在短时间内技能快速升降这类不常见情况。</NotificationTimerLabelTooltip>
 
   <SoundChooseLabel>音效</SoundChooseLabel>
   <TestPlaySound>播放音效</TestPlaySound>
