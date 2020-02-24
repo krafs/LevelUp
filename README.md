@@ -3,7 +3,8 @@
 A RimWorld mod adding notifications when a colonist levels up a skill.
 
 ### Compatibility
-- Should be compatible with everything.
+- Compatible with RimWorld v1.0, v1.1 and the Royalty DLC.
+- Should be compatible with any mods.
 
 ### Notes
 - Safe to add and remove from existing saves.
