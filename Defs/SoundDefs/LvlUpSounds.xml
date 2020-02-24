@@ -15,7 +15,7 @@
 				<volumeRange>
 					<min>20</min>
 					<max>20</max>
-				</volumeRange>   
+				</volumeRange>
 				<sustainLoop>False</sustainLoop>
 			</li>
 		</subSounds>
@@ -61,5 +61,4 @@
       </li>
     </subSounds>
   </SoundDef>
-  
 </Defs>

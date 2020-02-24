@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageInfo>
+  <friendlyNameNative>Français</friendlyNameNative>
+  <friendlyNameEnglish>French</friendlyNameEnglish>
+  <credits>
+    <li Class="CreditRecord_Role">
+      <roleKey>Credit_Translator</roleKey>
+      <creditee>Acaila</creditee>
+    </li>
+  </credits>
+</LanguageInfo>

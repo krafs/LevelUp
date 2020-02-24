@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+	<SoundDef>
+		<defName>LevelUpDing</defName>
+		<subSounds>
+			<li>
+        <onCamera>true</onCamera>
+        <grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>ding</clipPath>
+					</li>
+				</grains>
+        <volumeRange>
+					<min>20</min>
+					<max>20</max>
+				</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+  <SoundDef>
+    <defName>LevelDownDrop</defName>
+    <subSounds>
+      <li>
+        <onCamera>true</onCamera>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>drop</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

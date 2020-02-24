@@ -1,100 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1B23C80D-D3AB-4248-AF1B-86BDD9CFDC71}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LevelUp</RootNamespace>
-    <AssemblyName>LevelUp</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>preview</LangVersion>
+    <OutputPath>v1.1/Assemblies</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <DebugType>none</DebugType>
+    <AssemblyVersion>2.0.0</AssemblyVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\..\Program Files %28x86%29\Steam\steamapps\common\RimWorld\Mods\LevelUp\Assemblies\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+
+  <PropertyGroup Condition="$(Configuration) == Debug">
+    <DefineConstants>DEBUG</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+
+  <PropertyGroup Condition="$(Configuration) == Release">
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="0Harmony, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Lib.Harmony.1.2.0.1\lib\net35\0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="static_quality_plus">
-      <HintPath>bin\Debug\static_quality_plus.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine">
-      <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.1.2552" />
+    <PackageReference Include="Lib.Harmony" Version="2.0.0.5" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Source\DefHandler.cs" />
-    <Compile Include="Source\Extensions.cs" />
-    <Compile Include="Source\Learn_Patch.cs" />
-    <Compile Include="Source\LevelEvent.cs" />
-    <Compile Include="Source\Controller.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\ModHandler.cs" />
-    <Compile Include="Source\Settings.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="README.md" />
-    <None Include="Sounds\LevelUp\LvlUp.ogg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="About\About.xml" />
-    <Content Include="About\Preview.png" />
-    <Content Include="About\PublishedFileId.txt" />
-    <Content Include="Defs\SoundDefs\LvlUpSounds.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Defs\ThingDefs\Motes.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Languages\ChineseSimplified\Keyed\LevelUp.xml" />
-    <Content Include="Languages\English\Keyed\LevelUp.xml" />
-    <None Include="Sounds\LevelUp\LvlDown.wav" />
-    <None Include="Sounds\LevelUp\LvlUp2.wav" />
-    <Content Include="Languages\German\Keyed\LevelUp.xml" />
-    <Content Include="Languages\PortugueseBrazilian\Keyed\LevelUp.xml" />
-    <Content Include="Languages\Russian\Keyed\LevelUp.xml" />
-    <Content Include="Textures\Things\Mote\LevelBeamInner.png" />
-    <Content Include="Textures\Things\Mote\LevelBeamMiddle.png" />
-    <Content Include="Textures\Things\Mote\LevelBeamOuter.png" />
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>xcopy /i /s /y "$(SolutionDir)About" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\About\"
-xcopy /i /s /y "$(SolutionDir)Defs" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\Defs\"
-xcopy /i /s /y "$(SolutionDir)Languages" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\Languages\"
-xcopy /i /s /y "$(SolutionDir)Sounds" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\Sounds\"
-xcopy /i /s /y "$(SolutionDir)Textures" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LevelUp\Textures\"</PreBuildEvent>
-  </PropertyGroup>
+
 </Project>

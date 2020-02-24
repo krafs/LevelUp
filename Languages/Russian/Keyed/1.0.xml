@@ -17,7 +17,6 @@
   <LevelUpAnimationLabelTooltip>Делать анимацию при повышении уровня.</LevelUpAnimationLabelTooltip>
   <LevelUpLevelDesc>Описание полученного уровня</LevelUpLevelDesc>
   <LevelUpLevelDescTooltip>Включить описание в RimWorld для достигнутого уровня в сообщении.</LevelUpLevelDescTooltip>
-  
 
   <!--Level Down Options-->
   <LevelDownLabel>Уровень понижен! {0} понижен уровень {1} в {2}.</LevelDownLabel>
@@ -41,5 +40,4 @@
 
   <SoundChooseLabel>Sound</SoundChooseLabel>
   <TestPlaySound>Play Sound</TestPlaySound>
-  
 </LanguageData>
