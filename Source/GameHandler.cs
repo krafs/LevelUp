@@ -8,7 +8,7 @@ namespace LevelUp
     public class GameHandler : GameComponent
     {
         private static Harmony harmony;
-        private static readonly Harmony Harmony = harmony ??= new Harmony("krafs.levelup");
+        private static Harmony Harmony => harmony ??= new Harmony("krafs.levelup");
 
         public GameHandler(Game _)
         { }
