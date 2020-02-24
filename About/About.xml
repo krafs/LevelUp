@@ -3,7 +3,7 @@
   <name>Level Up!</name>
   <author>krafs</author>
   <packageId>krafs.levelup</packageId>
-  <description>Get notified when a pawn levels up or down.\n\nLevel down is disabled by default. Enable it in the mod settings.</description>
+  <description>Get notified when a pawn levels up or down.\n\n'Level down' is disabled by default. Enable it in the mod settings.</description>
   <url>https://github.com/krafs/LevelUp</url>
   <supportedVersions>
     <li>1.0</li>

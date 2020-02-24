@@ -10,6 +10,10 @@ A RimWorld mod adding notifications when a colonist levels up a skill.
 - Add anywhere in your load order.
 - This mod is different on v1.0 and v1.1 of RimWorld. You can use it on both versions, but they are slightly different. Read the release notes to learn what has changed.
 
+### How to use
+Just play like normal. You'll get notified whenever a colonist levels up.
+'Level up' is enabled by default. If you want to get notifications when a colonist levels down, enable it in the mod settings.
+
 ### "My colonist levels up and then almost instantly down again!"
 This is caused by a feature in vanilla RimWorld known as skill decay. Skills at lvl 10 and higher lose xp. If xp goes low enough, the skill levels down. The rate of skill decay increases with every level - It is slow at lvl 10, and fast at lvl 20.
 This can lead to two problems:
