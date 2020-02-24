@@ -8,17 +8,17 @@ namespace LevelUp
     public class PawnSkillTimerCache
     {
         public const int MinSecondsBetweenLevels = 20;
-        private readonly Dictionary<Tuple<Pawn, SkillDef>, DateTime> timerCache;
+        private readonly Dictionary<ValueTuple<Pawn, SkillDef>, DateTime> timerCache;
 
         public PawnSkillTimerCache(int capacity)
         {
-            this.timerCache = new Dictionary<Tuple<Pawn, SkillDef>, DateTime>(capacity);
+            this.timerCache = new Dictionary<ValueTuple<Pawn, SkillDef>, DateTime>(capacity);
         }
 
         public bool EnoughTimeHasPassed(Pawn pawn, SkillDef skillDef)
         {
             var currentDateTime = DateTime.Now;
-            var key = Tuple.Create(pawn, skillDef);
+            var key = new ValueTuple<Pawn, SkillDef>(pawn, skillDef);
 
             if (timerCache.TryGetValue(key, out DateTime minDateTime) && currentDateTime < minDateTime)
             {
