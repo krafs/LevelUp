@@ -1,26 +1,15 @@
-﻿using HarmonyLib;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 using Verse;
 
 namespace LevelUp
 {
+#if DEBUG
+
     public class GameHandler : GameComponent
     {
-        private static Harmony harmony;
-        private static Harmony Harmony => harmony ??= new Harmony("krafs.levelup");
-
         public GameHandler(Game _)
         { }
-
-        public override void FinalizeInit()
-        {
-            var pawnSkillTimerCache = new PawnSkillTimerCache(25);
-            var levelEventMaker = new LevelEventMaker(pawnSkillTimerCache);
-            SkillRecordLearnPatch.InitializePatch(Harmony, levelEventMaker);
-        }
-
-#if DEBUG
 
         public override void GameComponentOnGUI()
         {
@@ -39,7 +28,7 @@ namespace LevelUp
                 skill.Learn(-xp, true);
             }
         }
+    }
 
 #endif
-    }
 }
