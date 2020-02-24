@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageInfo>
+  <friendlyNameNative>Português Brasileiro</friendlyNameNative>
+  <friendlyNameEnglish>Brazilian Portuguese</friendlyNameEnglish>
+  <credits>
+    <li Class="CreditRecord_Role">
+      <roleKey>Credit_Translator</roleKey>
+      <creditee>randrade86</creditee>
+    </li>
+  </credits>
+</LanguageInfo>

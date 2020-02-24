@@ -17,7 +17,6 @@
   <LevelUpAnimationLabelTooltip>Zeige Animation beim Stufenaufstieg.</LevelUpAnimationLabelTooltip>
   <LevelUpLevelDesc>Stufen Beschreibung</LevelUpLevelDesc>
   <LevelUpLevelDescTooltip>Zeige zusätzlich die RimWorld Beschreibungen für die erreichte Stufe in der Nachricht.</LevelUpLevelDescTooltip>
-  
 
   <!--Level Down Options-->
   <LevelDownLabel>Stufe Abgestiegen! {0} ist auf Stufe {1} in {2} gesunken.</LevelDownLabel>
@@ -41,5 +40,4 @@
 
   <SoundChooseLabel>Sound</SoundChooseLabel>
   <TestPlaySound>Teste Sound</TestPlaySound>
-  
 </LanguageData>

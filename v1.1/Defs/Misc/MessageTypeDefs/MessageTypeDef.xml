@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- A pawn has leveled up -->
+  <MessageTypeDef>
+    <defName>MessageLevelUp</defName>
+    <sound>LevelUpDing</sound>
+  </MessageTypeDef>
+
+  <!-- A pawn has leveled down -->
+  <MessageTypeDef>
+    <defName>MessageLevelDown</defName>
+    <sound>LevelDownDrop</sound>
+  </MessageTypeDef>
+</Defs>

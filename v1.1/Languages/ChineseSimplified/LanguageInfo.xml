@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageInfo>
+  <friendlyNameNative>简体中文</friendlyNameNative>
+  <friendlyNameEnglish>Simplified Chinese</friendlyNameEnglish>
+  <credits>
+    <li Class="CreditRecord_Role">
+      <roleKey>Credit_Translator</roleKey>
+      <creditee>HawnHan</creditee>
+    </li>
+  </credits>
+</LanguageInfo>

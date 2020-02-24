@@ -1,7 +1,4 @@
-[Bb]in/
-[Oo]bj/
-Unused/
-backlog.txt
-*.vs
-*.csproj.user
-packages/
+Assemblies/
+v1.1/Assemblies/
+obj/
+.vs/
