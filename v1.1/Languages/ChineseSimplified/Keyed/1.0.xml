@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!--Level Up Options-->
+  <LevelUpLabel>升级! {0} 的{2}技能到达{1}级。</LevelUpLabel>
+  <LevelUpLabelShort>{0} 技能升级了!</LevelUpLabelShort>
+  <LevelUpLabelLong>升级! {0} 的{2}技能到达{1}级。({3})</LevelUpLabelLong>
+
+  <LevelUpSettingsLabel>技能升级</LevelUpSettingsLabel>
+  <LevelUpTextMessageLabel>文本消息</LevelUpTextMessageLabel>
+  <LevelUpTextMessageLabelTooltip>技能升级时显示文本消息。</LevelUpTextMessageLabelTooltip>
+  <LevelUpLetterLabel>通知</LevelUpLetterLabel>
+  <LevelUpLetterLabelTooltip>技能降级时显示通知。</LevelUpLetterLabelTooltip>
+  <LevelUpSoundEffectLabel>音效</LevelUpSoundEffectLabel>
+  <LevelUpSoundEffectLabelTooltip>技能升级时播放音效</LevelUpSoundEffectLabelTooltip>
+  <LevelUpAnimationLabel>动画效果</LevelUpAnimationLabel>
+  <LevelUpAnimationLabelTooltip>技能升级时播放动画效果</LevelUpAnimationLabelTooltip>
+  <LevelUpLevelDesc>技能等级描述</LevelUpLevelDesc>
+  <LevelUpLevelDescTooltip>提示信息中包含RimWorld的技能等级描述。</LevelUpLevelDescTooltip>
+
+  <!--Level Down Options-->
+  <LevelDownLabel>降级! {0} 的{2}技能降至{1}级。</LevelDownLabel>
+  <LevelDownLabelShort>{0} 技能降级了!</LevelDownLabelShort>
+  <LevelDownLabelLong>降级! {0} 的{2}技能降至{1}级。({3}).</LevelDownLabelLong>
+
+  <LevelDownSettingsLabel>技能降级</LevelDownSettingsLabel>
+  <LevelDownTextMessageLabel>文本消息</LevelDownTextMessageLabel>
+  <LevelDownTextMessageLabelTooltip>技能降级时显示文本消息。</LevelDownTextMessageLabelTooltip>
+  <LevelDownLetterLabel>通知</LevelDownLetterLabel>
+  <LevelDownLetterLabelTooltip>技能降级时显示通知。</LevelDownLetterLabelTooltip>
+  <LevelDownSoundEffectLabel>音效</LevelDownSoundEffectLabel>
+  <LevelDownSoundEffectLabelTooltip>技能降级时播放音效</LevelDownSoundEffectLabelTooltip>
+  <LevelDownAnimationLabel>动画效果</LevelDownAnimationLabel>
+  <LevelDownAnimationLabelTooltip>技能降级时播放动画效果</LevelDownAnimationLabelTooltip>
+  <LevelDownLevelDesc>技能等级描述</LevelDownLevelDesc>
+  <LevelDownLevelDescTooltip>提示信息中包含RimWorld的技能等级描述。</LevelDownLevelDescTooltip>
+
+  <Ignore10To9Label>忽视10-9</Ignore10To9Label>
+  <Ignore10To9LabelTooltip>技能从10级降至9级时不提示。\n\n这是为了修复角色的技能升到10级但因为经验衰退的原因马上降到9级的问题。</Ignore10To9LabelTooltip>
+
+  <NotificationTimerLabel>通知计时器(试验功能)</NotificationTimerLabel>
+  <NotificationTimerLabelTooltip>试验功能\n\n该功能处于测试戒断，但运行良好。\n\n为个体设置最低秒数以忽略技能升降之间的消息通知。\n\n一般用以修复某个个体在短时间内技能快速升降这类不常见情况。</NotificationTimerLabelTooltip>
+
+  <SoundChooseLabel>音效</SoundChooseLabel>
+  <TestPlaySound>播放音效</TestPlaySound>
+</LanguageData>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!--Level Up Options-->
+  <LevelUpLabel>Уровень повышен! {0} достигнут уровень {1} в {2}.</LevelUpLabel>
+  <LevelUpLabelShort>{0} повышен уровень!</LevelUpLabelShort>
+  <LevelUpLabelLong>Уровень повышен! {0} достигнут уровень {1} в {2} ({3}).</LevelUpLabelLong>
+
+  <LevelUpSettingsLabel>Повышение уровня</LevelUpSettingsLabel>
+  <LevelUpTextMessageLabel>Текст сообщения</LevelUpTextMessageLabel>
+  <LevelUpTextMessageLabelTooltip>Показывать сообщение при повышении уровня.</LevelUpTextMessageLabelTooltip>
+  <LevelUpLetterLabel>Письмо</LevelUpLetterLabel>
+  <LevelUpLetterLabelTooltip>Получать письмо при повышении уровня.</LevelUpLetterLabelTooltip>
+  <LevelUpSoundEffectLabel>Звуковой эффект</LevelUpSoundEffectLabel>
+  <LevelUpSoundEffectLabelTooltip>Проигрывать звуковой эффект при повышении уровня.</LevelUpSoundEffectLabelTooltip>
+  <LevelUpAnimationLabel>Анимация</LevelUpAnimationLabel>
+  <LevelUpAnimationLabelTooltip>Делать анимацию при повышении уровня.</LevelUpAnimationLabelTooltip>
+  <LevelUpLevelDesc>Описание полученного уровня</LevelUpLevelDesc>
+  <LevelUpLevelDescTooltip>Включить описание в RimWorld для достигнутого уровня в сообщении.</LevelUpLevelDescTooltip>
+
+  <!--Level Down Options-->
+  <LevelDownLabel>Уровень понижен! {0} понижен уровень {1} в {2}.</LevelDownLabel>
+  <LevelDownLabelShort>{0} понижен уровень</LevelDownLabelShort>
+  <LevelDownLabelLong>Уровень понижен! {0} понижен уровень {1} в {2} ({3}).</LevelDownLabelLong>
+
+  <LevelDownSettingsLabel>Понижение уровня</LevelDownSettingsLabel>
+  <LevelDownTextMessageLabel>Текст сообщения</LevelDownTextMessageLabel>
+  <LevelDownTextMessageLabelTooltip>Показывать сообщение при понижении уровня.</LevelDownTextMessageLabelTooltip>
+  <LevelDownLetterLabel>Письмо</LevelDownLetterLabel>
+  <LevelDownLetterLabelTooltip>Получать письмо при понижении уровня.</LevelDownLetterLabelTooltip>
+  <LevelDownSoundEffectLabel>Звуковой эффект</LevelDownSoundEffectLabel>
+  <LevelDownSoundEffectLabelTooltip>Проигрывать звуковой эффект при понижении уровня.</LevelDownSoundEffectLabelTooltip>
+  <LevelDownAnimationLabel>Анимация</LevelDownAnimationLabel>
+  <LevelDownAnimationLabelTooltip>Делать анимацию при понижении уровня.</LevelDownAnimationLabelTooltip>
+  <LevelDownLevelDesc>Описание полученного уровня</LevelDownLevelDesc>
+  <LevelDownLevelDescTooltip>Включить описание в RimWorld для достигнутого уровня в сообщении.</LevelDownLevelDescTooltip>
+
+  <Ignore10To9Label>Silent lvl 10-9</Ignore10To9Label>
+  <Ignore10To9LabelTooltip>Ignore skills that lvl down from 10 to 9.\n\nFix for pawns that level a skill up to 10, and then immediately levels down to 9 again due to xp decay kicking in.</Ignore10To9LabelTooltip>
+
+  <SoundChooseLabel>Sound</SoundChooseLabel>
+  <TestPlaySound>Play Sound</TestPlaySound>
+</LanguageData>

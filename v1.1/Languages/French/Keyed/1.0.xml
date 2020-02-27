@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!--Level Up Options-->
+  <LevelUpLabel>Niveau Supérieur ! {0} a atteint le niveau {1} en {2}.</LevelUpLabel>
+  <LevelUpLabelShort>{0} a gagné un niveau !</LevelUpLabelShort>
+  <LevelUpLabelLong>Niveau Supérieur ! {0} a atteint le niveau {1} en {2} ({3}).</LevelUpLabelLong>
+
+  <LevelUpSettingsLabel>Niveau Supérieur</LevelUpSettingsLabel>
+  <LevelUpTextMessageLabel>Message textuel</LevelUpTextMessageLabel>
+  <LevelUpTextMessageLabelTooltip>Déclenche un message lors du passage au niveau supérieur.</LevelUpTextMessageLabelTooltip>
+  <LevelUpLetterLabel>Lettre</LevelUpLetterLabel>
+  <LevelUpLetterLabelTooltip>Reçois une lettre lors du passage au niveau supérieur.</LevelUpLetterLabelTooltip>
+  <LevelUpSoundEffectLabel>Effet Sonore</LevelUpSoundEffectLabel>
+  <LevelUpSoundEffectLabelTooltip>Déclenche un effet sonore lors du passage au niveau supérieur.</LevelUpSoundEffectLabelTooltip>
+  <LevelUpAnimationLabel>Animation</LevelUpAnimationLabel>
+  <LevelUpAnimationLabelTooltip>Déclenche une animation lors du passage au niveau supérieur.</LevelUpAnimationLabelTooltip>
+  <LevelUpLevelDesc>Description du Niveau</LevelUpLevelDesc>
+  <LevelUpLevelDescTooltip>Ajoute dans le message la description Rimworld du niveau atteint dans la capacité.</LevelUpLevelDescTooltip>
+
+  <!--Level Down Options-->
+  <LevelDownLabel>Niveau Inférieur ! {0} est retombé au niveau {1} en {2}.</LevelDownLabel>
+  <LevelDownLabelShort>{0} a perdu un niveau</LevelDownLabelShort>
+  <LevelDownLabelLong>Niveau Inférieur ! {0} est retombé au niveau {1} en {2} ({3}).</LevelDownLabelLong>
+
+  <LevelDownSettingsLabel>Niveau Inférieur</LevelDownSettingsLabel>
+  <LevelDownTextMessageLabel>Message textuel</LevelDownTextMessageLabel>
+  <LevelDownTextMessageLabelTooltip>Déclenche un message lors du passage au niveau inférieur.</LevelDownTextMessageLabelTooltip>
+  <LevelDownLetterLabel>Lettre</LevelDownLetterLabel>
+  <LevelDownLetterLabelTooltip>Reçois une lettre lors du passage au niveau inférieur.</LevelDownLetterLabelTooltip>
+  <LevelDownSoundEffectLabel>Effet Sonore</LevelDownSoundEffectLabel>
+  <LevelDownSoundEffectLabelTooltip>Déclenche un effet sonore lors du passage au niveau inférieur.</LevelDownSoundEffectLabelTooltip>
+  <LevelDownAnimationLabel>Animation</LevelDownAnimationLabel>
+  <LevelDownAnimationLabelTooltip>Déclenche une animation lors du passage au niveau inférieur.</LevelDownAnimationLabelTooltip>
+  <LevelDownLevelDesc>Description du Niveau</LevelDownLevelDesc>
+  <LevelDownLevelDescTooltip>Ajoute dans le message la description Rimworld du niveau atteint dans la capacité.</LevelDownLevelDescTooltip>
+
+  <Ignore10To9Label>Perte de Niveau 10 à 9 silencieuse</Ignore10To9Label>
+  <Ignore10To9LabelTooltip>Ignore les capacités passant du niveau 10 à 9.\n\nCorrection pour les colons montant au niveau 10, et immédiatement retombant à 9 dû au déclenchement du mécanisme de perte d’expérience.</Ignore10To9LabelTooltip>
+
+  <SoundChooseLabel>Son</SoundChooseLabel>
+  <TestPlaySound>Test Sonore</TestPlaySound>
+</LanguageData>
