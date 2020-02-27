@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!--Level Up Options-->
+  <LevelUpLabel>Stufe Aufgestiegen! {0} erreichte Stufe {1} in {2}.</LevelUpLabel>
+  <LevelUpLabelShort>{0} ist Aufgestiegen!</LevelUpLabelShort>
+  <LevelUpLabelLong>Stufe Aufgestiegen! {0} erreichte Stufe {1} in {2} ({3}).</LevelUpLabelLong>
+
+  <LevelUpSettingsLabel>Level Up</LevelUpSettingsLabel>
+  <LevelUpTextMessageLabel>Text Nachricht</LevelUpTextMessageLabel>
+  <LevelUpTextMessageLabelTooltip>Zeige Textnachricht beim Stufenaufstieg.</LevelUpTextMessageLabelTooltip>
+  <LevelUpLetterLabel>Brief</LevelUpLetterLabel>
+  <LevelUpLetterLabelTooltip>Erhalte Brief beim Stufenaufstieg.</LevelUpLetterLabelTooltip>
+  <LevelUpSoundEffectLabel>Sound Effekt</LevelUpSoundEffectLabel>
+  <LevelUpSoundEffectLabelTooltip>Spiele Sound beim Stufenaufstieg.</LevelUpSoundEffectLabelTooltip>
+  <LevelUpAnimationLabel>Animation</LevelUpAnimationLabel>
+  <LevelUpAnimationLabelTooltip>Zeige Animation beim Stufenaufstieg.</LevelUpAnimationLabelTooltip>
+  <LevelUpLevelDesc>Stufen Beschreibung</LevelUpLevelDesc>
+  <LevelUpLevelDescTooltip>Zeige zusätzlich die RimWorld Beschreibungen für die erreichte Stufe in der Nachricht.</LevelUpLevelDescTooltip>
+
+  <!--Level Down Options-->
+  <LevelDownLabel>Stufe Abgestiegen! {0} ist auf Stufe {1} in {2} gesunken.</LevelDownLabel>
+  <LevelDownLabelShort>{0} ist Abgestiegen!</LevelDownLabelShort>
+  <LevelDownLabelLong>Stufe Abgestiegen! {0} ist auf Stufe {1} in {2} ({3}) gesunken.</LevelDownLabelLong>
+
+  <LevelDownSettingsLabel>Level Down</LevelDownSettingsLabel>
+  <LevelDownTextMessageLabel>Text Nachricht</LevelDownTextMessageLabel>
+  <LevelDownTextMessageLabelTooltip>Zeige Textnachricht beim Stufenabstieg.</LevelDownTextMessageLabelTooltip>
+  <LevelDownLetterLabel>Brief</LevelDownLetterLabel>
+  <LevelDownLetterLabelTooltip>Erhalte Brief beim Stufenabstieg.</LevelDownLetterLabelTooltip>
+  <LevelDownSoundEffectLabel>Sound Effekt</LevelDownSoundEffectLabel>
+  <LevelDownSoundEffectLabelTooltip>Spiele Sound beim Stufenabstieg.</LevelDownSoundEffectLabelTooltip>
+  <LevelDownAnimationLabel>Animation</LevelDownAnimationLabel>
+  <LevelDownAnimationLabelTooltip>Zeige Animation beim Stufenabstieg.</LevelDownAnimationLabelTooltip>
+  <LevelDownLevelDesc>Stufen Beschreibung</LevelDownLevelDesc>
+  <LevelDownLevelDescTooltip>Zeige zusätzlich die RimWorld Beschreibungen für die erreichte Stufe in der Nachricht.</LevelDownLevelDescTooltip>
+
+  <Ignore10To9Label>Stumm bei Stufe 10-9</Ignore10To9Label>
+  <Ignore10To9LabelTooltip>Ignoriert Fähigkeiten die von Stufe 10 auf 9 sinken.\n\nBehebt einen Fehler, bei dem Kolonisten auf Stufe 10 aufsteigen und direkt wieder auf Stufe 9 sinken (durch Erfahrungszerfall).</Ignore10To9LabelTooltip>
+
+  <SoundChooseLabel>Sound</SoundChooseLabel>
+  <TestPlaySound>Teste Sound</TestPlaySound>
+</LanguageData>

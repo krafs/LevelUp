@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <Krafs.LevelUp.LevelUpMessage>Subiu de Nível! {0} chegou ao nível {1} em {2}.</Krafs.LevelUp.LevelUpMessage>
+  <Krafs.LevelUp.LevelDownMessage>Desceu de Nível! {0} desceu para o nível {1} em {2}.</Krafs.LevelUp.LevelDownMessage>
+  <Krafs.LevelUp.LevelUpLabel>Subiu de Nível</Krafs.LevelUp.LevelUpLabel>
+  <Krafs.LevelUp.LevelDownLabel>Desceu de Nível</Krafs.LevelUp.LevelDownLabel>
+</LanguageData>

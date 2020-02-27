@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!--Level Up Options-->
+  <LevelUpLabel>Level Up! {0} reached level {1} in {2}.</LevelUpLabel>
+  <LevelUpLabelShort>{0} leveled up!</LevelUpLabelShort>
+  <LevelUpLabelLong>Level Up! {0} reached level {1} in {2} ({3}).</LevelUpLabelLong>
+
+  <LevelUpSettingsLabel>Level Up</LevelUpSettingsLabel>
+  <LevelUpTextMessageLabel>Text Message</LevelUpTextMessageLabel>
+  <LevelUpTextMessageLabelTooltip>Show text message on levelling up.</LevelUpTextMessageLabelTooltip>
+  <LevelUpLetterLabel>Letter</LevelUpLetterLabel>
+  <LevelUpLetterLabelTooltip>Receive letter when levelling up.</LevelUpLetterLabelTooltip>
+  <LevelUpSoundEffectLabel>Sound Effect</LevelUpSoundEffectLabel>
+  <LevelUpSoundEffectLabelTooltip>Play sound effect when levelling up.</LevelUpSoundEffectLabelTooltip>
+  <LevelUpAnimationLabel>Animation</LevelUpAnimationLabel>
+  <LevelUpAnimationLabelTooltip>Do animation on pawn when levelling up.</LevelUpAnimationLabelTooltip>
+  <LevelUpLevelDesc>Level Description</LevelUpLevelDesc>
+  <LevelUpLevelDescTooltip>Include the RimWorld description for the achieved skill level in the message.</LevelUpLevelDescTooltip>
+
+  <!--Level Down Options-->
+  <LevelDownLabel>Level Down! {0} dropped to level {1} in {2}.</LevelDownLabel>
+  <LevelDownLabelShort>{0} leveled down</LevelDownLabelShort>
+  <LevelDownLabelLong>Level Down! {0} dropped to level {1} in {2} ({3}).</LevelDownLabelLong>
+
+  <LevelDownSettingsLabel>Level Down</LevelDownSettingsLabel>
+  <LevelDownTextMessageLabel>Text Message</LevelDownTextMessageLabel>
+  <LevelDownTextMessageLabelTooltip>Show text message on levelling down.</LevelDownTextMessageLabelTooltip>
+  <LevelDownLetterLabel>Letter</LevelDownLetterLabel>
+  <LevelDownLetterLabelTooltip>Receive letter when levelling down.</LevelDownLetterLabelTooltip>
+  <LevelDownSoundEffectLabel>Sound Effect</LevelDownSoundEffectLabel>
+  <LevelDownSoundEffectLabelTooltip>Play sound effect when levelling down.</LevelDownSoundEffectLabelTooltip>
+  <LevelDownAnimationLabel>Animation</LevelDownAnimationLabel>
+  <LevelDownAnimationLabelTooltip>Do animation on pawn when levelling down.</LevelDownAnimationLabelTooltip>
+  <LevelDownLevelDesc>Level Description</LevelDownLevelDesc>
+  <LevelDownLevelDescTooltip>Include the RimWorld description for the achieved skill level in the message.</LevelDownLevelDescTooltip>
+
+  <Ignore10To9Label>Silent lvl 10-9</Ignore10To9Label>
+  <Ignore10To9LabelTooltip>Ignore skills that lvl down from 10 to 9.\n\nFix for pawns that level a skill up to 10, and then immediately levels down to 9 again due to xp decay kicking in.</Ignore10To9LabelTooltip>
+
+  <NotificationTimerLabel>Notification Timer (Experimental)</NotificationTimerLabel>
+  <NotificationTimerLabelTooltip>EXPERIMENTAL\n\nThis feature is still being tested, but should work just fine.\n\nMinimum number of seconds that have to pass between two level notifications for individual pawns.\n\nGeneral fix for receiving fewer notifications from the same pawn that rapidly levels up and down within a short amount of time.</NotificationTimerLabelTooltip>
+
+  <SoundChooseLabel>Sound</SoundChooseLabel>
+  <TestPlaySound>Play Sound</TestPlaySound>
+</LanguageData>

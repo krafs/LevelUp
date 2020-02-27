@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Krafs.LevelUp.LevelUpMessage>升级! {0} 的{2}技能到达{1}级。</Krafs.LevelUp.LevelUpMessage>
+  <Krafs.LevelUp.LevelDownMessage>降级! {0} 的{2}技能降至{1}级。</Krafs.LevelUp.LevelDownMessage>
+  <Krafs.LevelUp.LevelUpLabel>技能升级</Krafs.LevelUp.LevelUpLabel>
+  <Krafs.LevelUp.LevelDownLabel>技能降级</Krafs.LevelUp.LevelDownLabel>
+</LanguageData>
