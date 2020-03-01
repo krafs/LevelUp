@@ -13,6 +13,10 @@ namespace LevelUp
 
         public override void GameComponentOnGUI()
         {
+            if (Find.CurrentMap is null)
+            {
+                return;
+            }
             var map = Find.CurrentMap;
             var pawn = map.mapPawns.FreeColonists.FirstOrFallback();
             var skill = pawn.skills.skills.First(x => !(x is null));

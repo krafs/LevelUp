@@ -2,11 +2,19 @@
 <ModMetaData>
   <name>Level Up!</name>
   <author>krafs</author>
-  <packageId>krafs.levelup</packageId>
+  <packageId>Krafs.LevelUp</packageId>
   <description>Get notified when a pawn levels up or down.\n\n'Level down' is disabled by default. Enable it in the mod settings.</description>
   <url>https://github.com/krafs/LevelUp</url>
   <supportedVersions>
     <li>1.0</li>
     <li>1.1</li>
   </supportedVersions>
+  <modDependencies>
+      <li>
+        <packageId>brrainz.harmony</packageId>
+        <displayName>Harmony</displayName>
+        <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+        <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      </li>
+  </modDependencies>
 </ModMetaData>

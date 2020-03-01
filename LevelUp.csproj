@@ -4,10 +4,10 @@
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <LangVersion>preview</LangVersion>
-    <OutputPath>v1.1/Assemblies</OutputPath>
+    <OutputPath>1.1/Assemblies</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <DebugType>none</DebugType>
-    <AssemblyVersion>2.0.1</AssemblyVersion>
+    <AssemblyVersion>2.0.2</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(Configuration) == Debug">
@@ -19,8 +19,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.1.2552" />
-    <PackageReference Include="Lib.Harmony" Version="2.0.0.5" />
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.1.2559" />
+    <PackageReference Include="Lib.Harmony" Version="2.0.0.8">
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

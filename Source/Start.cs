@@ -10,7 +10,7 @@ namespace LevelUp
         {
             var pawnSkillTimerCache = new PawnSkillTimerCache(25);
             var levelEventMaker = new LevelEventMaker(pawnSkillTimerCache);
-            SkillRecordLearnPatch.InitializePatch(new Harmony("krafs.levelup"), levelEventMaker);
+            SkillRecordLearnPatch.InitializePatch(new Harmony("Krafs.LevelUp"), levelEventMaker);
         }
     }
 }
