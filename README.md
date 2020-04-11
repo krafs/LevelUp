@@ -30,6 +30,10 @@ This can lead to two problems:
 ### Languages
 English
 
+Spanish (Credit: 7f45k)
+
+SpanishLatin (Credit: 7f45k)
+
 Russian (Credit: Player.exe)
 
 German (Credit: Paradies)
@@ -39,6 +43,8 @@ French (Credit: Acaila)
 Simplified Chinese (Credit: HawnHan)
 
 Portuguese/Brazilian (Credit: randrade86)
+
+Polish (Credit: soshman)
 
 # Installation
 Add _Level Up!_ anywhere in your load order.
