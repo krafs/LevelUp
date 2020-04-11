@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!--Level Up Options-->
+  <LevelUpLabel>Nowy poziom! {0} osiągnął {1} poziom w {2}.</LevelUpLabel>
+  <LevelUpLabelShort>{0} osiągnął nowy poziom!</LevelUpLabelShort>
+  <LevelUpLabelLong>Nowy poziom! {0} osiągnął {1} poziom w {2} ({3}).</LevelUpLabelLong>
+
+  <LevelUpSettingsLabel>Poziom w górę</LevelUpSettingsLabel>
+  <LevelUpTextMessageLabel>Wiadomość tekstowa</LevelUpTextMessageLabel>
+  <LevelUpTextMessageLabelTooltip>Pokaż wiadomość tekstową, gdy postać osiągnęła nowy poziom.</LevelUpTextMessageLabelTooltip>
+  <LevelUpLetterLabel>List</LevelUpLetterLabel>
+  <LevelUpLetterLabelTooltip>Pokaż list, gdy postać osiągnęła nowy poziom.</LevelUpLetterLabelTooltip>
+  <LevelUpSoundEffectLabel>Efekt dźwiękowy</LevelUpSoundEffectLabel>
+  <LevelUpSoundEffectLabelTooltip>Odegraj dźwięk, gdy postać osiągnęła nowy poziom.</LevelUpSoundEffectLabelTooltip>
+  <LevelUpAnimationLabel>Animacja</LevelUpAnimationLabel>
+  <LevelUpAnimationLabelTooltip>Pokaż animację, gdy postać osiągnęła nowy poziom.</LevelUpAnimationLabelTooltip>
+  <LevelUpLevelDesc>Opis poziomu</LevelUpLevelDesc>
+  <LevelUpLevelDescTooltip>Zawrzyj w wiadomości opis z gry na temat zdobytego poziomu.</LevelUpLevelDescTooltip>
+
+  <!--Level Down Options-->
+  <LevelDownLabel>Poziom spadł! {0} spadł na poziom {1} w {2}.</LevelDownLabel>
+  <LevelDownLabelShort>{0} stracił poziom</LevelDownLabelShort>
+  <LevelDownLabelLong>Poziom spadł! {0} spadł na poziom {1} w {2} ({3}).</LevelDownLabelLong>
+
+  <LevelDownSettingsLabel>Poziom w dół</LevelDownSettingsLabel>
+  <LevelDownTextMessageLabel>Wiadomość tekstowa</LevelDownTextMessageLabel>
+  <LevelDownTextMessageLabelTooltip>Pokaż wiadomość tekstową, gdy postać straciła poziom.</LevelDownTextMessageLabelTooltip>
+  <LevelDownLetterLabel>List</LevelDownLetterLabel>
+  <LevelDownLetterLabelTooltip>Pokaż list, gdy postać straciła poziom.</LevelDownLetterLabelTooltip>
+  <LevelDownSoundEffectLabel>Efekt dźwiękowy</LevelDownSoundEffectLabel>
+  <LevelDownSoundEffectLabelTooltip>Odegraj dźwięk, gdy postać straciła poziom.</LevelDownSoundEffectLabelTooltip>
+  <LevelDownAnimationLabel>Animacja</LevelDownAnimationLabel>
+  <LevelDownAnimationLabelTooltip>Pokaż animację, gdy postać straciła poziom.</LevelDownAnimationLabelTooltip>
+  <LevelDownLevelDesc>Opis poziomu</LevelDownLevelDesc>
+  <LevelDownLevelDescTooltip>Zawrzyj w wiadomości opis z gry na temat straconego poziomu.</LevelDownLevelDescTooltip>
+
+  <Ignore10To9Label>Cichy poziom 10-9</Ignore10To9Label>
+  <Ignore10To9LabelTooltip>Ignoruj spadek umiejętnosci z poziomu 10 na 9.\n\nPoprawia sytuację, gdy postaci osiągają 10 poziom i od razu spadają na 9, ze względu na czasową utratę doświadczenia.</Ignore10To9LabelTooltip>
+
+  <NotificationTimerLabel>Minutnik dla notyfikacji (FUNKCJA EKSPERYMENTALNA)</NotificationTimerLabel>
+  <NotificationTimerLabelTooltip>FUNKCJA EKSPERYMENTALNA\n\nTa opcja jest w trakcie testów, jednak powinna działać poprawnie.\n\nMinimalna liczba sekund, która musi upłynąć, aby wyświetliła się kolejna notyfikacja dla tej samej postaci.\n\nPoprawia notyfikacje dla postaci, które zyskują i tracą poziomy w bardzo krótkim odstępie czasu.</NotificationTimerLabelTooltip>
+
+  <SoundChooseLabel>Dźwięk</SoundChooseLabel>
+  <TestPlaySound>Odtwórz dźwięk</TestPlaySound>
+</LanguageData>
