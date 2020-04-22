@@ -36,14 +36,17 @@ namespace LevelUp
                 var message = new Message(text, messageType, new LookTargets(pawn));
                 Messages.Message(message, false);
 
-                var mote = ThingMaker.MakeThing(moteDef) as Mote;
-                mote.Scale = scale;
-                mote.rotationRate = rotationRate;
-                var position = pawn.DrawPos;
-                mote.Attach(pawn);
-                mote.exactPosition = position;
+                if (pawn.Map == Find.CurrentMap)
+                {
+                    var mote = ThingMaker.MakeThing(moteDef) as Mote;
+                    mote.Scale = scale;
+                    mote.rotationRate = rotationRate;
+                    var position = pawn.DrawPos;
+                    mote.Attach(pawn);
+                    mote.exactPosition = position;
 
-                GenSpawn.Spawn(mote, position.ToIntVec3(), Find.CurrentMap);
+                    GenSpawn.Spawn(mote, position.ToIntVec3(), Find.CurrentMap);
+                }
             }
         }
 
