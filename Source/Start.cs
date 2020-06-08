@@ -9,7 +9,8 @@ namespace LevelUp
         static Start()
         {
             var pawnSkillTimerCache = new PawnSkillTimerCache(25);
-            var levelEventMaker = new LevelEventMaker(pawnSkillTimerCache);
+            var modSettings = LoadedModManager.GetMod<ModHandler>().GetSettings<Settings>();
+            var levelEventMaker = new LevelEventMaker(pawnSkillTimerCache, modSettings);
             SkillRecordLearnPatch.InitializePatch(new Harmony("Krafs.LevelUp"), levelEventMaker);
         }
     }

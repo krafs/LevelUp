@@ -20,13 +20,13 @@ namespace LevelUp
             var map = Find.CurrentMap;
             var pawn = map.mapPawns.FreeColonists.FirstOrFallback();
             var skill = pawn.skills.skills.First(x => !(x is null));
-            if (Widgets.ButtonText(new Rect(20f, 100f, 200f, 24f), $"Level up {pawn.LabelShortCap} in {skill.def.LabelCap}"))
+            if (Widgets.ButtonText(new Rect(20f, 100f, 200f, 24f), $"Level up {pawn.LabelShortCap} in {skill.def.LabelCap.Resolve()}"))
             {
                 var xp = skill.XpRequiredForLevelUp + skill.XpRequiredForLevelUp * 1.2f;
                 skill.Learn(xp, true);
             }
 
-            if (Widgets.ButtonText(new Rect(20f, 130f, 200f, 24f), $"Level down {pawn.LabelShortCap} in {skill.def.LabelCap}"))
+            if (Widgets.ButtonText(new Rect(20f, 130f, 200f, 24f), $"Level down {pawn.LabelShortCap} in {skill.def.LabelCap.Resolve()}"))
             {
                 var xp = skill.xpSinceLastLevel + skill.xpSinceLastLevel * 1.2f;
                 skill.Learn(-xp, true);

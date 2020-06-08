@@ -4,4 +4,8 @@
   <Krafs.LevelUp.LevelDownMessage>降级! {0} 的{2}技能降至{1}级。</Krafs.LevelUp.LevelDownMessage>
   <Krafs.LevelUp.LevelUpLabel>技能升级</Krafs.LevelUp.LevelUpLabel>
   <Krafs.LevelUp.LevelDownLabel>技能降级</Krafs.LevelUp.LevelDownLabel>
+
+  <Krafs.LevelUp.DoMessage>文本消息</Krafs.LevelUp.DoMessage>
+  <Krafs.LevelUp.DoSound>音效</Krafs.LevelUp.DoSound>
+  <Krafs.LevelUp.DoAnimation>动画效果</Krafs.LevelUp.DoAnimation>
 </LanguageData>

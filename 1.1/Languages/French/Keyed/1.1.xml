@@ -4,4 +4,8 @@
   <Krafs.LevelUp.LevelDownMessage>Niveau Inférieur! {0} est retombé au niveau {1} en {2}.</Krafs.LevelUp.LevelDownMessage>
   <Krafs.LevelUp.LevelUpLabel>Niveau Supérieur</Krafs.LevelUp.LevelUpLabel>
   <Krafs.LevelUp.LevelDownLabel>Niveau Inférieur</Krafs.LevelUp.LevelDownLabel>
+
+  <Krafs.LevelUp.DoMessage>Message textuel</Krafs.LevelUp.DoMessage>
+  <Krafs.LevelUp.DoSound>Effet Sonore</Krafs.LevelUp.DoSound>
+  <Krafs.LevelUp.DoAnimation>Animation</Krafs.LevelUp.DoAnimation>
 </LanguageData>

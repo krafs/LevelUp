@@ -4,4 +4,8 @@
   <Krafs.LevelUp.LevelDownMessage>Уровень понижен! {0} понижен уровень {1} в {2}.</Krafs.LevelUp.LevelDownMessage>
   <Krafs.LevelUp.LevelUpLabel>Повышение уровня</Krafs.LevelUp.LevelUpLabel>
   <Krafs.LevelUp.LevelDownLabel>Текст сообщения</Krafs.LevelUp.LevelDownLabel>
+
+  <Krafs.LevelUp.DoMessage>Текст сообщения</Krafs.LevelUp.DoMessage>
+  <Krafs.LevelUp.DoSound>Звуковой эффект</Krafs.LevelUp.DoSound>
+  <Krafs.LevelUp.DoAnimation>Анимация</Krafs.LevelUp.DoAnimation>
 </LanguageData>

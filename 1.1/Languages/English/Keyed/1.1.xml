@@ -4,4 +4,8 @@
   <Krafs.LevelUp.LevelDownMessage>{0} dropped to level {1} in {2}.</Krafs.LevelUp.LevelDownMessage>
   <Krafs.LevelUp.LevelUpLabel>Level up</Krafs.LevelUp.LevelUpLabel>
   <Krafs.LevelUp.LevelDownLabel>Level down</Krafs.LevelUp.LevelDownLabel>
+
+  <Krafs.LevelUp.DoMessage>Text Message</Krafs.LevelUp.DoMessage>
+  <Krafs.LevelUp.DoSound>Sound Effect</Krafs.LevelUp.DoSound>
+  <Krafs.LevelUp.DoAnimation>Animation</Krafs.LevelUp.DoAnimation>
 </LanguageData>

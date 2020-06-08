@@ -5,31 +5,43 @@ namespace LevelUp
 {
     public class ModHandler : Mod
     {
-        public ModHandler(ModContentPack content) : base(content)
-        { }
+        private readonly Listing_Standard listing;
+        private Settings settings;
+        public Settings Settings => this.settings ??= this.GetSettings<Settings>();
 
-        private Settings Settings => this.GetSettings<Settings>();
+        public override string SettingsCategory() => base.Content.Name;
+
+        public ModHandler(ModContentPack content) : base(content)
+        {
+            this.listing = new Listing_Standard
+            {
+                ColumnWidth = 300f
+            };
+        }
 
         public override void DoSettingsWindowContents(Rect rect)
         {
-            var doLevelUp = this.Settings.DoLevelUp;
-            var doLevelDown = this.Settings.DoLevelDown;
+            listing.Begin(rect);
 
-            var list = new Listing_Standard
+            listing.CheckboxLabeled("Krafs.LevelUp.LevelUpLabel".Translate(), ref this.Settings.DoLevelUp);
+            if (this.Settings.DoLevelUp)
             {
-                ColumnWidth = 120f
-            };
-            list.Begin(rect);
-            list.CheckboxLabeled("Krafs.LevelUp.LevelUpLabel".Translate(), ref this.Settings.DoLevelUp);
-            list.CheckboxLabeled("Krafs.LevelUp.LevelDownLabel".Translate(), ref this.Settings.DoLevelDown);
-            list.End();
-
-            if (doLevelUp != this.Settings.DoLevelUp || doLevelDown != this.Settings.DoLevelDown)
-            {
-                SkillRecordLearnPatch.UpdatePatch();
+                listing.CheckboxLabeled("Krafs.LevelUp.DoMessage".Translate(), ref this.Settings.DoLevelUpMessage);
+                listing.CheckboxLabeled("Krafs.LevelUp.DoSound".Translate(), ref this.Settings.DoLevelUpSound);
+                listing.CheckboxLabeled("Krafs.LevelUp.DoAnimation".Translate(), ref this.Settings.DoLevelUpAnimation);
             }
-        }
 
-        public override string SettingsCategory() => "LevelUp";
+            listing.NewColumn();
+
+            listing.CheckboxLabeled("Krafs.LevelUp.LevelDownLabel".Translate(), ref this.Settings.DoLevelDown);
+            if (this.Settings.DoLevelDown)
+            {
+                listing.CheckboxLabeled("Krafs.LevelUp.DoMessage".Translate(), ref this.Settings.DoLevelDownMessage);
+                listing.CheckboxLabeled("Krafs.LevelUp.DoSound".Translate(), ref this.Settings.DoLevelDownSound);
+                listing.CheckboxLabeled("Krafs.LevelUp.DoAnimation".Translate(), ref this.Settings.DoLevelDownAnimation);
+            }
+
+            listing.End();
+        }
     }
 }

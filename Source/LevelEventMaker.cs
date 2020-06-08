@@ -1,69 +1,119 @@
 ﻿using RimWorld;
 using Verse;
+using Verse.Sound;
 
 namespace LevelUp
 {
     public class LevelEventMaker
     {
         private readonly PawnSkillTimerCache pawnSkillTimerCache;
-        private string levelDownMessage;
-        private string levelUpMessage;
-        private MessageTypeDef messageLevelDownDef;
+        private readonly Settings modSettings;
+        private readonly string levelUpMessage;
+        private readonly string levelDownMessage;
+        private readonly SoundDef soundLevelUpDef = DefDatabase<SoundDef>.GetNamed("LevelUpDing");
+        private readonly SoundDef soundLevelDownDef = DefDatabase<SoundDef>.GetNamed("LevelDownDrop");
+        private readonly ThingDef moteLevelUpDef = DefDatabase<ThingDef>.GetNamed("Mote_LevelUp");
+        private readonly ThingDef moteLevelDownDef = DefDatabase<ThingDef>.GetNamed("Mote_LevelDown");
 
-        private MessageTypeDef messageLevelUpDef;
-
-        private ThingDef moteLevelDownDef;
-
-        private ThingDef moteLevelUpDef;
-
-        public LevelEventMaker(PawnSkillTimerCache pawnSkillTimerCache)
+        public LevelEventMaker(PawnSkillTimerCache pawnSkillTimerCache, Settings modSettings)
         {
             this.pawnSkillTimerCache = pawnSkillTimerCache;
+            this.modSettings = modSettings;
+            this.levelUpMessage = "Krafs.LevelUp.LevelUpMessage".TranslateSimple().Replace("{0}", "{0}".Colorize(ColoredText.NameColor));
+            this.levelDownMessage = "Krafs.LevelUp.LevelDownMessage".TranslateSimple().Replace("{0}", "{0}".Colorize(ColoredText.NameColor));
         }
 
-        private string LevelDownMessage => levelDownMessage ??= PrepareLevelMessage("Krafs.LevelUp.LevelDownMessage");
-        private string LevelUpMessage => levelUpMessage ??= PrepareLevelMessage("Krafs.LevelUp.LevelUpMessage");
-        private MessageTypeDef MessageLevelDownDef => messageLevelDownDef ??= DefDatabase<MessageTypeDef>.GetNamed("MessageLevelDown");
-        private MessageTypeDef MessageLevelUpDef => messageLevelUpDef ??= DefDatabase<MessageTypeDef>.GetNamed("MessageLevelUp");
-        private ThingDef MoteLevelDownDef => moteLevelDownDef ??= DefDatabase<ThingDef>.GetNamed("Mote_LevelDown");
-        private ThingDef MoteLevelUpDef => moteLevelUpDef ??= DefDatabase<ThingDef>.GetNamed("Mote_LevelUp");
-
-        public void OnLevelChange(string baseMessage, MessageTypeDef messageType, SkillRecord skillRecord, Pawn pawn, int level, ThingDef moteDef, float scale, float rotationRate)
+        public void OnLevelUp(SkillRecord skillRecord, Pawn pawn)
         {
-            if (pawn.IsFreeColonist && this.pawnSkillTimerCache.EnoughTimeHasPassed(pawn, skillRecord.def))
+            if (!this.modSettings.DoLevelUp)
             {
-                var text = string.Format(baseMessage, pawn.LabelShortCap, level, skillRecord.def.LabelCap);
-                var message = new Message(text, messageType, new LookTargets(pawn));
-                Messages.Message(message, false);
+                return;
+            }
 
-                if (pawn.Map == Find.CurrentMap)
-                {
-                    var mote = ThingMaker.MakeThing(moteDef) as Mote;
-                    mote.Scale = scale;
-                    mote.rotationRate = rotationRate;
-                    var position = pawn.DrawPos;
-                    mote.Attach(pawn);
-                    mote.exactPosition = position;
+            if (!pawn.IsFreeColonist)
+            {
+                return;
+            }
 
-                    GenSpawn.Spawn(mote, position.ToIntVec3(), Find.CurrentMap);
-                }
+            if (!this.pawnSkillTimerCache.EnoughTimeHasPassed(pawn, skillRecord.def))
+            {
+                return;
+            }
+
+            if (this.modSettings.DoLevelUpSound)
+            {
+                DoSound(soundLevelUpDef);
+            }
+
+            if (this.modSettings.DoLevelUpMessage)
+            {
+                DoMessage(this.levelUpMessage, pawn, skillRecord);
+            }
+
+            if (this.modSettings.DoLevelUpAnimation)
+            {
+                DoAnimation(pawn, this.moteLevelUpDef, 1.0f, 100f);
             }
         }
 
-        public void OnLevelDown(SkillRecord skillRecord, Pawn pawn, int level)
+        public void OnLevelDown(SkillRecord skillRecord, Pawn pawn)
         {
-            OnLevelChange(LevelDownMessage, MessageLevelDownDef, skillRecord, pawn, level, MoteLevelDownDef, 8.0f, -100f);
+            if (!this.modSettings.DoLevelDown)
+            {
+                return;
+            }
+
+            if (!pawn.IsFreeColonist)
+            {
+                return;
+            }
+
+            if (!this.pawnSkillTimerCache.EnoughTimeHasPassed(pawn, skillRecord.def))
+            {
+                return;
+            }
+
+            if (this.modSettings.DoLevelDownSound)
+            {
+                DoSound(soundLevelDownDef);
+            }
+
+            if (this.modSettings.DoLevelDownMessage)
+            {
+                DoMessage(this.levelDownMessage, pawn, skillRecord);
+            }
+
+            if (this.modSettings.DoLevelDownAnimation)
+            {
+                DoAnimation(pawn, this.moteLevelDownDef, 8.0f, -100f);
+            }
         }
 
-        public void OnLevelUp(SkillRecord skillRecord, Pawn pawn, int level)
+        private void DoMessage(string messageTemplate, Pawn pawn, SkillRecord skillRecord)
         {
-            OnLevelChange(LevelUpMessage, MessageLevelUpDef, skillRecord, pawn, level, MoteLevelUpDef, 1.0f, 100f);
+            var text = string.Format(messageTemplate, pawn.LabelShortCap, skillRecord.Level.ToString(), skillRecord.def.LabelCap.Resolve());
+            var message = new Message(text, MessageTypeDefOf.SilentInput, new LookTargets(pawn));
+            Messages.Message(message, false);
         }
 
-        private string PrepareLevelMessage(string key)
+        private void DoSound(SoundDef soundDef)
         {
-            return key.TranslateSimple()
-            .Replace("{0}", "{0}".Colorize(ColoredText.NameColor));
+            soundDef.PlayOneShotOnCamera(null);
+        }
+
+        private void DoAnimation(Pawn pawn, ThingDef moteDef, float scale, float rotationRate)
+        {
+            if (pawn.Map == Find.CurrentMap)
+            {
+                var mote = ThingMaker.MakeThing(moteDef) as Mote;
+                mote.Scale = scale;
+                mote.rotationRate = rotationRate;
+                var position = pawn.DrawPos;
+                mote.Attach(pawn);
+                mote.exactPosition = position;
+
+                GenSpawn.Spawn(mote, position.ToIntVec3(), Find.CurrentMap);
+            }
         }
     }
 }

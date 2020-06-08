@@ -7,7 +7,7 @@ namespace LevelUp
 {
     public class PawnSkillTimerCache
     {
-        public const int MinSecondsBetweenLevels = 20;
+        private const int MinSecondsBetweenLevels = 20;
         private readonly Dictionary<ValueTuple<Pawn, SkillDef>, DateTime> timerCache;
 
         public PawnSkillTimerCache(int capacity)
@@ -26,6 +26,7 @@ namespace LevelUp
             }
 
             timerCache[key] = currentDateTime.AddSeconds(MinSecondsBetweenLevels);
+
             return true;
         }
     }
