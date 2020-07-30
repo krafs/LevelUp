@@ -3,13 +3,13 @@
 A RimWorld mod adding notifications when a colonist levels up a skill.
 
 ### Compatibility
-- Compatible with RimWorld **v1.0** and **v1.1**.
+- Compatible with all release versions of RimWorld, **v1.0** - **v1.2**.
 - Partially incompatible with **Static Quality Plus**.
 
 ### Notes
 - Safe to add and remove from existing saves.
 - Add anywhere in your load order.
-- This mod is different on v1.0 and v1.1 of RimWorld. You can use it on both versions, but they are slightly different. 
+- This mod is different on v1.0 of RimWorld. You can use it on both versions, but they are slightly different. 
 Read the [Release notes](https://github.com/krafs/LevelUp/releases/tag/v2.0.0) to learn what has changed.
 
 ### How to use
