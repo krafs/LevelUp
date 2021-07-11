@@ -5,14 +5,14 @@ using Verse;
 
 namespace LevelUp
 {
-    public class PawnSkillTimerCache
+    public sealed class PawnSkillTimerCache
     {
-        private const int MinSecondsBetweenLevels = 20;
-        private readonly Dictionary<ValueTuple<Pawn, SkillDef>, DateTime> timerCache;
+        public const int MinSecondsBetweenLevels = 20;
+        private readonly Dictionary<ValueTuple<Pawn, SkillDef>, DateTime> _timerCache;
 
         public PawnSkillTimerCache(int capacity)
         {
-            this.timerCache = new Dictionary<ValueTuple<Pawn, SkillDef>, DateTime>(capacity);
+            _timerCache = new Dictionary<ValueTuple<Pawn, SkillDef>, DateTime>(capacity);
         }
 
         public bool EnoughTimeHasPassed(Pawn pawn, SkillDef skillDef)
@@ -20,12 +20,12 @@ namespace LevelUp
             var currentDateTime = DateTime.Now;
             var key = new ValueTuple<Pawn, SkillDef>(pawn, skillDef);
 
-            if (timerCache.TryGetValue(key, out DateTime minDateTime) && currentDateTime < minDateTime)
+            if (_timerCache.TryGetValue(key, out DateTime minDateTime) && currentDateTime < minDateTime)
             {
                 return false;
             }
 
-            timerCache[key] = currentDateTime.AddSeconds(MinSecondsBetweenLevels);
+            _timerCache[key] = currentDateTime.AddSeconds(MinSecondsBetweenLevels);
 
             return true;
         }
