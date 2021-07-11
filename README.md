@@ -1,23 +1,33 @@
 # Level Up!
 
-A RimWorld mod adding notifications when a colonist levels up a skill.
+A RimWorld mod for receiving notifications when a colonist levels up a skill.
 
-### Compatibility
-- Compatible with all release versions of RimWorld, **v1.0** - **v1.2**.
-- Partially incompatible with **Static Quality Plus**.
+# How to install
 
-### Notes
-- Safe to add and remove from existing saves.
-- Add anywhere in your load order.
-- This mod is different on v1.0 of RimWorld. You can use it on both versions, but they are slightly different. 
-Read the [Release notes](https://github.com/krafs/LevelUp/releases/tag/v2.0.0) to learn what has changed.
+- Subscribe at the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=1701592470)
+
+ _or_
+
+- Download the latest zip-file from [Latest Release](https://github.com/krafs/LevelUp/releases)
+- Unzip the contents and place them in your RimWorld/Mods folder.
+- Activate the mod in the mod menu in the game.
+- Put anywhere in your load order.
 
 ### How to use
 Just play like normal. You'll get notified whenever a colonist levels up.
 
-*Level up* is enabled by default. If you want to get notifications when a colonist levels down, enable it in the mod settings.
+The mod can be customized in the mod settings.
 
-Toggle individual features in the mod settings.
+### Incompatibilities
+- **Static Quality Plus**.
+- **Ducks' Insane Skills**.
+
+### Notes
+- Compatible with Rimworld **v1.3**.
+- Safe to add and remove from existing saves.
+- Add anywhere in your load order.
+- Incompatible with mod **Static Quality Plus**.
+- Incompatible with mod **Ducks' Insane Skills**.
 
 #### "My colonist levels up and then almost instantly down again!"
 This is caused by a feature in vanilla RimWorld known as *skill decay*. Skills at lvl 10 and higher lose xp. If xp goes low enough, the skill levels down. The rate of skill decay increases with every level - It is slow at lvl 10, and fast at lvl 20.
@@ -47,13 +57,3 @@ Simplified Chinese (Credit: HawnHan)
 Portuguese/Brazilian (Credit: randrade86)
 
 Polish (Credit: soshman)
-
-# Installation
-Add _Level Up!_ anywhere in your load order.
-- Subscribe at the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=1701592470)
-
- _or_
-
-- Download the latest zip-file from [Latest Release](https://github.com/krafs/LevelUp/releases)
-- Unzip the contents and place them in your RimWorld/Mods folder.
-- Activate the mod in the mod menu in the game.

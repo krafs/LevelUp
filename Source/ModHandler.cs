@@ -7,9 +7,6 @@ namespace LevelUp
     {
         private readonly Listing_Standard listing;
         private Settings settings;
-        public Settings Settings => this.settings ??= this.GetSettings<Settings>();
-
-        public override string SettingsCategory() => base.Content.Name;
 
         public ModHandler(ModContentPack content) : base(content)
         {
@@ -18,6 +15,21 @@ namespace LevelUp
                 ColumnWidth = 300f
             };
         }
+
+        public Settings Settings
+        {
+            get
+            {
+                if (this.settings is null)
+                {
+                    this.settings = this.GetSettings<Settings>();
+                }
+
+                return this.settings;
+            }
+        }
+
+        public override string SettingsCategory() => base.Content.Name;
 
         public override void DoSettingsWindowContents(Rect rect)
         {
