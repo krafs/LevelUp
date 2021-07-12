@@ -7,17 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LevelUp", "LevelUp\LevelUp.
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		1.1|Any CPU = 1.1|Any CPU
-		1.2|Any CPU = 1.2|Any CPU
-		1.3|Any CPU = 1.3|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D2A0C8C9-8E02-426F-B69E-E4B093BCA945}.1.1|Any CPU.ActiveCfg = 1.1|Any CPU
-		{D2A0C8C9-8E02-426F-B69E-E4B093BCA945}.1.1|Any CPU.Build.0 = 1.1|Any CPU
-		{D2A0C8C9-8E02-426F-B69E-E4B093BCA945}.1.2|Any CPU.ActiveCfg = 1.2|Any CPU
-		{D2A0C8C9-8E02-426F-B69E-E4B093BCA945}.1.2|Any CPU.Build.0 = 1.2|Any CPU
-		{D2A0C8C9-8E02-426F-B69E-E4B093BCA945}.1.3|Any CPU.ActiveCfg = 1.3|Any CPU
-		{D2A0C8C9-8E02-426F-B69E-E4B093BCA945}.1.3|Any CPU.Build.0 = 1.3|Any CPU
+		{D2A0C8C9-8E02-426F-B69E-E4B093BCA945}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A0C8C9-8E02-426F-B69E-E4B093BCA945}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

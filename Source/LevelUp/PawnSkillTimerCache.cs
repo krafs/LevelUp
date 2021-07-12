@@ -1,6 +1,6 @@
-﻿using RimWorld;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using RimWorld;
 using Verse;
 
 namespace LevelUp
@@ -17,7 +17,7 @@ namespace LevelUp
 
         public bool EnoughTimeHasPassed(Pawn pawn, SkillDef skillDef)
         {
-            var currentDateTime = DateTime.Now;
+            DateTime currentDateTime = DateTime.Now;
             var key = new ValueTuple<Pawn, SkillDef>(pawn, skillDef);
 
             if (_timerCache.TryGetValue(key, out DateTime minDateTime) && currentDateTime < minDateTime)
