@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<SoundDef>
+	<defName>MyLevelUpSoundDef</defName>
+	<label>My sound</label>
+	<modExtensions>
+		<li Class="LevelUp.SoundDefExtension" />
+	</modExtensions>
+	<subSounds>
+		<li>
+			<onCamera>True</onCamera>
+			<sustainLoop>False</sustainLoop>
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>SampleModSounds/Jingle</clipPath>
+				</li>
+			</grains>
+		</li>
+	</subSounds>
+</SoundDef>
+</Defs>

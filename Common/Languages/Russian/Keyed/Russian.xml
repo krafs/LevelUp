@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<LevelUp.DefaultLevelUpMessage><![CDATA[Уровень повышен! <color=orange>{PAWN}</color> достигнут уровень {LEVEL} в {SKILL}.]]></LevelUp.DefaultLevelUpMessage>
+	<LevelUp.DefaultLevelDownMessage><![CDATA[Уровень понижен! <color=orange>{PAWN}</color> понижен уровень {LEVEL} в {SKILL}.]]></LevelUp.DefaultLevelDownMessage>
+</LanguageData>
