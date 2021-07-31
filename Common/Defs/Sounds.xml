@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<SoundDef>
+    <defName>LevelUpSound_Classic</defName>
+    <label>Classic</label>
+    <modExtensions>
+      <li Class="LevelUp.SoundDefExtension" />
+    </modExtensions>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+				<sustainLoop>False</sustainLoop>
+				<grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>LevelUp/Classic</clipPath>
+					</li>
+				</grains>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>LevelUpSound_Negative</defName>
+		<label>Negative</label>
+		<modExtensions>
+      <li Class="LevelUp.SoundDefExtension" />
+    </modExtensions>
+		<subSounds>
+			<li>
+				<onCamera>True</onCamera>
+				<sustainLoop>False</sustainLoop>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>LevelUp/Negative</clipPath>
+					</li>
+				</grains>
+			</li>
+		</subSounds>
+	</SoundDef>
+	
+	<!-- Credit: Scott Wilco -->
+	<SoundDef>
+		<defName>LevelUpSound_Punchy</defName>
+		<label>Punchy</label>
+		<modExtensions>
+      <li Class="LevelUp.SoundDefExtension" />
+    </modExtensions>
+		<subSounds>
+			<li>
+				<onCamera>True</onCamera>
+				<sustainLoop>False</sustainLoop>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>LevelUp/Punchy</clipPath>
+					</li>
+				</grains>
+			</li>
+		</subSounds>
+	</SoundDef>
+	
+	<!-- Credit: likmask -->
+	<SoundDef>
+		<defName>LevelUpSound_DistortedSiren</defName>
+		<label>Distorted Siren</label>
+		<modExtensions>
+      <li Class="LevelUp.SoundDefExtension" />
+    </modExtensions>
+		<subSounds>
+			<li>
+				<onCamera>True</onCamera>
+				<sustainLoop>False</sustainLoop>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>LevelUp/DistortedSiren</clipPath>
+					</li>
+				</grains>
+				<volumeRange>
+					<min>125</min>
+					<max>125</max>
+				</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+	
+	<!-- Credit: nomiqbomi -->
+	<SoundDef>
+		<defName>LevelUpSound_Dissonance</defName>
+		<label>Dissonance</label>
+		<modExtensions>
+      <li Class="LevelUp.SoundDefExtension" />
+    </modExtensions>
+		<subSounds>
+			<li>
+				<onCamera>True</onCamera>
+				<sustainLoop>False</sustainLoop>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>LevelUp/Dissonance</clipPath>
+					</li>
+				</grains>
+				<volumeRange>
+					<min>130</min>
+					<max>130</max>
+				</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>LevelUpSound_Deception</defName>
+		<label>Deception</label>
+		<modExtensions>
+      <li Class="LevelUp.SoundDefExtension" />
+    </modExtensions>
+		<subSounds>
+			<li>
+				<onCamera>True</onCamera>
+				<sustainLoop>False</sustainLoop>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>LevelUp/Deception</clipPath>
+					</li>
+				</grains>
+				<volumeRange>
+					<min>200</min>
+					<max>200</max>
+				</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<!-- Credit: NenadSimic -->
+	<SoundDef>
+		<defName>LevelUpSound_Jazzy</defName>
+		<label>Jazzy</label>
+		<modExtensions>
+      <li Class="LevelUp.SoundDefExtension" />
+    </modExtensions>
+		<subSounds>
+			<li>
+				<onCamera>True</onCamera>
+				<sustainLoop>False</sustainLoop>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>LevelUp/Jazzy</clipPath>
+					</li>
+				</grains>
+			</li>
+		</subSounds>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>LevelUpSound_Strum</defName>
+		<label>Strum</label>
+		<modExtensions>
+      <li Class="LevelUp.SoundDefExtension" />
+    </modExtensions>
+		<subSounds>
+			<li>
+				<onCamera>True</onCamera>
+				<sustainLoop>False</sustainLoop>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>LevelUp/Strum</clipPath>
+					</li>
+				</grains>
+			</li>
+		</subSounds>
+	</SoundDef>
+		
+	<!-- Credit: plasterbrain -->
+	<SoundDef>
+		<defName>LevelUpSound_TadaFanfare</defName>
+		<label>Tada Fanfare</label>
+		<modExtensions>
+      <li Class="LevelUp.SoundDefExtension" />
+    </modExtensions>
+		<subSounds>
+			<li>
+				<onCamera>True</onCamera>
+				<sustainLoop>False</sustainLoop>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>LevelUp/TadaFanfare</clipFolderPath>
+					</li>
+				</grains>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+</Defs>

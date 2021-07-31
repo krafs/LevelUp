@@ -1,28 +1,40 @@
-﻿using Verse;
+﻿using System;
+using Verse;
 
 namespace LevelUp
 {
+    [Serializable]
     public class Settings : ModSettings
     {
-        public bool DoLevelUp = true;
-        public bool DoLevelDown;
-        public bool DoLevelUpMessage = true;
-        public bool DoLevelDownMessage;
-        public bool DoLevelUpAnimation = true;
-        public bool DoLevelDownAnimation;
-        public bool DoLevelUpSound = true;
-        public bool DoLevelDownSound;
+        private Profile profile = null!;
+        public Profile Profile => profile;
+
+        public Settings()
+        {
+            if (Scribe.mode == LoadSaveMode.Inactive)
+            {
+                EnsureInitialized();
+            }
+        }
 
         public override void ExposeData()
         {
-            Scribe_Values.Look(ref DoLevelUp, nameof(DoLevelUp), true);
-            Scribe_Values.Look(ref DoLevelDown, nameof(DoLevelDown), false);
-            Scribe_Values.Look(ref DoLevelUpMessage, nameof(DoLevelUpMessage), true);
-            Scribe_Values.Look(ref DoLevelDownMessage, nameof(DoLevelDownMessage), false);
-            Scribe_Values.Look(ref DoLevelUpAnimation, nameof(DoLevelUpAnimation), true);
-            Scribe_Values.Look(ref DoLevelDownAnimation, nameof(DoLevelDownAnimation), false);
-            Scribe_Values.Look(ref DoLevelUpSound, nameof(DoLevelUpSound), true);
-            Scribe_Values.Look(ref DoLevelDownSound, nameof(DoLevelDownSound), false);
+            Scribe_Deep.Look(ref profile, "profile");
+            if (Scribe.mode == LoadSaveMode.LoadingVars)
+            {
+                EnsureInitialized();
+            }
+            else if (Scribe.mode == LoadSaveMode.Saving)
+            {
+                profile.Prepare();
+            }
+        }
+
+        private void EnsureInitialized()
+        {
+            profile ??= new Profile();
+            ProfileInitializer.InitializeProfile(profile);
+            profile.Prepare();
         }
     }
 }

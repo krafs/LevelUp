@@ -1,5 +1,4 @@
-﻿using HarmonyLib;
-using Verse;
+﻿using Verse;
 
 namespace LevelUp
 {
@@ -8,10 +7,8 @@ namespace LevelUp
     {
         static Start()
         {
-            var pawnSkillTimerCache = new PawnSkillTimerCache(25);
-            Settings modSettings = LoadedModManager.GetMod<ModHandler>().GetSettings<Settings>();
-            var levelEventMaker = new LevelEventMaker(pawnSkillTimerCache, modSettings);
-            SkillRecordLearnPatch.InitializePatch(new Harmony("Krafs.LevelUp"), levelEventMaker);
+            Settings settings = LoadedModManager.GetMod<LevelUpMod>().GetSettings<Settings>();
+            Patcher.Patch(settings);
         }
     }
 }

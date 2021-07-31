@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>MyLevelUpAnimationDef</defName>
+		<label>My animation</label>
+		<modExtensions>
+			<li Class="LevelUp.AnimationDefExtension" />
+		</modExtensions>
+		<graphicData>
+		  <texPath>SampleModTextures/Star</texPath>
+		  <shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>1</fadeInTime>
+		<fadeOutTime>1</fadeOutTime>
+	</FleckDef>
+</Defs>

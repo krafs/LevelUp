@@ -1,4 +1,3 @@
-# Remove the line below if you want to inherit .editorconfig settings from higher directories
 root = true
 
 [*.{xml,csproj}]
@@ -24,6 +23,7 @@ dotnet_analyzer_diagnostic.severity = warning
 
 # IDE0090: Use 'new(...)'
 dotnet_diagnostic.IDE0090.severity = none
+dotnet_diagnostic.CS0649.severity = none
 
 # Organize usings
 dotnet_sort_system_directives_first = true
@@ -185,14 +185,6 @@ dotnet_naming_rule.non_field_members_should_be_pascal_case.severity =
 dotnet_naming_rule.non_field_members_should_be_pascal_case.symbols = non_field_members
 dotnet_naming_rule.non_field_members_should_be_pascal_case.style = pascal_case
 
-dotnet_naming_rule.private_or_internal_field_should_be_underscore_prefix.severity = 
-dotnet_naming_rule.private_or_internal_field_should_be_underscore_prefix.symbols = private_or_internal_field
-dotnet_naming_rule.private_or_internal_field_should_be_underscore_prefix.style = underscore_prefix
-
-dotnet_naming_rule.private_or_internal_static_field_should_be_static_underscore_prefix.severity = 
-dotnet_naming_rule.private_or_internal_static_field_should_be_static_underscore_prefix.symbols = private_or_internal_static_field
-dotnet_naming_rule.private_or_internal_static_field_should_be_static_underscore_prefix.style = static_underscore_prefix
-
 # Symbol specifications
 
 dotnet_naming_symbols.interface.applicable_kinds = interface
@@ -226,13 +218,3 @@ dotnet_naming_style.begins_with_i.required_prefix = I
 dotnet_naming_style.begins_with_i.required_suffix = 
 dotnet_naming_style.begins_with_i.word_separator = 
 dotnet_naming_style.begins_with_i.capitalization = pascal_case
-
-dotnet_naming_style.underscore_prefix.required_prefix = _
-dotnet_naming_style.underscore_prefix.required_suffix = 
-dotnet_naming_style.underscore_prefix.word_separator = 
-dotnet_naming_style.underscore_prefix.capitalization = camel_case
-
-dotnet_naming_style.static_underscore_prefix.required_prefix = s_
-dotnet_naming_style.static_underscore_prefix.required_suffix = 
-dotnet_naming_style.static_underscore_prefix.word_separator = 
-dotnet_naming_style.static_underscore_prefix.capitalization = camel_case

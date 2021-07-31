@@ -5,27 +5,31 @@ using Verse;
 
 namespace LevelUp
 {
-    public sealed class PawnSkillTimerCache
+    public static class PawnSkillTimerCache
     {
-        public const int MinSecondsBetweenLevels = 20;
-        private readonly Dictionary<ValueTuple<Pawn, SkillDef>, DateTime> _timerCache;
+        private static readonly Dictionary<ValueTuple<Pawn, SkillDef>, DateTime> _timerCache;
+        private static readonly Settings settings;
 
-        public PawnSkillTimerCache(int capacity)
+        static PawnSkillTimerCache()
         {
-            _timerCache = new Dictionary<ValueTuple<Pawn, SkillDef>, DateTime>(capacity);
+            settings = LoadedModManager.GetMod<LevelUpMod>().GetSettings<Settings>();
+            _timerCache = new Dictionary<ValueTuple<Pawn, SkillDef>, DateTime>();
         }
 
-        public bool EnoughTimeHasPassed(Pawn pawn, SkillDef skillDef)
+        public static bool EnoughTimeHasPassed(LevelingInfo levelingInfo)
         {
-            DateTime currentDateTime = DateTime.Now;
-            var key = new ValueTuple<Pawn, SkillDef>(pawn, skillDef);
-
-            if (_timerCache.TryGetValue(key, out DateTime minDateTime) && currentDateTime < minDateTime)
+            DateTime currentDateTime = DateTime.UtcNow;
+            var key = new ValueTuple<Pawn, SkillDef>(levelingInfo.Pawn, levelingInfo.SkillRecord.def);
+            if (_timerCache.TryGetValue(key, out DateTime lastEntryDateTime))
             {
-                return false;
+                DateTime nextAllowedDateTime = lastEntryDateTime.AddSeconds(settings.Profile.GeneralSettingsContent.CooldownSeconds);
+                if (currentDateTime < nextAllowedDateTime)
+                {
+                    return false;
+                }
             }
 
-            _timerCache[key] = currentDateTime.AddSeconds(MinSecondsBetweenLevels);
+            _timerCache[key] = currentDateTime;
 
             return true;
         }

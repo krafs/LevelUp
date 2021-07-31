@@ -3,9 +3,9 @@ using Verse;
 
 namespace LevelUp
 {
-    public sealed class ModHandler : Mod
+    public class LevelUpMod : Mod
     {
-        public ModHandler(ModContentPack content) : base(content)
+        public LevelUpMod(ModContentPack content) : base(content)
         { }
 
         public override string SettingsCategory()
@@ -15,6 +15,7 @@ namespace LevelUp
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
+            GetSettings<Settings>().Profile.Draw(inRect);
         }
     }
 }
