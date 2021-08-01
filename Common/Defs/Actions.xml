@@ -10,7 +10,7 @@
 	<LevelUp.ActionDef>
 		<defName>LevelUpActionDef_Animation</defName>
 		<label>Animation</label>
-		<description>Displays a simple, possibly animated, graphic on the pawn.</description>
+		<description>Displays a simple, possibly animated, graphic on the colonist.</description>
 		<actionClass>LevelUp.AnimationAction</actionClass>
 	</LevelUp.ActionDef>
 	
@@ -24,7 +24,7 @@
 	<LevelUp.ActionDef>
 		<defName>LevelUpActionDef_OverheadMessage</defName>
 		<label>Overhead message</label>
-		<description>Displays a text message on the pawn.</description>
+		<description>Displays a text message on the colonist.</description>
 		<actionClass>LevelUp.OverheadMessageAction</actionClass>
 	</LevelUp.ActionDef>
 </Defs>
