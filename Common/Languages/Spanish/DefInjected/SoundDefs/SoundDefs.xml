@@ -2,6 +2,7 @@
 <LanguageData>
 
   <LevelUpSound_Classic.label>Clásico</LevelUpSound_Classic.label>
+  <LevelUpSound_Ding.label>Ding</LevelUpSound_Ding.label>
   <LevelUpSound_Negative.label>Negativo</LevelUpSound_Negative.label>
   <LevelUpSound_Punchy.label>Con garra</LevelUpSound_Punchy.label>
   <LevelUpSound_DistortedSiren.label>Sirena distorsionada</LevelUpSound_DistortedSiren.label>
