@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- UI -->
+	<LevelUp.LevelUpActionsLabel>Acciones de subida de nivel</LevelUp.LevelUpActionsLabel>
+	<LevelUp.LevelDownActionsLabel>>Acciones para bajada de nivel</LevelUp.LevelDownActionsLabel>
+	
+	<LevelUp.LevelUpActionHeaderDescription>Lista de acciones que, si están activas, se ejecutan cuando un colono sube de nivel una habilidad.</LevelUp.LevelUpActionHeaderDescription>
+	<LevelUp.LevelDownActionHeaderDescription>Lista de acciones que, si están activas, se ejecutan cuando un colono baja de nivel una habilidad.</LevelUp.LevelDownActionHeaderDescription>
+	
+	<LevelUp.CooldownLabel>Enfriamiento</LevelUp.CooldownLabel>
+	<LevelUp.CooldownEntryDescription>La duración de un enfriamiento especificado en segundos en tiempo real.\n\nSi se aplica a una acción, la acción no se ejecutará para el mismo colono y habilidad de nuevo hasta que el enfriamiento se haya agotado.</LevelUp.CooldownEntryDescription>
+	<LevelUp.CooldownOnActionDescription>Si se aplica o no el enfriamiento para esta acción.\n\nSi se aplica, esta acción no se ejecutará para el mismo colono y habilidad nuevamente hasta que se agote el tiempo de reutilización.</LevelUp.CooldownOnActionDescription>
+	
+	<LevelUp.GeneralSettingsLabel>General</LevelUp.GeneralSettingsLabel>
+	<LevelUp.HistoricalLabel>Histórico</LevelUp.HistoricalLabel>
+	<LevelUp.HistoricalDescription>Si el mensaje debe guardarse o no en el historial.</LevelUp.HistoricalDescription>
+	
+	<LevelUp.InjectableValuesLabel>Valores inyectables</LevelUp.InjectableValuesLabel>
+	<LevelUp.FormattingLabel>Formato</LevelUp.FormattingLabel>
+	<LevelUp.FormattingBoldLabel>Negrita</LevelUp.FormattingBoldLabel>
+	<LevelUp.FormattingItalicLabel>Cursiva</LevelUp.FormattingItalicLabel>
+	<LevelUp.FormattingColorLabel>Color</LevelUp.FormattingColorLabel>
+	
+	<!-- Default message texts -->
+	<LevelUp.DefaultLevelUpMessage><![CDATA[<color=orange>{PAWN}</color>  ha alcanzado el nivel {LEVEL} en {SKILL}!]]></LevelUp.DefaultLevelUpMessage>
+	<LevelUp.DefaultLevelDownMessage><![CDATA[<color=orange>{PAWN}</color>  ha alcanzado el nivel {LEVEL} en {SKILL}.]]></LevelUp.DefaultLevelDownMessage>
+	<LevelUp.DefaultLevelUpOverheadMessage>{SKILL}\nnivel {LEVEL}</LevelUp.DefaultLevelUpOverheadMessage>
+	<LevelUp.DefaultLevelDownOverheadMessage>{SKILL}\nnivel {LEVEL}</LevelUp.DefaultLevelDownOverheadMessage>
+</LanguageData>
+
