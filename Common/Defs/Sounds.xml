@@ -74,10 +74,6 @@
 						<clipPath>LevelUp/DistortedSiren</clipPath>
 					</li>
 				</grains>
-				<volumeRange>
-					<min>125</min>
-					<max>125</max>
-				</volumeRange>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -98,10 +94,6 @@
 						<clipPath>LevelUp/Dissonance</clipPath>
 					</li>
 				</grains>
-				<volumeRange>
-					<min>130</min>
-					<max>130</max>
-				</volumeRange>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -121,10 +113,6 @@
 						<clipPath>LevelUp/Deception</clipPath>
 					</li>
 				</grains>
-				<volumeRange>
-					<min>200</min>
-					<max>200</max>
-				</volumeRange>
 			</li>
 		</subSounds>
 	</SoundDef>
