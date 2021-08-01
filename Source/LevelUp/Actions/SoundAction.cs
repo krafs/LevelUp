@@ -14,7 +14,7 @@ namespace LevelUp
                 .AllDefs.Where(x => x.HasModExtension<SoundDefExtension>()).ToList();
 
         private SoundDef soundDef = null!;
-        private float volume = 1f;
+        private float volume = 0.5f;
 
         public SoundDef SoundDef
         {
@@ -71,7 +71,7 @@ namespace LevelUp
         private static void DrawVolumeSlider(Rect rect, ref float volume)
         {
             const float min = 0f;
-            const float max = 2f;
+            const float max = 1.5f;
 
             Texture2D image;
             if (volume > max * 0.8)
@@ -94,14 +94,14 @@ namespace LevelUp
             Rect imageRect = new Rect(rect) { width = rect.height };
             Widgets.DrawTextureFitted(imageRect, image, 1f);
             Rect sliderRect = new Rect(rect) { xMin = imageRect.xMax, yMin = rect.y };
-            volume = Widgets.HorizontalSlider(sliderRect, volume, 0f, 2f, middleAlignment: true);
+            volume = Widgets.HorizontalSlider(sliderRect, volume, min, max, middleAlignment: true);
         }
 
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Defs.Look(ref soundDef, "soundDef");
-            Scribe_Values.Look(ref volume, "volume", 1f);
+            Scribe_Values.Look(ref volume, "volume", 0.5f);
         }
     }
 }
