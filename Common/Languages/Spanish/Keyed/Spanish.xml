@@ -3,7 +3,7 @@
 
 	<!-- UI -->
 	<LevelUp.LevelUpActionsLabel>Acciones de subida de nivel</LevelUp.LevelUpActionsLabel>
-	<LevelUp.LevelDownActionsLabel>>Acciones para bajada de nivel</LevelUp.LevelDownActionsLabel>
+	<LevelUp.LevelDownActionsLabel>Acciones para bajada de nivel</LevelUp.LevelDownActionsLabel>
 	
 	<LevelUp.LevelUpActionHeaderDescription>Lista de acciones que, si están activas, se ejecutan cuando un colono sube de nivel una habilidad.</LevelUp.LevelUpActionHeaderDescription>
 	<LevelUp.LevelDownActionHeaderDescription>Lista de acciones que, si están activas, se ejecutan cuando un colono baja de nivel una habilidad.</LevelUp.LevelDownActionHeaderDescription>
