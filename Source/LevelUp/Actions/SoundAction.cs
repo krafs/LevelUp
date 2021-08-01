@@ -71,7 +71,7 @@ namespace LevelUp
         private static void DrawVolumeSlider(Rect rect, ref float volume)
         {
             const float min = 0f;
-            const float max = 1f;
+            const float max = 1.5f;
 
             Texture2D image;
             if (volume > max * 0.8)
