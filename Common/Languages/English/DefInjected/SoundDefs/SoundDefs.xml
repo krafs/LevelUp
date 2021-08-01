@@ -5,6 +5,7 @@
   <!-- This is here for translation reference only. -->
 
   <LevelUpSound_Classic.label>Classic</LevelUpSound_Classic.label>
+  <LevelUpSound_Ding.label>Ding</LevelUpSound_Ding.label>
   <LevelUpSound_Negative.label>Negative</LevelUpSound_Negative.label>
   <LevelUpSound_Punchy.label>Punchy</LevelUpSound_Punchy.label>
   <LevelUpSound_DistortedSiren.label>Distorted Siren</LevelUpSound_DistortedSiren.label>

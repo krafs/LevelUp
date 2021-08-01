@@ -1,20 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<SoundDef>
-    <defName>LevelUpSound_Classic</defName>
-    <label>Classic</label>
-    <modExtensions>
-      <li Class="LevelUp.SoundDefExtension" />
-    </modExtensions>
-    <subSounds>
-      <li>
-        <onCamera>True</onCamera>
-				<sustainLoop>False</sustainLoop>
-				<grains>
-          <li Class="AudioGrain_Clip">
-            <clipPath>LevelUp/Classic</clipPath>
-					</li>
-				</grains>
+		<defName>LevelUpSound_Ding</defName>
+		<label>Ding</label>
+		<modExtensions>
+			<li Class="LevelUp.SoundDefExtension" />
+		</modExtensions>
+		<subSounds>
+			<li>
+				<onCamera>True</onCamera>
+					<sustainLoop>False</sustainLoop>
+					<grains>
+						<li Class="AudioGrain_Clip">
+							<clipPath>LevelUp/Ding</clipPath>
+						</li>
+					</grains>
+			</li>
+		</subSounds>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>LevelUpSound_Classic</defName>
+		<label>Classic</label>
+		<modExtensions>
+			<li Class="LevelUp.SoundDefExtension" />
+		</modExtensions>
+		<subSounds>
+			<li>
+				<onCamera>True</onCamera>
+					<sustainLoop>False</sustainLoop>
+					<grains>
+						<li Class="AudioGrain_Clip">
+							<clipPath>LevelUp/Classic</clipPath>
+						</li>
+					</grains>
 			</li>
 		</subSounds>
 	</SoundDef>

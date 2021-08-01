@@ -22,7 +22,7 @@ namespace LevelUp
                     if (action is SoundAction soundAction)
                     {
                         soundAction.Active = true;
-                        soundAction.SoundDef = DefDatabase<SoundDef>.GetNamed("LevelUpSound_Classic");
+                        soundAction.SoundDef = DefDatabase<SoundDef>.GetNamed("LevelUpSound_Ding");
                     }
                     else if (action is MessageAction messageAction)
                     {
