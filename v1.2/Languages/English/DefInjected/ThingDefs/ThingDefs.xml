@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- This file is ignored if the language is English. Then the values on the defs are used directly. -->
+  <!-- This is here for translation reference only. -->
+
+  <LevelUpAnimation_Radiance.label>Radiance</LevelUpAnimation_Radiance.label>
+  <LevelUpAnimation_Drain.label>Drain</LevelUpAnimation_Drain.label>
+  <LevelUpAnimation_UpwardChevron.label>Upward Chevron</LevelUpAnimation_UpwardChevron.label>
+  <LevelUpAnimation_DownwardChevron.label>Downward Chevron</LevelUpAnimation_DownwardChevron.label>
+  
+</LanguageData>
