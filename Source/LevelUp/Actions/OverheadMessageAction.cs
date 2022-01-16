@@ -13,6 +13,10 @@ namespace LevelUp
         public override void Execute(LevelingInfo levelingInfo)
         {
             Pawn pawn = levelingInfo.Pawn;
+            if (pawn.Map is null)
+            {
+                return;
+            }
             string resolvedText = ResolveText(levelingInfo, Text);
             MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, resolvedText);
 
