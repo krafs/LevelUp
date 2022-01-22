@@ -77,14 +77,14 @@ namespace LevelUp
             Verse.Text.CurFontStyle.richText = false;
             Widgets.Label(guideRowRect, I18n.FormattingBoldLabel.Bolded());
             Verse.Text.CurFontStyle.richText = true;
-            Widgets.Label(label2Rect, I18n.FormattingBoldLabel);
+            Widgets.Label(label2Rect, I18n.FormattingBoldLabel.Bolded());
 
             guideRowRect.y = guideRowRect.yMax;
             label2Rect.y = label2Rect.yMax;
             Verse.Text.CurFontStyle.richText = false;
             Widgets.Label(guideRowRect, I18n.FormattingItalicLabel.Italicized());
             Verse.Text.CurFontStyle.richText = true;
-            Widgets.Label(label2Rect, I18n.FormattingItalicLabel);
+            Widgets.Label(label2Rect, I18n.FormattingItalicLabel.Italicized());
 
             guideRowRect.y = guideRowRect.yMax;
             label2Rect.y = label2Rect.yMax;
