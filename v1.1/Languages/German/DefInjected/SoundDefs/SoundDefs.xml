@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Classic -->
+  <LevelUpSound_Classic.label>Klassisch</LevelUpSound_Classic.label>
+  <!-- EN: Ding -->
+  <LevelUpSound_Ding.label>Ding</LevelUpSound_Ding.label>
+  <!-- EN: Negative -->
+  <LevelUpSound_Negative.label>Negativ</LevelUpSound_Negative.label>
+  <!-- EN: Punchy -->
+  <LevelUpSound_Punchy.label>Kraftvoll</LevelUpSound_Punchy.label>
+  <!-- EN: Distorted Siren -->
+  <LevelUpSound_DistortedSiren.label>Verzerrte Sirene</LevelUpSound_DistortedSiren.label>
+  <!-- EN: Dissonance -->
+  <LevelUpSound_Dissonance.label>Dissonanz</LevelUpSound_Dissonance.label>
+  <!-- EN: Deception -->
+  <LevelUpSound_Deception.label>Täuschung</LevelUpSound_Deception.label>
+  <!-- EN: Jazzy -->
+  <LevelUpSound_Jazzy.label>Jazzig</LevelUpSound_Jazzy.label>
+  <!-- EN: Strum -->
+  <LevelUpSound_Strum.label>Klimpern</LevelUpSound_Strum.label>
+  <!-- EN: Tada Fanfare -->
+  <LevelUpSound_TadaFanfare.label>Tada-Fanfare</LevelUpSound_TadaFanfare.label>
+  
+</LanguageData>
