@@ -1,79 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <FleckDef ParentName="FleckBase_Thrown">
-    <defName>LevelUpAnimation_Radiance</defName>
-	  <label>Radiance</label>
-	  <modExtensions>
-		  <li Class="LevelUp.AnimationDefExtension">
-			  <rotationRate>100</rotationRate>
-		  </li>
-	  </modExtensions>
-    <graphicData>
-      <texPath>Things/Mote/PowerBeam</texPath>
-      <shaderType>MoteGlow</shaderType>
-    </graphicData>
-    <altitudeLayer>MoteOverhead</altitudeLayer>
-	  <fadeInTime>0.1</fadeInTime>
-	  <fadeOutTime>0.4</fadeOutTime>
-	  <growthRate>6.0</growthRate>
-  </FleckDef>
 
-  <FleckDef ParentName="FleckBase_Thrown">
-    <defName>LevelUpAnimation_Drain</defName>
-	  <label>Drain</label>
-	  <modExtensions>
-		  <li Class="LevelUp.AnimationDefExtension">
-			  <scale>8</scale>
-			  <rotationRate>-100</rotationRate>
-		  </li>
-	  </modExtensions>
-    <graphicData>
-      <texPath>Things/Mote/PowerBeam</texPath>
-      <shaderType>MoteGlow</shaderType>
-      <color>(255, 51, 0, 200)</color>
-    </graphicData>
-    <altitudeLayer>MoteLow</altitudeLayer>
-	  <fadeInTime>0.1</fadeInTime>
-	  <fadeOutTime>0.6</fadeOutTime>
-	  <growthRate>-6.0</growthRate>
-  </FleckDef>
-  
-  <FleckDef ParentName="FleckBase_Thrown">
-    <defName>LevelUpAnimation_UpwardChevron</defName>
-	  <label>Upward chevron</label>
-	  <modExtensions>
-		  <li Class="LevelUp.AnimationDefExtension">
-			  <velocitySpeed>1</velocitySpeed>
-		  </li>
-	  </modExtensions>
-    <graphicData>
-      <texPath>LevelUp/Mote/DoubleChevron</texPath>
-      <shaderType>MoteGlow</shaderType>
-	    <color>(255,255,0,100)</color>
-    </graphicData>
-    <altitudeLayer>MoteOverhead</altitudeLayer>
-	  <fadeInTime>1.5</fadeInTime>
-	  <fadeOutTime>1.5</fadeOutTime>
-  </FleckDef>
-  
-  <FleckDef ParentName="FleckBase_Thrown">
-    <defName>LevelUpAnimation_DownwardChevron</defName>
-    <label>Downward chevron</label>
-    <modExtensions>
-		  <li Class="LevelUp.AnimationDefExtension">
-			  <velocitySpeed>1</velocitySpeed>
-			  <velocityAngle>180</velocityAngle>
-			  <rotation>180</rotation>
-		  </li>
-	  </modExtensions>
-    <graphicData>
-      <texPath>LevelUp/Mote/DoubleChevron</texPath>
-      <shaderType>MoteGlow</shaderType>
-	    <color>(255,0,0,100)</color>
-    </graphicData>
-    <altitudeLayer>MoteOverhead</altitudeLayer>
-    <fadeInTime>0.5</fadeInTime>
-    <fadeOutTime>0.5</fadeOutTime>
-    <unattachedDrawOffset>(0,0,2)</unattachedDrawOffset>
-  </FleckDef>
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>LevelUpAnimation_Radiance</defName>
+		<label>Radiance</label>
+		<modExtensions>
+			<li Class="LevelUp.AnimationDefExtension">
+				<rotationRate>100</rotationRate>
+			</li>
+		</modExtensions>
+		<graphicData>
+			<texPath>Things/Mote/PowerBeam</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>0.1</fadeInTime>
+		<fadeOutTime>0.4</fadeOutTime>
+		<growthRate>6.0</growthRate>
+	</FleckDef>
+	
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>LevelUpAnimation_Drain</defName>
+		<label>Drain</label>
+		<modExtensions>
+			<li Class="LevelUp.AnimationDefExtension">
+				<scale>10</scale>
+				<rotationRate>-100</rotationRate>
+			</li>
+		</modExtensions>
+		<graphicData>
+			<texPath>Things/Mote/PowerBeam</texPath>
+			<shaderType>MoteGlow</shaderType>
+			<color>(255, 51, 0, 200)</color>
+		</graphicData>
+		<altitudeLayer>MoteLow</altitudeLayer>
+		<fadeInTime>0.1</fadeInTime>
+		<fadeOutTime>0.4</fadeOutTime>
+		<growthRate>3.5</growthRate>
+	</FleckDef>
+	
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>LevelUpAnimation_UpwardChevron</defName>
+		<label>Upward chevron</label>
+		<modExtensions>
+			<li Class="LevelUp.AnimationDefExtension">
+				<velocitySpeed>1</velocitySpeed>
+			</li>
+		</modExtensions>
+		<graphicData>
+			<texPath>LevelUp/Mote/DoubleChevron</texPath>
+			<shaderType>MoteGlow</shaderType>
+			<color>(255,255,0,100)</color>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>1.5</fadeInTime>
+		<fadeOutTime>1.5</fadeOutTime>
+	</FleckDef>
+	
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>LevelUpAnimation_DownwardChevron</defName>
+		<label>Downward chevron</label>
+		<modExtensions>
+			<li Class="LevelUp.AnimationDefExtension">
+				<velocitySpeed>1</velocitySpeed>
+				<velocityAngle>180</velocityAngle>
+				<rotation>180</rotation>
+			</li>
+		</modExtensions>
+		<graphicData>
+			<texPath>LevelUp/Mote/DoubleChevron</texPath>
+			<shaderType>MoteGlow</shaderType>
+			<color>(255,0,0,100)</color>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>0.5</fadeInTime>
+		<fadeOutTime>0.5</fadeOutTime>
+		<unattachedDrawOffset>(0,0,2)</unattachedDrawOffset>
+	</FleckDef>
+	
 </Defs>
