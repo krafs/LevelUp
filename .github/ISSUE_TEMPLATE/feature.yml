@@ -1,0 +1,12 @@
+name: 🌟 Feature
+description: Suggest a new feature or improvement
+title: "<title>"
+labels: feature
+assignees: krafs
+body:
+- type: textarea
+  attributes:
+    label: Description
+    description: Describe the feature you would like to see added.
+  validations:
+    required: true

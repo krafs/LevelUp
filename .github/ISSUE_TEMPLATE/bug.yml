@@ -1,0 +1,65 @@
+name: 🐞 Bug
+description: File a bug/issue
+title: "<title>"
+labels: bug
+assignees: krafs
+body:
+- type: textarea
+  attributes:
+    label: Current Behavior
+    description: A concise description of what you're experiencing.
+    placeholder: "E.g. 'Default sound effect is much louder than the other ones.'"
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Expected Behavior
+    description: A concise description of what you expected to happen.
+    placeholder: "E.g. 'Expecting the default sound effect to be as loud as the others.'"
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Steps To Reproduce
+    placeholder: |
+      1. When on this screen...
+      2. Doing this particular thing...
+      3. This thing happens...
+      4. See error...
+  validations:
+    required: false
+- type: input
+  attributes:
+    label: Mod version
+    placeholder: "E.g. 'v3.0.7'"
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Game version
+    placeholder: "E.g. '1.3'"
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Operating system
+    placeholder: "E.g. 'Windows 11'"
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Files
+    description: |
+      Add files or other useful information to help troubleshoot the issue. Click this text area to highlight it and then drag files in.
+      
+      **Player.log**
+      Windows: %AppData%\..\LocalLow\Ludeon Studios\RimWorld by Ludeon Studios\Config
+      Mac: /Users/[Username]/Library/Logs/Unity/Player.log
+      Linux: Pass '-logfile /tmp/rimworld_log' to the Rimworld binary. It will generate a log at that location.
+      
+      **HugsLog**
+      If using HugsLib, open up the Debug log in Dev Mode and click the green 'Share'-button.
+      
+      **Screenshots.**
+  validations:
+    required: false
