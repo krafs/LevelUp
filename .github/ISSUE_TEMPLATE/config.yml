@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🌐 Translation
+    url: https://github.com/krafs/LevelUp/compare
+    about: Want to contribute a translation? Open a pull request!
+  - name: 💡 Discussions
+    url: https://github.com/krafs/LevelUp/discussions
+    about: Have an idea or question? Open a discussion!
