@@ -1,6 +1,6 @@
 # Level Up
 
-**Level Up** is a RimWorld mod for customizing how you are notified about colonists leveling up.
+**Level Up** is a RimWorld mod for customizing how you are notified about colonists leveling up.a
 
 ## Installation
 
