@@ -1,7 +1,7 @@
 # Level Up
 
 **Level Up** is a RimWorld mod for customizing how you are notified about colonists leveling up.aa
-
+a
 ## Installation
 
 Subscribe to the mod on [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=1701592470) or download the latest release [from here](https://github.com/krafs/LevelUp/releases/latest) and unzip in your Rimworld/Mods-folder.
