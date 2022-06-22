@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
+
   <!-- This file is ignored if the language is English. Then the values on the defs are used directly. -->
   <!-- This is here for translation reference only. -->
-  
+
   <LevelUpActionDef_Sound.label>Sound</LevelUpActionDef_Sound.label>
   <LevelUpActionDef_Sound.description>Plays a sound.</LevelUpActionDef_Sound.description>
-  
+
   <LevelUpActionDef_Animation.label>Animation</LevelUpActionDef_Animation.label>
   <LevelUpActionDef_Animation.description>Displays a simple, possibly animated, graphic on the pawn.</LevelUpActionDef_Animation.description>
-  
+
   <LevelUpActionDef_Message.label>Text message</LevelUpActionDef_Message.label>
   <LevelUpActionDef_Message.description>Displays a text message in the top-left corner of the screen.</LevelUpActionDef_Message.description>
-  
+
   <LevelUpActionDef_OverheadMessage.label>Overhead message</LevelUpActionDef_OverheadMessage.label>
   <LevelUpActionDef_OverheadMessage.description>Displays a text message on the colonist.</LevelUpActionDef_OverheadMessage.description>
-  
+
 </LanguageData>

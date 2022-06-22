@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
+
   <!-- This file is ignored if the language is English. Then the values on the defs are used directly. -->
   <!-- This is here for translation reference only. -->
 
@@ -14,5 +14,5 @@
   <LevelUpSound_Jazzy.label>Jazzy</LevelUpSound_Jazzy.label>
   <LevelUpSound_Strum.label>Strum</LevelUpSound_Strum.label>
   <LevelUpSound_TadaFanfare.label>Tada Fanfare</LevelUpSound_TadaFanfare.label>
-  
+
 </LanguageData>

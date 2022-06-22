@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-	<LevelUp.DefaultLevelUpMessage><![CDATA[升级! <color=orange>{PAWN}</color> 的{SKILL}技能到达{LEVEL}级。]]></LevelUp.DefaultLevelUpMessage>
-	<LevelUp.DefaultLevelDownMessage><![CDATA[降级! <color=orange>{PAWN}</color> 的{SKILL}技能降至{LEVEL}级。]]></LevelUp.DefaultLevelDownMessage>
+  <LevelUp.DefaultLevelUpMessage><![CDATA[升级! <color=orange>{PAWN}</color> 的{SKILL}技能到达{LEVEL}级。]]></LevelUp.DefaultLevelUpMessage>
+  <LevelUp.DefaultLevelDownMessage><![CDATA[降级! <color=orange>{PAWN}</color> 的{SKILL}技能降至{LEVEL}级。]]></LevelUp.DefaultLevelDownMessage>
 </LanguageData>
