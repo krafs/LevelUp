@@ -28,7 +28,7 @@ In short, you add a sound to Level Up by adding LevelUp.SoundDefExtension to a S
 In the above case, a sound file is expected to be at RootFolder/Sounds/MyLevelUpSounds/MySound.ogg. RimWorld supports other sound formats too, like .wav and .mp3.
 
 ## Animations
-An animation is added to Level Up by making a FleckDef with a LevelUp.AnimationDefExtension. It should be noted that FleckDefs are new to Rimworld 1.3, and will not work in earlier versions. If you really want to add an animation to a 1.1 or 1.2 you can do so by adding the LevelUp.AnimationDefExtension to a ThingDef defined for Motes, but if you are making a new mod it is recommended to utilize FleckDefs.
+An animation is added to Level Up by making a FleckDef with a LevelUp.AnimationDefExtension.
 ```xml
 <FleckDef ParentName="FleckBase_Thrown">
 	<defName>MyLevelUpAnimationDef</defName>

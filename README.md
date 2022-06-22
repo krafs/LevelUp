@@ -11,7 +11,7 @@ Start the game and enable the mod in the Mod menu.
 Place anywhere below **Core** and **Harmony** ([Github](https://github.com/pardeike/HarmonyRimWorld) / [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077)).
 
 ## Compatibility
-**Level up** is compatible with RimWorld **v1.1** - **v1.3**.
+**Level up** is compatible with RimWorld **v1.3**.
 
 It is incompatible with mods **Static Quality Plus** and **Ducks' Insane Skills**.
 

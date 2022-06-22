@@ -26,12 +26,7 @@ namespace LevelUp
 
         static AnimationAction()
         {
-            animations = new List<IAnimation>();
-            animations.AddRange(MoteAnimation.Animations);
-
-#if v1_3
-            animations.AddRange(FleckAnimation.Animations);
-#endif
+            animations = new List<IAnimation>(FleckAnimation.Animations);
         }
 
         public AnimationAction()
