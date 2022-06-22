@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
+
   <!-- EN: Sound -->
   <LevelUpActionDef_Sound.label>Geräusch</LevelUpActionDef_Sound.label>
   <!-- EN: Plays a sound. -->
   <LevelUpActionDef_Sound.description>Spielt ein Geräusch ab.</LevelUpActionDef_Sound.description>
-  
+
   <!-- EN: Animation -->
   <LevelUpActionDef_Animation.label>Animation</LevelUpActionDef_Animation.label>
   <!-- EN: Displays a simple, possibly animated, graphic on the pawn. -->
   <LevelUpActionDef_Animation.description>Zeigt eine einfache, ggf. animierte Grafik auf dem Kolonisten an.</LevelUpActionDef_Animation.description>
-  
+
   <!-- EN: Text message -->
   <LevelUpActionDef_Message.label>Textnachricht</LevelUpActionDef_Message.label>
   <!-- EN: Displays a text message in the top-left corner of the screen. -->
   <LevelUpActionDef_Message.description>Zeigt eine Textnachricht in der oberen linken Ecke des Bildschirms an.</LevelUpActionDef_Message.description>
-  
+
   <!-- EN: Overhead message -->
   <LevelUpActionDef_OverheadMessage.label>Über-Kopf-Nachricht</LevelUpActionDef_OverheadMessage.label>
   <!-- EN: Displays a text message on the colonist. -->
   <LevelUpActionDef_OverheadMessage.description>Zeigt eine Textnachricht auf dem Kolonisten an.</LevelUpActionDef_OverheadMessage.description>
-  
+
 </LanguageData>

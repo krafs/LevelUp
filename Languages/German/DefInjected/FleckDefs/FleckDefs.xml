@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
+
   <!-- EN: Radiance -->
   <LevelUpAnimation_Radiance.label>Strahlen</LevelUpAnimation_Radiance.label>
   <!-- EN: Drain -->
@@ -9,5 +9,5 @@
   <LevelUpAnimation_UpwardChevron.label>Doppelspitze nach oben</LevelUpAnimation_UpwardChevron.label>
   <!-- EN: Downward Chevron -->
   <LevelUpAnimation_DownwardChevron.label>Doppelspitze nach unten</LevelUpAnimation_DownwardChevron.label>
-  
+
 </LanguageData>

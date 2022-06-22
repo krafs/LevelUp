@@ -1,10 +1,12 @@
 version: 2
 updates:
   - package-ecosystem: "nuget"
-    directory: "/Source/LevelUp"
+    directory: "/"
     schedule:
       interval: "daily"
     assignees:
       - "krafs"
     labels:
-      - "enhancement"
+      - "build"
+    commit-message:
+      prefix: "build"
