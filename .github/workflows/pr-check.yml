@@ -21,12 +21,9 @@ jobs:
       env:
         DOTNET_NOLOGO: true
         DOTNET_CLI_TELEMETRY_OPTOUT: true
+        
+    - name: Restore dependencies
+      run: dotnet restore Source/LevelUp/LevelUp.csproj
       
-    - name: Build v1.1
-      run: dotnet build Source/LevelUp/LevelUp.csproj -warnaserror -property:Configuration=v1.1
-      
-    - name: Build v1.2
-      run: dotnet build Source/LevelUp/LevelUp.csproj -warnaserror -property:Configuration=v1.2
-      
-    - name: Build v1.3
-      run: dotnet build Source/LevelUp/LevelUp.csproj -warnaserror -property:Configuration=v1.3
+    - name: Build
+      run: dotnet build Source/LevelUp/LevelUp.csproj --no-restore -warnaserror

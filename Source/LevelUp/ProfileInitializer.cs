@@ -36,17 +36,11 @@ namespace LevelUp
                     else if (action is AnimationAction animationAction)
                     {
                         animationAction.Active = true;
-#if v1_3
+
                         animationAction.Animation = new FleckAnimation
                         {
                             FleckDef = DefDatabase<FleckDef>.GetNamed("LevelUpAnimation_Radiance")
                         };
-#else
-                        animationAction.Animation = new MoteAnimation
-                        {
-                            MoteDef = DefDatabase<ThingDef>.GetNamed("LevelUpAnimation_Radiance")
-                        };
-#endif
                     }
                 }
             }
@@ -79,17 +73,10 @@ namespace LevelUp
                     }
                     else if (action is AnimationAction animationAction)
                     {
-#if v1_3
                         animationAction.Animation = new FleckAnimation
                         {
                             FleckDef = DefDatabase<FleckDef>.GetNamed("LevelUpAnimation_Drain")
                         };
-#else
-                        animationAction.Animation = new MoteAnimation
-                        {
-                            MoteDef = DefDatabase<ThingDef>.GetNamed("LevelUpAnimation_Drain")
-                        };
-#endif
                     }
                 }
             }
