@@ -1,0 +1,28 @@
+[changelog]
+body = """
+{% for group, commits in commits | group_by(attribute="group") %}
+### {{ group | upper_first }}
+    {% for commit in commits %}
+        - {% if commit.breaking %}_**Breaking:**_ {% endif %}{{ commit.message | upper_first }}\
+    {% endfor %}
+{% endfor %}\n
+"""
+trim = true
+
+[git]
+conventional_commits = true
+# filter out the commits that are not conventional
+filter_unconventional = true
+# regex for parsing and grouping commits
+commit_parsers = [
+    { message = "^feat", group = "Features"},
+    { message = "^fix", group = "Bug Fixes"}
+]
+# filter out the commits that are not matched by commit parsers
+filter_commits = true
+# glob pattern for matching git tags
+tag_pattern = "v[0-9]*"
+# sort the tags chronologically
+date_order = false
+# sort the commits inside sections by oldest/newest order
+sort_commits = "oldest"

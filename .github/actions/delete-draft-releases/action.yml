@@ -1,0 +1,25 @@
+name: 'Delete Draft Releases'
+description: 'Deletes all draft releases in the repository'
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/github-script@v6
+      with:
+        script: |
+            const data = await github.paginate(github.rest.repos.listReleases, {
+                owner: context.repo.owner,
+                repo: context.repo.repo
+              });
+            const deleteTasks = [];
+            data.forEach(element => {
+                if (element.draft) {
+                    const deleteTask = github.rest.repos.deleteRelease({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        release_id: element.id
+                    });
+                    deleteTasks.push(deleteTask);
+                }
+            });
+            await Promise.all(deleteTasks);
