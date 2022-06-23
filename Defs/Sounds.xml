@@ -187,8 +187,8 @@
         <onCamera>True</onCamera>
         <sustainLoop>False</sustainLoop>
         <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>LevelUp/TadaFanfare</clipFolderPath>
+          <li Class="AudioGrain_Clip">
+            <clipPath>LevelUp/TadaFanfare</clipPath>
           </li>
         </grains>
       </li>
