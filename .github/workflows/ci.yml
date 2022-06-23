@@ -1,0 +1,131 @@
+name: CI/CD
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+        - 'main'
+    paths:
+        - 'About/**'
+        - 'Defs/**'
+        - 'Languages/**'
+        - 'Sounds/**'
+        - 'Textures/**'
+        - 'Source/**'
+        - 'LevelUp.*'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.output-version.outputs.version }}
+      artifact-id: ${{ steps.generate-artifact-id.outputs.artifact-id }}
+    steps:
+    
+    - name: Check out repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+      env:
+        DOTNET_NOLOGO: true
+        DOTNET_CLI_TELEMETRY_OPTOUT: true
+      
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: dotnet build -property:ModOutput=./ --no-restore -warnaserror
+
+    - name: Generate artifact cache id
+      id: generate-artifact-id
+      run: echo "::set-output name=artifact-id::'artifact-${{ github.run_id }}-${{ github.run_attempt }}'"
+      
+    - name: Cache build artifact
+      uses: actions/cache@v3
+      with:
+        path: LevelUp
+        key: ${{ steps.generate-artifact-id.outputs.artifact-id }}
+      
+    - name: Output version
+      id: output-version
+      run: |
+        echo "::set-output name=version::${{ env.GitVersion_SemVer }}"
+        echo "Release build version -> v${{ env.GitVersion_SemVer }}" >> $GITHUB_STEP_SUMMARY
+
+  generate-release-notes:
+      name: Generate Release Notes
+      runs-on: ubuntu-latest
+      outputs:
+        release-notes: ${{ steps.output-release-notes.outputs.release-notes }}
+      steps:
+    
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Generate release notes
+        id: generate-release-notes
+        uses: orhun/git-cliff-action@v1
+        with:
+          config: .github/cliff.toml
+          args: --unreleased
+            
+      - name: Output release notes
+        id: output-release-notes
+        run: |
+          notes=$(cat ${{ steps.generate-release-notes.outputs.changelog }})
+          echo "Trimming leading whitespace"
+          notes="${notes#"${notes%%[![:space:]]*}"}"
+          echo "Escaping linebreaks"
+          notes="${notes//'%'/'%25'}"
+          notes="${notes//$'\n'/'%0A'}"
+          notes="${notes//$'\r'/'%0D'}"
+          echo "Setting release-notes to output"
+          echo "::set-output name=release-notes::$notes"
+
+      - name: Generate Summary
+        run: |
+          IFS=$'\n'
+          for item in $(cat ${{ steps.generate-release-notes.outputs.changelog }})
+          do
+            echo "$item" >> $GITHUB_STEP_SUMMARY
+          done
+
+  draft-release:
+    name: Draft Release
+    needs: [build, generate-release-notes]
+    runs-on: ubuntu-latest
+    steps:
+        
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    - name: Retrieve build artifact
+      uses: actions/cache@v3
+      with:
+        path: LevelUp
+        key: ${{ needs.build.outputs.artifact-id }}
+
+    - name: Zip release
+      run: zip -9 -r LevelUp${{ needs.build.outputs.version }}.zip LevelUp
+    
+      # We only want one potential release at any given time, so we delete all others and then save the new draft.
+    - name: Delete Stale Draft Releases
+      uses: ./.github/actions/delete-draft-releases
+
+    - name: Publish draft release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: LevelUp*.zip
+        body: ${{ needs.generate-release-notes.outputs.release-notes }}
+        tag_name: v${{ needs.build.outputs.version }}
+        fail_on_unmatched_files: true
+        token: ${{ github.token }}
+        draft: true
