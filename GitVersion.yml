@@ -2,7 +2,7 @@ mode: ContinuousDelivery
 assembly-versioning-scheme: Major
 major-version-bump-message: '^(BREAKING CHANGE|\w+!): \S+'
 minor-version-bump-message: '^feat: \S+'
-patch-version-bump-message: '^fix: \S+'
+patch-version-bump-message: '^(fix|perf): \S+'
 no-bump-message: ^\b$
 branches:
   development:

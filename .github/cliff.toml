@@ -16,6 +16,7 @@ filter_unconventional = true
 # regex for parsing and grouping commits
 commit_parsers = [
     { message = "^feat", group = "Features"},
+    { message = "^perf", group = "Features"},
     { message = "^fix", group = "Bug Fixes"}
 ]
 # filter out the commits that are not matched by commit parsers
