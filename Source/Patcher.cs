@@ -8,6 +8,7 @@ using Verse;
 
 namespace LevelUp;
 
+[StaticConstructorOnStartup]
 public static class Patcher
 {
     private static readonly MethodInfo onLevelUpMethod;
