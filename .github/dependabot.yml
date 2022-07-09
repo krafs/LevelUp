@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "nuget"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    assignees:
+      - "krafs"
+    labels:
+      - "build"
+    commit-message:
+      prefix: "build"
+    ignore:
+      - dependency-name: "Krafs.Rimworld.Ref"
