@@ -8,6 +8,7 @@ using Verse;
 
 namespace LevelUp;
 
+[StaticConstructorOnStartup]
 public static class Patcher
 {
     private static readonly MethodInfo onLevelUpMethod;
@@ -16,8 +17,6 @@ public static class Patcher
     private static readonly FieldInfo skillRecordPawnField;
     private static readonly MethodInfo moteThrowTextMethod;
     private static readonly MethodInfo moteThrowTextProxyMethod;
-
-    private static Settings settings = null!;
 
     static Patcher()
     {
@@ -28,14 +27,9 @@ public static class Patcher
         moteThrowTextMethod = AccessTools.Method(typeof(MoteMaker), nameof(MoteMaker.ThrowText),
             new[] { typeof(Vector3), typeof(Map), typeof(string), typeof(float) });
         moteThrowTextProxyMethod = AccessTools.Method(typeof(Patcher), nameof(MoteThrowTextProxy));
-    }
 
-    public static void Patch(Settings modSettings)
-    {
         var skillRecordLearnMethod = AccessTools.Method(typeof(SkillRecord), nameof(SkillRecord.Learn));
         var skillRecordLearnTranspilerMethod = AccessTools.Method(typeof(Patcher), nameof(LearnTranspilerPatch));
-
-        settings = modSettings;
 
         new Harmony("Krafs.LevelUp").Patch(skillRecordLearnMethod, transpiler: new HarmonyMethod(skillRecordLearnTranspilerMethod));
     }
@@ -89,12 +83,12 @@ public static class Patcher
 
     private static void OnLevelUp(SkillRecord skillRecord, Pawn pawn)
     {
-        LoadedModManager.GetMod<LevelUpMod>().GetSettings<Settings>().Profile.LevelUpActionMaker.ExecuteActions(new LevelingInfo(pawn, skillRecord));
+        Settings.CurrentProfile.LevelUpActionMaker.ExecuteActions(new LevelingInfo(pawn, skillRecord));
     }
 
     private static void OnLevelDown(SkillRecord skillRecord, Pawn pawn)
     {
-        LoadedModManager.GetMod<LevelUpMod>().GetSettings<Settings>().Profile.LevelDownActionMaker.ExecuteActions(new LevelingInfo(pawn, skillRecord));
+        Settings.CurrentProfile.LevelDownActionMaker.ExecuteActions(new LevelingInfo(pawn, skillRecord));
     }
 
 #pragma warning disable IDE0060 // Remove unused parameter

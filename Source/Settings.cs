@@ -8,6 +8,7 @@ public class Settings : ModSettings
 {
     private Profile profile = null!;
     public Profile Profile => profile;
+    public static Profile CurrentProfile { get; private set; } = null!;
 
     public Settings()
     {
@@ -32,7 +33,7 @@ public class Settings : ModSettings
 
     private void EnsureInitialized()
     {
-        profile ??= new Profile();
+        CurrentProfile = profile ??= new Profile();
         ProfileInitializer.InitializeProfile(profile);
         profile.Prepare();
     }
