@@ -12,3 +12,14 @@ updates:
       prefix: "build"
     ignore:
       - dependency-name: "Krafs.Rimworld.Ref"
+      
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    assignees:
+      - "krafs"
+    labels:
+      - "build"
+    commit-message:
+      prefix: "build"
