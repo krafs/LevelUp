@@ -47,7 +47,7 @@ public class SoundAction : LevelingAction
     {
         var rowRect = new Rect(rect) { height = 24f };
         var soundDefRect = new Rect(rowRect) { width = rect.width / 2 };
-        if (Widgets.ButtonText(soundDefRect, soundDef.LabelCap))
+        if (CustomWidgets.ButtonText(soundDefRect, soundDef.LabelCap))
         {
             var options = allSounds
                 .Select(x => new FloatMenuOption(x.LabelCap, () => soundDef = x))
