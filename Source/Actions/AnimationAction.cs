@@ -49,7 +49,7 @@ public class AnimationAction : LevelingAction
     {
         var rowRect = new Rect(rect) { height = 24f };
         var buttonRect = new Rect(rowRect) { width = rowRect.width / 2 };
-        if (Widgets.ButtonText(buttonRect, animation.Label))
+        if (CustomWidgets.ButtonText(buttonRect, animation.Label))
         {
             var options = animations
                 .Select(x => new FloatMenuOption(x.Label, () => Select(x)))
