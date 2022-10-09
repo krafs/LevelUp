@@ -8,16 +8,16 @@
   <LevelUp.LevelDownActionsLabel>Aktionen bei Stufenverlust</LevelUp.LevelDownActionsLabel>
 
   <!-- EN: List of actions that, if active, are executed when a colonist levels up a skill. -->
-  <LevelUp.LevelUpActionHeaderDescription>Eine Liste von Aktionen, die, sofern aktiv, ausgeführt werden, wenn ein Kolonist Fähigkeitsstufen aufsteigt.</LevelUp.LevelUpActionHeaderDescription>
+  <LevelUp.LevelUpActionHeaderDescription>Eine Liste von Aktionen, die, sofern aktiv, ausgeführt werden, wenn ein Kolonist Fertigkeitsstufen aufsteigt.</LevelUp.LevelUpActionHeaderDescription>
   <!-- EN: List of actions that, if active, are executed when a colonist levels down a skill. -->
-  <LevelUp.LevelDownActionHeaderDescription>Eine Liste von Aktionen, die, sofern aktiv, ausgeführt werden, wenn ein Kolonist Fähigkeitsstufen verliert.</LevelUp.LevelDownActionHeaderDescription>
+  <LevelUp.LevelDownActionHeaderDescription>Eine Liste von Aktionen, die, sofern aktiv, ausgeführt werden, wenn ein Kolonist Fertigkeitsstufen verliert.</LevelUp.LevelDownActionHeaderDescription>
 
   <!-- EN: Cooldown -->
   <LevelUp.CooldownLabel>Abklingzeit</LevelUp.CooldownLabel>
   <!-- EN: The duration of a cooldown specified in real-time seconds.\n\nIf applied to an action, the action will not execute for the same colonist and skill again until the cooldown has run out. -->
-  <LevelUp.CooldownEntryDescription>Die Dauer einer Abklingzeit in echten Sekunden.\n\nAktiviert man eine Abklingzeit bei einer Aktion, wird die Aktion für denselben Kolonisten und dieselbe Fähigkeit erst nach einer gewissen Zeit wieder ausgeführt.</LevelUp.CooldownEntryDescription>
+  <LevelUp.CooldownEntryDescription>Die Dauer einer Abklingzeit in echten Sekunden.\n\nAktiviert man eine Abklingzeit bei einer Aktion, wird die Aktion für denselben Kolonisten und dieselbe Fertigkeit erst nach einer gewissen Zeit wieder ausgeführt.</LevelUp.CooldownEntryDescription>
   <!-- EN: Whether or not Cooldown should apply for this action.\n\nIf applied, this action will not execute for the same colonist and skill again until the cooldown has run out. -->
-  <LevelUp.CooldownOnActionDescription>Ob eine Abklingzeit bei dieser Aktion aktiviert werden soll oder nicht.\n\nIm aktivierten Zustand wird die Aktion für denselben Kolonisten und dieselbe Fähigkeit erst nach einer gewissen Zeit wieder ausgeführt.</LevelUp.CooldownOnActionDescription>
+  <LevelUp.CooldownOnActionDescription>Ob eine Abklingzeit bei dieser Aktion aktiviert werden soll oder nicht.\n\nIm aktivierten Zustand wird die Aktion für denselben Kolonisten und dieselbe Fertigkeit erst nach einer gewissen Zeit wieder ausgeführt.</LevelUp.CooldownOnActionDescription>
 
   <!-- EN: General -->
   <LevelUp.GeneralSettingsLabel>Allgemein</LevelUp.GeneralSettingsLabel>
@@ -39,9 +39,9 @@
 
   <!-- Default message texts -->
   <!-- EN: <![CDATA[<color=orange>{PAWN}</color> reached level {LEVEL} in {SKILL}!]]> -->
-  <LevelUp.DefaultLevelUpMessage><![CDATA[Die {SKILL}-Fähigkeit von <color=orange>{PAWN}</color> ist auf Stufe {LEVEL} gestiegen!]]></LevelUp.DefaultLevelUpMessage>
+  <LevelUp.DefaultLevelUpMessage><![CDATA[Die {SKILL}-Fertigkeit von <color=orange>{PAWN}</color> ist auf Stufe {LEVEL} gestiegen!]]></LevelUp.DefaultLevelUpMessage>
   <!-- EN: <![CDATA[<color=orange>{PAWN}</color> reached level {LEVEL} in {SKILL}.]]> -->
-  <LevelUp.DefaultLevelDownMessage><![CDATA[Die {SKILL}-Fähigkeit von <color=orange>{PAWN}</color> ist auf Stufe {LEVEL} gesunken.]]></LevelUp.DefaultLevelDownMessage>
+  <LevelUp.DefaultLevelDownMessage><![CDATA[Die {SKILL}-Fertigkeit von <color=orange>{PAWN}</color> ist auf Stufe {LEVEL} gesunken.]]></LevelUp.DefaultLevelDownMessage>
   <!-- EN: {SKILL}\nlevel {LEVEL} -->
   <LevelUp.DefaultLevelUpOverheadMessage>{SKILL}\nStufe {LEVEL}</LevelUp.DefaultLevelUpOverheadMessage>
   <!-- EN: {SKILL}\nlevel {LEVEL} -->
