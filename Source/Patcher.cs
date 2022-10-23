@@ -31,6 +31,9 @@ public static class Patcher
         var skillRecordLearnMethod = AccessTools.Method(typeof(SkillRecord), nameof(SkillRecord.Learn));
         var skillRecordLearnTranspilerMethod = AccessTools.Method(typeof(Patcher), nameof(LearnTranspilerPatch));
 
+        // Force initialize Settings to make sure profile is set up.
+        _ = LoadedModManager.GetMod<LevelUpMod>().GetSettings<Settings>().Profile;
+
         new Harmony("Krafs.LevelUp").Patch(skillRecordLearnMethod, transpiler: new HarmonyMethod(skillRecordLearnTranspilerMethod));
     }
 
