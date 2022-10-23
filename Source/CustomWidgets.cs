@@ -4,6 +4,7 @@ using Verse.Sound;
 
 namespace LevelUp;
 
+[StaticConstructorOnStartup]
 internal static class CustomWidgets
 {
     private static readonly Texture2D buttonBGAtlasMouseover = ContentFinder<Texture2D>.Get("UI/Widgets/ButtonBGMouseover");
