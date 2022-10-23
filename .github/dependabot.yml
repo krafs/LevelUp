@@ -10,8 +10,6 @@ updates:
       - "build"
     commit-message:
       prefix: "build"
-    ignore:
-      - dependency-name: "Krafs.Rimworld.Ref"
       
   - package-ecosystem: "github-actions"
     directory: "/"
