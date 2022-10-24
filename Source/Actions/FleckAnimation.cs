@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -68,23 +69,19 @@ public class FleckAnimation : IAnimation
             return;
         }
 
-        var fleckData = new FleckCreationData
-        {
-            def = fleckDef,
-            exactScale = animationExtension.ExactScale,
-            scale = animationExtension.Scale,
-            rotation = animationExtension.Rotation,
-            rotationRate = animationExtension.RotationRate,
-            solidTimeOverride = animationExtension.SolidTimeOverride,
-            airTimeLeft = animationExtension.AirTimeLeft,
-            targetSize = animationExtension.TargetSize,
-            velocity = animationExtension.Velocity,
-            velocityAngle = animationExtension.VelocityAngle,
-            velocitySpeed = animationExtension.VelocitySpeed,
-            instanceColor = animationExtension.InstanceColor,
-            spawnPosition = pawn.DrawPos,
-            link = new FleckAttachLink(pawn)
-        };
+        var fleckData = FleckMaker.GetDataStatic(pawn.DrawPos, pawnMap, fleckDef);
+        fleckData.exactScale = animationExtension.ExactScale;
+        fleckData.scale = animationExtension.Scale;
+        fleckData.rotation = animationExtension.Rotation;
+        fleckData.rotationRate = animationExtension.RotationRate;
+        fleckData.solidTimeOverride = animationExtension.SolidTimeOverride;
+        fleckData.airTimeLeft = animationExtension.AirTimeLeft;
+        fleckData.targetSize = animationExtension.TargetSize;
+        fleckData.velocity = animationExtension.Velocity;
+        fleckData.velocityAngle = animationExtension.VelocityAngle;
+        fleckData.velocitySpeed = animationExtension.VelocitySpeed;
+        fleckData.instanceColor = animationExtension.InstanceColor;
+        fleckData.link = new FleckAttachLink(pawn);
 
         pawnMap.flecks.CreateFleck(fleckData);
     }
