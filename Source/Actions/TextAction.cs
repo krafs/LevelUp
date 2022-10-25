@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Text;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -21,24 +22,32 @@ public abstract class TextAction : LevelingAction
 
     protected static string ResolveText(LevelingInfo levelingInfo, string text)
     {
+        return ResolveText(levelingInfo.Pawn.LabelShortCap, levelingInfo.SkillRecord.Level, levelingInfo.SkillRecord.def.LabelCap, text);
+    }
+
+    private static string ResolveText(string pawnLabel, int skillLevel, string skillLabel, string text)
+    {
         return stringBuilder
             .Clear()
             .Append(text)
-            .Replace("{PAWN}", levelingInfo.Pawn.LabelShortCap)
-            .Replace("{LEVEL}", levelingInfo.SkillRecord.levelInt.ToString(CultureInfo.InvariantCulture))
-            .Replace("{SKILL}", levelingInfo.SkillRecord.def.LabelCap)
+            .Replace("{PAWN}", pawnLabel)
+            .Replace("{LEVEL}", skillLevel.ToString(CultureInfo.InvariantCulture))
+            .Replace("{SKILL}", skillLabel)
             .ToString();
     }
 
     protected Rect DrawTextBuilder(Rect rect)
     {
+        var pawnLabel = "Levelyn";
+        var skillLevel = 18;
+        var skillLabel = SkillDefOf.Intellectual.LabelCap;
+
         var rowRect = new Rect(rect) { height = 24f };
 
         var exampleTextRect = new Rect(rowRect) { height = rowRect.height * 2 };
         var curAnchor = Verse.Text.Anchor;
         Verse.Text.Anchor = TextAnchor.MiddleCenter;
-        var levelingInfo = GenLevelingInfo.Fake;
-        Widgets.Label(exampleTextRect, ResolveText(levelingInfo, Text));
+        Widgets.Label(exampleTextRect, ResolveText(pawnLabel, skillLevel, skillLabel, Text));
         Verse.Text.Anchor = curAnchor;
 
         rowRect.y = rowRect.yMax + 5f;
@@ -56,17 +65,17 @@ public abstract class TextAction : LevelingAction
         guideRowRect.y = guideRowRect.yMax;
         label2Rect.y = label2Rect.yMax;
         Widgets.Label(guideRowRect, "{PAWN}");
-        Widgets.Label(label2Rect, levelingInfo.Pawn.LabelShortCap);
+        Widgets.Label(label2Rect, pawnLabel);
 
         guideRowRect.y = guideRowRect.yMax;
         label2Rect.y = label2Rect.yMax;
         Widgets.Label(guideRowRect, "{LEVEL}");
-        Widgets.Label(label2Rect, levelingInfo.SkillRecord.levelInt.ToString(CultureInfo.InvariantCulture));
+        Widgets.Label(label2Rect, skillLevel.ToString(CultureInfo.InvariantCulture));
 
         guideRowRect.y = guideRowRect.yMax;
         label2Rect.y = label2Rect.yMax;
         Widgets.Label(guideRowRect, "{SKILL}");
-        Widgets.Label(label2Rect, levelingInfo.SkillRecord.def.LabelCap);
+        Widgets.Label(label2Rect, skillLabel);
 
         guideRowRect.y = guideRowRect.yMax + 5f;
         label2Rect.y = label2Rect.yMax + 5f;
