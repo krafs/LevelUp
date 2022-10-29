@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <LevelUpActionDef_Sound.label>Suono</LevelUpActionDef_Sound.label>
+  <LevelUpActionDef_Sound.description>Riproduce un suono.</LevelUpActionDef_Sound.description>
+
+  <LevelUpActionDef_Animation.label>Animazione</LevelUpActionDef_Animation.label>
+  <LevelUpActionDef_Animation.description>Mostra un grafico, possibilmente animato, sul colono.</LevelUpActionDef_Animation.description>
+
+  <LevelUpActionDef_Message.label>Messaggio testuale</LevelUpActionDef_Message.label>
+  <LevelUpActionDef_Message.description>Mostra un messaggio testuale nell'angolo in alto a sinistra dello schermo.</LevelUpActionDef_Message.description>
+
+  <LevelUpActionDef_OverheadMessage.label>Messaggio in alto</LevelUpActionDef_OverheadMessage.label>
+  <LevelUpActionDef_OverheadMessage.description>Mostra un messaggio testuale sul colono.</LevelUpActionDef_OverheadMessage.description>
+
+</LanguageData>
