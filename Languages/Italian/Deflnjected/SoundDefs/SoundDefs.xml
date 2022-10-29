@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <LevelUpSound_Classic.label>Classico</LevelUpSound_Classic.label>
+  <LevelUpSound_Ding.label>Ding</LevelUpSound_Ding.label>
+  <LevelUpSound_Negative.label>Negativo</LevelUpSound_Negative.label>
+  <LevelUpSound_Punchy.label>Incisivo</LevelUpSound_Punchy.label>
+  <LevelUpSound_DistortedSiren.label>Sirena distorta</LevelUpSound_DistortedSiren.label>
+  <LevelUpSound_Dissonance.label>Dissonanza</LevelUpSound_Dissonance.label>
+  <LevelUpSound_Deception.label>Inganno</LevelUpSound_Deception.label>
+  <LevelUpSound_Jazzy.label>Jazzy</LevelUpSound_Jazzy.label>
+  <LevelUpSound_Strum.label>Strum</LevelUpSound_Strum.label>
+  <LevelUpSound_TadaFanfare.label>Tada-Fanfare</LevelUpSound_TadaFanfare.label>
+
+</LanguageData>
