@@ -6,10 +6,10 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace LevelUp;
+namespace LevelUp.Patches;
 
 [StaticConstructorOnStartup]
-public static class Patcher
+public static class SkillRecord_Learn_Patch
 {
     private static readonly MethodInfo onLevelUpMethod;
     private static readonly MethodInfo onLevelDownMethod;
@@ -18,23 +18,22 @@ public static class Patcher
     private static readonly MethodInfo moteThrowTextMethod;
     private static readonly MethodInfo moteThrowTextProxyMethod;
 
-    static Patcher()
+    static SkillRecord_Learn_Patch()
     {
+        Logger.Debug("SkillRecord_Learn_Patch");
+        var harmony = new Harmony("Krafs.LevelUp");
+
         skillRecordLevelField = AccessTools.Field(typeof(SkillRecord), nameof(SkillRecord.levelInt));
         skillRecordPawnField = AccessTools.Field(typeof(SkillRecord), "pawn");
-        onLevelUpMethod = AccessTools.Method(typeof(Patcher), nameof(OnLevelUp));
-        onLevelDownMethod = AccessTools.Method(typeof(Patcher), nameof(OnLevelDown));
-        moteThrowTextMethod = AccessTools.Method(typeof(MoteMaker), nameof(MoteMaker.ThrowText),
-            new[] { typeof(Vector3), typeof(Map), typeof(string), typeof(float) });
-        moteThrowTextProxyMethod = AccessTools.Method(typeof(Patcher), nameof(MoteThrowTextProxy));
+        onLevelUpMethod = SymbolExtensions.GetMethodInfo(() => Notifier.OnLevelUp);
+        onLevelDownMethod = SymbolExtensions.GetMethodInfo(() => Notifier.OnLevelDown);
+        moteThrowTextMethod = SymbolExtensions.GetMethodInfo(() => MoteMaker.ThrowText(default(Vector3), default(Map), default(string), default(float)));
+        moteThrowTextProxyMethod = SymbolExtensions.GetMethodInfo(() => MoteThrowTextProxy);
 
-        var skillRecordLearnMethod = AccessTools.Method(typeof(SkillRecord), nameof(SkillRecord.Learn));
-        var skillRecordLearnTranspilerMethod = AccessTools.Method(typeof(Patcher), nameof(LearnTranspilerPatch));
+        var original = SymbolExtensions.GetMethodInfo<SkillRecord>(x => x.Learn(default, default));
+        var transpiler = new HarmonyMethod(typeof(SkillRecord_Learn_Patch), nameof(SkillRecord_Learn_Patch.LearnTranspilerPatch));
 
-        // Force initialize Settings to make sure profile is set up.
-        _ = LoadedModManager.GetMod<LevelUpMod>().GetSettings<Settings>().Profile;
-
-        new Harmony("Krafs.LevelUp").Patch(skillRecordLearnMethod, transpiler: new HarmonyMethod(skillRecordLearnTranspilerMethod));
+        harmony.Patch(original, transpiler: transpiler);
     }
 
     private static IEnumerable<CodeInstruction> LearnTranspilerPatch(IEnumerable<CodeInstruction> instructions)
@@ -82,16 +81,6 @@ public static class Patcher
 
             previousInstruction = currentInstruction;
         }
-    }
-
-    private static void OnLevelUp(SkillRecord skillRecord, Pawn pawn)
-    {
-        Settings.CurrentProfile.LevelUpActionMaker.ExecuteActions(new LevelingInfo(pawn, skillRecord));
-    }
-
-    private static void OnLevelDown(SkillRecord skillRecord, Pawn pawn)
-    {
-        Settings.CurrentProfile.LevelDownActionMaker.ExecuteActions(new LevelingInfo(pawn, skillRecord));
     }
 
 #pragma warning disable IDE0060 // Remove unused parameter
