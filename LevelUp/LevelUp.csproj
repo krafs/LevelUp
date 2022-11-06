@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <OutDir>$(LevelUpFolder)Common\Assemblies</OutDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <RootModItem Include="About\*;LoadFolders.xml" />
+    <CommonModItem Include="Defs\**\*;Languages\**\*;Sounds\**\*;Textures\**\*" />
+  </ItemGroup>
+
+  <ItemGroup Condition="$(Configuration) == Release">
+    <Compile Remove="Source\Debug\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.4.3537" />
+    <PackageReference Include="Lib.Harmony" Version="2.2.2" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+  <Target Name="CopyModItemsToModOutput" AfterTargets="Build">
+    <Copy SourceFiles="@(RootModItem)" DestinationFiles="$(LevelUpFolder)%(Identity)" />
+    <Copy SourceFiles="@(CommonModItem)" DestinationFiles="$(LevelUpFolder)Common\%(Identity)" />
+    <Message Importance="high" Text="Copied mod items to $(ModOutput)." />
+  </Target>
+
+  <Target Name="CleanModOutput" AfterTargets="Clean">
+    <RemoveDir Directories="$(LevelUpFolder)" />
+  </Target>
+
+</Project>

@@ -1,0 +1,16 @@
+<Project>
+
+  <PropertyGroup>
+    <ModOutput Condition="$(ModOutput) == ''">bin\</ModOutput>
+    <ModOutput>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\</ModOutput>
+    <DebugType>none</DebugType>
+    <LangVersion>10</LangVersion>
+    <Nullable>enable</Nullable>
+    <LevelUpFolder>$(ModOutput)LevelUp\</LevelUpFolder>
+    <Version>4.1.1-SNAPSHOT</Version>
+    <NoWarn>$(NoWarn);IDE1006</NoWarn>
+  </PropertyGroup>
+
+</Project>
+
+

@@ -1,7 +1,6 @@
 ﻿using Verse;
 
 namespace LevelUp;
-
 public static class I18n
 {
     public const string TranslatePrefix = "LevelUp.";
