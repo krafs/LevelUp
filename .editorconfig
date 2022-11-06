@@ -7,17 +7,17 @@ indent_style = space
 # (Please don't specify an indent_size here; that has too many unintended consequences.)
 
 # Code files
-[*.{cs,csx,vb,vbx}]
+[*.cs]	
 indent_size = 4
 insert_final_newline = true
 charset = utf-8-bom
 
 # XML project files
-[*.{csproj,vbproj,vcxproj,vcxproj.filters,proj,projitems,shproj}]
+[*.csproj]
 indent_size = 2
 
 # XML config Files
-[*.{xml,config,props,targets,nuspec,resx,ruleset,vsixmanifest,vsct}]
+[*.{xml,props,targets}]
 indent_size = 2
 
 # JSON files
@@ -29,15 +29,11 @@ indent_size = 2
 indent_size = 2
 
 # Markdown Files
-[*.{md,mdx}]
+[*.md]
 trim_trailing_whitespace = false
 
-# Web Files
-[*.{htm,html,js,jsm,ts,tsx,cjs,cts,ctsx,mjs,mts,mtsx,css,sass,scss,less,pcss,svg,vue}]
-indent_size = 2
-
 # Dotnet code style settings:
-[*.{cs,vb}]
+[*.cs]
 
 # IDE0055: Fix formatting
 dotnet_diagnostic.IDE0055.severity = warning
@@ -149,9 +145,6 @@ dotnet_naming_style.pascal_case_style.capitalization = pascal_case
 # Default severity for all analyzer diagnostics
 dotnet_analyzer_diagnostic.severity = warning
 
-# error RS2008: Enable analyzer release tracking for the analyzer project containing rule '{0}'
-dotnet_diagnostic.RS2008.severity = none
-
 # CSharp code style settings:
 [*.cs]
 # Newline settings
@@ -175,11 +168,6 @@ csharp_indent_labels = flush_left
 csharp_style_allow_embedded_statements_on_same_line_experimental = false
 csharp_style_allow_blank_lines_between_consecutive_braces_experimental = false
 csharp_style_allow_blank_line_after_colon_in_constructor_initializer_experimental = false
-
-# Prefer "var" everywhere
-csharp_style_var_for_built_in_types = true:suggestion
-csharp_style_var_when_type_is_apparent = true:suggestion
-csharp_style_var_elsewhere = true:suggestion
 
 # Prefer method-like constructs to have a block body
 csharp_style_expression_bodied_methods = false:none
@@ -227,12 +215,6 @@ csharp_space_between_square_brackets = false
 csharp_prefer_braces = true:warning
 csharp_preserve_single_line_blocks = true
 csharp_preserve_single_line_statements = true
-
-# Prefer "var" everywhere
-dotnet_diagnostic.IDE0007.severity = warning
-csharp_style_var_for_built_in_types = true:warning
-csharp_style_var_when_type_is_apparent = true:warning
-csharp_style_var_elsewhere = true:warning
 
 # IDE0130: Namespace does not match folder structure
 # dotnet_style_namespace_match_folder = false:none
