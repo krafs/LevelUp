@@ -31,7 +31,7 @@ jobs:
       run: dotnet build -property:ModOutput=./ --no-restore -warnaserror
 
     - name: Resolve version
-      run: echo "VERSION=$(git describe --tag)" >> $GITHUB_ENV
+      run: echo "VERSION=$(git describe --tag --abbrev=0)" >> $GITHUB_ENV
 
     - name: Zip release
       run: zip -9 -r LevelUp${{ env.VERSION }}.zip LevelUp
