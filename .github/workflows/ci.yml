@@ -37,7 +37,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: LevelUp*.zip
-        tag_name: ${{ github.event.inputs.version }}
+        tag_name: v${{ github.event.inputs.version }}
         fail_on_unmatched_files: true
         token: ${{ github.token }}
         draft: true
