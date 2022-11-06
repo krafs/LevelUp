@@ -31,7 +31,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore -warnaserror
 
     - name: Zip release
-      run: zip -9 -r LevelUp${{ github.event.inputs.version }}.zip bin/LevelUp
+      run: zip -9 -r LevelUp${{ github.event.inputs.version }}.zip output/LevelUp
 
     - name: Publish draft release
       uses: softprops/action-gh-release@v1
