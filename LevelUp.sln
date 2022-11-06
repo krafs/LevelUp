@@ -34,6 +34,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEM
 		.github\ISSUE_TEMPLATE\feature.yml = .github\ISSUE_TEMPLATE\feature.yml
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LevelUp.Biotech", "LevelUp.Biotech\LevelUp.Biotech.csproj", "{3025F7C3-2E24-446A-AD85-4ED866B38601}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{D2A0C8C9-8E02-426F-B69E-E4B093BCA945}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2A0C8C9-8E02-426F-B69E-E4B093BCA945}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2A0C8C9-8E02-426F-B69E-E4B093BCA945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3025F7C3-2E24-446A-AD85-4ED866B38601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3025F7C3-2E24-446A-AD85-4ED866B38601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3025F7C3-2E24-446A-AD85-4ED866B38601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3025F7C3-2E24-446A-AD85-4ED866B38601}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
