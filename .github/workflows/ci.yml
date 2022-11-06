@@ -1,11 +1,12 @@
 name: CI/CD
 
 on:
-  push:
-    branches:
-      - 'main'
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version'
+        required: true
+        type: environment
 
 jobs:
   build:
@@ -30,17 +31,14 @@ jobs:
     - name: Build
       run: dotnet build -property:ModOutput=./ --no-restore -warnaserror
 
-    - name: Resolve version
-      run: echo "VERSION=$(git describe --tag --abbrev=0)" >> $GITHUB_ENV
-
     - name: Zip release
-      run: zip -9 -r LevelUp${{ env.VERSION }}.zip LevelUp
+      run: zip -9 -r LevelUp$VERSION.zip LevelUp
 
     - name: Publish draft release
       uses: softprops/action-gh-release@v1
       with:
         files: LevelUp*.zip
-        tag_name: ${{ env.VERSION }}
+        tag_name: $VERSION
         fail_on_unmatched_files: true
         token: ${{ github.token }}
         draft: true
