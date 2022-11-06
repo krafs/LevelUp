@@ -21,17 +21,17 @@ public static class SkillRecord_Learn_Patch
     static SkillRecord_Learn_Patch()
     {
         Logger.Debug("SkillRecord_Learn_Patch");
-        var harmony = new Harmony("Krafs.LevelUp");
+        Harmony harmony = new("Krafs.LevelUp");
 
         skillRecordLevelField = AccessTools.Field(typeof(SkillRecord), nameof(SkillRecord.levelInt));
         skillRecordPawnField = AccessTools.Field(typeof(SkillRecord), "pawn");
         onLevelUpMethod = SymbolExtensions.GetMethodInfo(() => Notifier.OnLevelUp);
         onLevelDownMethod = SymbolExtensions.GetMethodInfo(() => Notifier.OnLevelDown);
-        moteThrowTextMethod = SymbolExtensions.GetMethodInfo(() => MoteMaker.ThrowText(default(Vector3), default(Map), default(string), default(float)));
+        moteThrowTextMethod = SymbolExtensions.GetMethodInfo(() => MoteMaker.ThrowText(default, default, default, default));
         moteThrowTextProxyMethod = SymbolExtensions.GetMethodInfo(() => MoteThrowTextProxy);
 
-        var original = SymbolExtensions.GetMethodInfo<SkillRecord>(x => x.Learn(default, default));
-        var transpiler = new HarmonyMethod(typeof(SkillRecord_Learn_Patch), nameof(SkillRecord_Learn_Patch.LearnTranspilerPatch));
+        MethodInfo original = SymbolExtensions.GetMethodInfo<SkillRecord>(x => x.Learn(default, default));
+        HarmonyMethod transpiler = new(typeof(SkillRecord_Learn_Patch), nameof(SkillRecord_Learn_Patch.LearnTranspilerPatch));
 
         harmony.Patch(original, transpiler: transpiler);
     }
@@ -40,7 +40,7 @@ public static class SkillRecord_Learn_Patch
     {
         CodeInstruction previousInstruction = null!;
 
-        foreach (var currentInstruction in instructions)
+        foreach (CodeInstruction currentInstruction in instructions)
         {
             // Replace call to Mote.ThrowText with empty to disable text popup. We replace it with our custom popup.
             if (currentInstruction.Calls(moteThrowTextMethod))
