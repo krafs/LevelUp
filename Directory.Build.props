@@ -1,7 +1,7 @@
 <Project>
 
   <PropertyGroup>
-    <ModOutput Condition="$(ModOutput) == ''">bin\</ModOutput>
+    <ModOutput Condition="$(ModOutput) == ''">$(MSBuildThisFileDirectory)output\</ModOutput>
     <DebugType>none</DebugType>
     <LangVersion>10</LangVersion>
     <Nullable>enable</Nullable>
