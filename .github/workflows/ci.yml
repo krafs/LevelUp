@@ -31,13 +31,13 @@ jobs:
       run: dotnet build -property:ModOutput=./ --no-restore -warnaserror
 
     - name: Zip release
-      run: zip -9 -r LevelUp$VERSION.zip LevelUp
+      run: zip -9 -r LevelUp${{ github.event.inputs.version }}.zip LevelUp
 
     - name: Publish draft release
       uses: softprops/action-gh-release@v1
       with:
         files: LevelUp*.zip
-        tag_name: $VERSION
+        tag_name: ${{ github.event.inputs.version }}
         fail_on_unmatched_files: true
         token: ${{ github.token }}
         draft: true
