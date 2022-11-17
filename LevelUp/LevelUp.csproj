@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <LangVersion>10</LangVersion>
+    <LangVersion>11</LangVersion>
     <Nullable>enable</Nullable>
     <DebugType>none</DebugType>
     <NoWarn>$(NoWarn);IDE1006</NoWarn>
