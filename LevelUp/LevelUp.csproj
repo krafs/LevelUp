@@ -2,12 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <OutDir>$(LevelUpFolder)Common\Assemblies</OutDir>
+    <OutDir>$(LevelUpFolder)Assemblies</OutDir>
   </PropertyGroup>
 
   <ItemGroup>
-    <RootModItem Include="About\*;LoadFolders.xml" />
-    <CommonModItem Include="Defs\**\*;Languages\**\*;Sounds\**\*;Textures\**\*" />
+    <ModItem Include="About\*;Defs\**\*;Languages\**\*;Sounds\**\*;Textures\**\*" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,8 +15,7 @@
   </ItemGroup>
 
   <Target Name="CopyModItemsToModOutput" AfterTargets="Build">
-    <Copy SourceFiles="@(RootModItem)" DestinationFiles="$(LevelUpFolder)%(Identity)" />
-    <Copy SourceFiles="@(CommonModItem)" DestinationFiles="$(LevelUpFolder)Common\%(Identity)" />
+    <Copy SourceFiles="@(ModItem)" DestinationFiles="$(LevelUpFolder)%(Identity)" />
     <Message Importance="high" Text="Copied mod items to $(ModOutput)." />
   </Target>
 
