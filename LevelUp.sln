@@ -5,34 +5,6 @@ VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LevelUp", "LevelUp.csproj", "{D2A0C8C9-8E02-426F-B69E-E4B093BCA945}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{451EB107-AE2E-463B-87BB-BA3F22B4EB23}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-		.gitattributes = .gitattributes
-		.gitignore = .gitignore
-		LICENSE.md = LICENSE.md
-		README.md = README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{8BACB9AC-77AC-4097-9EF1-8F3E3723BB46}"
-	ProjectSection(SolutionItems) = preProject
-		.github\CONTRIBUTING.md = .github\CONTRIBUTING.md
-		.github\dependabot.yml = .github\dependabot.yml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{09E77032-F8B2-4DFA-AE4F-EEB77AA2C9AA}"
-	ProjectSection(SolutionItems) = preProject
-		.github\workflows\ci.yml = .github\workflows\ci.yml
-		.github\workflows\pr-check.yml = .github\workflows\pr-check.yml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEMPLATE", "{F8BC78B9-8C0C-4D3F-8519-F9B2618393AE}"
-	ProjectSection(SolutionItems) = preProject
-		.github\ISSUE_TEMPLATE\bug.yml = .github\ISSUE_TEMPLATE\bug.yml
-		.github\ISSUE_TEMPLATE\config.yml = .github\ISSUE_TEMPLATE\config.yml
-		.github\ISSUE_TEMPLATE\feature.yml = .github\ISSUE_TEMPLATE\feature.yml
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,14 +17,6 @@ Global
 		{D2A0C8C9-8E02-426F-B69E-E4B093BCA945}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{8BACB9AC-77AC-4097-9EF1-8F3E3723BB46} = {451EB107-AE2E-463B-87BB-BA3F22B4EB23}
-		{09E77032-F8B2-4DFA-AE4F-EEB77AA2C9AA} = {8BACB9AC-77AC-4097-9EF1-8F3E3723BB46}
-		{F8BC78B9-8C0C-4D3F-8519-F9B2618393AE} = {8BACB9AC-77AC-4097-9EF1-8F3E3723BB46}
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1AF4F27F-06B4-4A80-BC85-EA03114A8B5A}
+		HideSolutionNode = TRUE
 	EndGlobalSection
 EndGlobal
