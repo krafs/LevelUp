@@ -42,17 +42,17 @@ public class AnimationAction : LevelingAction
         }
 
         FleckCreationData fleckData = FleckMaker.GetDataStatic(pawn.DrawPos, map, fleckDef);
-        fleckData.exactScale = defExtension.ExactScale;
-        fleckData.scale = defExtension.Scale;
-        fleckData.rotation = defExtension.Rotation;
-        fleckData.rotationRate = defExtension.RotationRate;
-        fleckData.solidTimeOverride = defExtension.SolidTimeOverride;
-        fleckData.airTimeLeft = defExtension.AirTimeLeft;
-        fleckData.targetSize = defExtension.TargetSize;
-        fleckData.velocity = defExtension.Velocity;
-        fleckData.velocityAngle = defExtension.VelocityAngle;
-        fleckData.velocitySpeed = defExtension.VelocitySpeed;
-        fleckData.instanceColor = defExtension.InstanceColor;
+        fleckData.exactScale = defExtension.exactScale;
+        fleckData.scale = defExtension.scale;
+        fleckData.rotation = defExtension.rotation;
+        fleckData.rotationRate = defExtension.rotationRate;
+        fleckData.solidTimeOverride = defExtension.solidTimeOverride;
+        fleckData.airTimeLeft = defExtension.airTimeLeft;
+        fleckData.targetSize = defExtension.targetSize;
+        fleckData.velocity = defExtension.velocity;
+        fleckData.velocityAngle = defExtension.velocityAngle;
+        fleckData.velocitySpeed = defExtension.velocitySpeed;
+        fleckData.instanceColor = defExtension.instanceColor;
         fleckData.link = new FleckAttachLink(pawn);
 
         map.flecks.CreateFleck(fleckData);
@@ -96,7 +96,7 @@ public class AnimationAction : LevelingAction
             scale: 1f,
             texProportions: new Vector2(texture.width, texture.height),
             texCoords: new Rect(0, 0, 1, 1),
-            defExtension.Rotation,
+            defExtension.rotation,
             graphic.MatSingle);
     }
 
