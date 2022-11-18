@@ -3,10 +3,10 @@ using Verse;
 
 namespace LevelUp;
 
-public static class Logger
+internal static class Logger
 {
     [Conditional("DEBUG")]
-    public static void Debug(string message)
+    internal static void Debug(string message)
     {
         Log.Message(message);
     }
