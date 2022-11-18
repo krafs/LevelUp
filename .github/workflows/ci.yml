@@ -32,12 +32,12 @@ jobs:
 
     - name: Zip release
       run: zip -9 -r LevelUp${{ github.event.inputs.version }}.zip LevelUp/
-      working-directory: output
+      working-directory: bin
 
     - name: Publish draft release
       uses: softprops/action-gh-release@v1
       with:
-        files: output/LevelUp*.zip
+        files: bin/LevelUp*.zip
         tag_name: v${{ github.event.inputs.version }}
         fail_on_unmatched_files: true
         token: ${{ github.token }}
