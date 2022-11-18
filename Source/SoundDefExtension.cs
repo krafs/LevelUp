@@ -1,8 +1,6 @@
-﻿using System;
-using Verse;
+﻿using Verse;
 
 namespace LevelUp;
 
-[Serializable]
-public class SoundDefExtension : DefModExtension
+internal class SoundDefExtension : DefModExtension
 { }
