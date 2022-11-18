@@ -12,7 +12,7 @@ Subscribe to the mod on [Steam Workshop](https://steamcommunity.com/sharedfiles/
 Start the game and enable the mod in the Mod menu. Place it anywhere below **Core** and **Harmony**[^1] in the load order.
 
 ## Compatibility
-Level Up is compatible with Rimworld 1.3 and 1.4.
+Level Up is compatible with Rimworld 1.4.
 
 Known incompatible mods:
 * Static Quality Plus
