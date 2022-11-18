@@ -14,7 +14,7 @@ public class AnimationAction : LevelingAction
     private Texture2D texture = null!;
     private FleckDefExtension defExtension = null!;
 
-    public FleckDef FleckDef
+    internal FleckDef FleckDef
     {
         get => fleckDef;
         set
@@ -88,7 +88,7 @@ public class AnimationAction : LevelingAction
         DrawGraphic(imageRect);
     }
 
-    public void DrawGraphic(Rect rect)
+    private void DrawGraphic(Rect rect)
     {
         Widgets.DrawTextureFitted(
             outerRect: rect,
