@@ -73,7 +73,7 @@ public class AnimationAction : LevelingAction
     {
         Rect rowRect = new Rect(rect) { height = 24f };
         Rect buttonRect = new Rect(rowRect) { width = rowRect.width / 2 };
-        if (CustomWidgets.ButtonText(buttonRect, fleckDef.LabelCap))
+        if (Widgets.ButtonText(buttonRect, fleckDef.LabelCap))
         {
             List<FloatMenuOption> options = DefDatabase<FleckDef>.AllDefs
                 .Where(x => x.HasModExtension<FleckDefExtension>())
