@@ -36,11 +36,7 @@ public static class ProfileInitializer
                 else if (action is AnimationAction animationAction)
                 {
                     animationAction.Active = true;
-
-                    animationAction.Animation = new FleckAnimation
-                    {
-                        FleckDef = DefDatabase<FleckDef>.GetNamed("LevelUpAnimation_Radiance")
-                    };
+                    animationAction.FleckDef = DefDatabase<FleckDef>.GetNamed("LevelUpAnimation_Radiance");
                 }
             }
         }
@@ -73,10 +69,7 @@ public static class ProfileInitializer
                 }
                 else if (action is AnimationAction animationAction)
                 {
-                    animationAction.Animation = new FleckAnimation
-                    {
-                        FleckDef = DefDatabase<FleckDef>.GetNamed("LevelUpAnimation_Drain")
-                    };
+                    animationAction.FleckDef = DefDatabase<FleckDef>.GetNamed("LevelUpAnimation_Drain");
                 }
             }
         }
