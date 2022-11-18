@@ -4,7 +4,7 @@
     <defName>LevelUpAnimation_Radiance</defName>
     <label>Radiance</label>
     <modExtensions>
-      <li Class="LevelUp.AnimationDefExtension">
+      <li Class="LevelUp.FleckDefExtension">
         <rotationRate>100</rotationRate>
       </li>
     </modExtensions>
@@ -22,7 +22,7 @@
     <defName>LevelUpAnimation_Drain</defName>
     <label>Drain</label>
     <modExtensions>
-      <li Class="LevelUp.AnimationDefExtension">
+      <li Class="LevelUp.FleckDefExtension">
         <scale>10</scale>
         <rotationRate>-100</rotationRate>
       </li>
@@ -42,7 +42,7 @@
     <defName>LevelUpAnimation_UpwardChevron</defName>
     <label>Upward chevron</label>
     <modExtensions>
-      <li Class="LevelUp.AnimationDefExtension">
+      <li Class="LevelUp.FleckDefExtension">
         <velocitySpeed>1</velocitySpeed>
       </li>
     </modExtensions>
@@ -60,7 +60,7 @@
     <defName>LevelUpAnimation_DownwardChevron</defName>
     <label>Downward chevron</label>
     <modExtensions>
-      <li Class="LevelUp.AnimationDefExtension">
+      <li Class="LevelUp.FleckDefExtension">
         <velocitySpeed>1</velocitySpeed>
         <velocityAngle>180</velocityAngle>
         <rotation>180</rotation>

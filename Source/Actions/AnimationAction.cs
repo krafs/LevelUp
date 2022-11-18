@@ -12,7 +12,7 @@ public class AnimationAction : LevelingAction
     private FleckDef fleckDef;
     private Graphic_Single graphic = null!;
     private Texture2D texture = null!;
-    private AnimationDefExtension defExtension = null!;
+    private FleckDefExtension defExtension = null!;
 
     public FleckDef FleckDef
     {
@@ -27,7 +27,7 @@ public class AnimationAction : LevelingAction
     public AnimationAction()
     {
         fleckDef = DefDatabase<FleckDef>.AllDefs
-                .Where(x => x.HasModExtension<AnimationDefExtension>())
+                .Where(x => x.HasModExtension<FleckDefExtension>())
                 .RandomElement();
         Prepare();
     }
@@ -60,7 +60,7 @@ public class AnimationAction : LevelingAction
 
     public override void Prepare()
     {
-        defExtension = fleckDef.GetModExtension<AnimationDefExtension>();
+        defExtension = fleckDef.GetModExtension<FleckDefExtension>();
 
         graphic = fleckDef.graphicData.Graphic is Graphic_Single graphicSingle
             ? graphicSingle
@@ -76,7 +76,7 @@ public class AnimationAction : LevelingAction
         if (CustomWidgets.ButtonText(buttonRect, fleckDef.LabelCap))
         {
             List<FloatMenuOption> options = DefDatabase<FleckDef>.AllDefs
-                .Where(x => x.HasModExtension<AnimationDefExtension>())
+                .Where(x => x.HasModExtension<FleckDefExtension>())
                 .Select(x => new FloatMenuOption(fleckDef.LabelCap, () => this.fleckDef = x))
                 .ToList();
 

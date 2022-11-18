@@ -5,7 +5,7 @@ using Verse;
 namespace LevelUp;
 
 [Serializable]
-public class AnimationDefExtension : DefModExtension
+public class FleckDefExtension : DefModExtension
 {
 #pragma warning disable CS0649 // Field is never assigned
 
