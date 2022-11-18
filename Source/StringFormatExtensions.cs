@@ -1,13 +1,13 @@
 ﻿namespace LevelUp;
 
-public static class StringFormatExtensions
+internal static class StringFormatExtensions
 {
-    public static string Bolded(this string str)
+    internal static string Bolded(this string str)
     {
         return $"<b>{str}</b>";
     }
 
-    public static string Italicized(this string str)
+    internal static string Italicized(this string str)
     {
         return $"<i>{str}</i>";
     }
