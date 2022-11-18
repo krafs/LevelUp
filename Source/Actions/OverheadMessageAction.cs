@@ -10,7 +10,7 @@ public class OverheadMessageAction : TextAction
 {
     private bool historical;
 
-    public override void Execute(LevelingInfo levelingInfo)
+    internal override void Execute(LevelingInfo levelingInfo)
     {
         var pawn = levelingInfo.Pawn;
         if (pawn.Map is null)

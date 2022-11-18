@@ -10,7 +10,7 @@ public class MessageAction : TextAction
 {
     private bool historical;
 
-    public override void Execute(LevelingInfo levelingInfo)
+    internal override void Execute(LevelingInfo levelingInfo)
     {
         var resolvedText = ResolveText(levelingInfo, Text);
         var message = new Message(resolvedText, MessageTypeDefOf.SilentInput, levelingInfo.Pawn);

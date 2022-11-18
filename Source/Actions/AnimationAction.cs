@@ -32,7 +32,7 @@ public class AnimationAction : LevelingAction
         Prepare();
     }
 
-    public override void Execute(LevelingInfo levelingInfo)
+    internal override void Execute(LevelingInfo levelingInfo)
     {
         Pawn pawn = levelingInfo.Pawn;
         Map map = pawn.Map;
@@ -58,7 +58,7 @@ public class AnimationAction : LevelingAction
         map.flecks.CreateFleck(fleckData);
     }
 
-    public override void Prepare()
+    internal override void Prepare()
     {
         defExtension = fleckDef.GetModExtension<FleckDefExtension>();
 

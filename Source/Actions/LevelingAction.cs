@@ -11,11 +11,11 @@ public abstract class LevelingAction : IExposable, IDrawer
     private bool active;
     private bool cooldown = true;
 
-    public ActionDef ActionDef { get => actionDef; set => actionDef = value; }
-    public bool Active { get => active; set => active = value; }
-    public bool Cooldown { get => cooldown; set => cooldown = value; }
+    internal ActionDef ActionDef { get => actionDef; set => actionDef = value; }
+    internal bool Active { get => active; set => active = value; }
+    internal bool Cooldown { get => cooldown; set => cooldown = value; }
 
-    public virtual void Prepare()
+    internal virtual void Prepare()
     {
         if (actionDef is null)
         {
@@ -23,7 +23,7 @@ public abstract class LevelingAction : IExposable, IDrawer
         }
     }
 
-    public abstract void Execute(LevelingInfo levelingInfo);
+    internal abstract void Execute(LevelingInfo levelingInfo);
 
     public virtual void Draw(Rect rect)
     { }

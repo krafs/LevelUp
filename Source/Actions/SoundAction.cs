@@ -33,12 +33,12 @@ public class SoundAction : LevelingAction
                 .RandomElement();
     }
 
-    public override void Prepare()
+    internal override void Prepare()
     {
         base.Prepare();
     }
 
-    public override void Execute(LevelingInfo levelingInfo)
+    internal override void Execute(LevelingInfo levelingInfo)
     {
         var soundInfo = SoundInfo.OnCamera();
         soundInfo.volumeFactor = volume;

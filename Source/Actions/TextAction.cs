@@ -14,7 +14,7 @@ public abstract class TextAction : LevelingAction
     private string text = string.Empty;
     public string Text { get => text; set => text = value; }
 
-    public override void Prepare()
+    internal override void Prepare()
     {
         base.Prepare();
         text ??= string.Empty;
