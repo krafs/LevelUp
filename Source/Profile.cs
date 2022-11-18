@@ -63,7 +63,7 @@ public class Profile : IExposable
     private void DoList(Rect rect, ActionMaker actionMaker, string header, string headerTooltip)
     {
         var labelRect = new Rect(rect) { height = 24f, xMax = rect.xMax - 15f };
-        Widgets.Label(labelRect, header.Bolded());
+        Widgets.Label(labelRect, header.Bold());
         TooltipHandler.TipRegion(labelRect, headerTooltip);
         Widgets.DrawHighlight(labelRect);
 
@@ -75,7 +75,7 @@ public class Profile : IExposable
     private void DoGeneralRect(Rect rect)
     {
         var generalLabel = I18n.GeneralSettingsLabel;
-        Widgets.Label(rect, generalLabel.Bolded());
+        Widgets.Label(rect, generalLabel.Bold());
         Widgets.DrawLightHighlight(rect);
         if (Widgets.ButtonInvisible(rect))
         {
@@ -123,7 +123,7 @@ public class Profile : IExposable
         var actionLabelSize = Text.CalcSize(actionLabel);
         actionLabelSize.x += 15f;
         var actionLabelRect = new Rect(rowRect) { width = actionLabelSize.x };
-        Widgets.Label(actionLabelRect, selectedAction.ActionDef.label.Bolded());
+        Widgets.Label(actionLabelRect, selectedAction.ActionDef.label.Bold());
         TooltipHandler.TipRegion(actionLabelRect, selectedAction.ActionDef.description);
 
         rect.y = rowRect.yMax;

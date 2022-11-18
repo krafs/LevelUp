@@ -60,7 +60,7 @@ public abstract class TextAction : LevelingAction
         Widgets.DrawMenuSection(guideRect);
         var guideRowRect = new Rect(innerGuideRect) { height = 24f };
         var label2Rect = new Rect(guideRowRect) { x = guideRowRect.x + (guideRowRect.width / 2) };
-        Widgets.Label(guideRowRect, I18n.InjectableValuesLabel.Bolded());
+        Widgets.Label(guideRowRect, I18n.InjectableValuesLabel.Bold());
 
         guideRowRect.y = guideRowRect.yMax;
         label2Rect.y = label2Rect.yMax;
@@ -79,21 +79,21 @@ public abstract class TextAction : LevelingAction
 
         guideRowRect.y = guideRowRect.yMax + 5f;
         label2Rect.y = label2Rect.yMax + 5f;
-        Widgets.Label(guideRowRect, I18n.FormattingLabel.Bolded());
+        Widgets.Label(guideRowRect, I18n.FormattingLabel.Bold());
 
         guideRowRect.y = guideRowRect.yMax;
         label2Rect.y = label2Rect.yMax;
         Verse.Text.CurFontStyle.richText = false;
-        Widgets.Label(guideRowRect, I18n.FormattingBoldLabel.Bolded());
+        Widgets.Label(guideRowRect, I18n.FormattingBoldLabel.Bold());
         Verse.Text.CurFontStyle.richText = true;
-        Widgets.Label(label2Rect, I18n.FormattingBoldLabel.Bolded());
+        Widgets.Label(label2Rect, I18n.FormattingBoldLabel.Bold());
 
         guideRowRect.y = guideRowRect.yMax;
         label2Rect.y = label2Rect.yMax;
         Verse.Text.CurFontStyle.richText = false;
-        Widgets.Label(guideRowRect, I18n.FormattingItalicLabel.Italicized());
+        Widgets.Label(guideRowRect, I18n.FormattingItalicLabel.Italic());
         Verse.Text.CurFontStyle.richText = true;
-        Widgets.Label(label2Rect, I18n.FormattingItalicLabel.Italicized());
+        Widgets.Label(label2Rect, I18n.FormattingItalicLabel.Italic());
 
         guideRowRect.y = guideRowRect.yMax;
         label2Rect.y = label2Rect.yMax;
