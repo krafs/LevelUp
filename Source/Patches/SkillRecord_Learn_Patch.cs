@@ -6,7 +6,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace LevelUp.Patches;
+namespace LevelUp;
 
 [StaticConstructorOnStartup]
 public static class SkillRecord_Learn_Patch

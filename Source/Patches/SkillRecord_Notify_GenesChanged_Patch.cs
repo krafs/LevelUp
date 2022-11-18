@@ -3,7 +3,7 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
-namespace LevelUp.Patches;
+namespace LevelUp;
 
 [StaticConstructorOnStartup]
 public static class SkillRecord_Notify_GenesChanged_Patch
