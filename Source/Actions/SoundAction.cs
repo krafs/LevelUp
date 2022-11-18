@@ -10,8 +10,8 @@ namespace LevelUp;
 [Serializable]
 public class SoundAction : LevelingAction
 {
-    private static readonly List<SoundDef> allSounds = DefDatabase<SoundDef>
-            .AllDefs.Where(x => x.HasModExtension<SoundDefExtension>()).ToList();
+    private const float MinVolume = 0f;
+    private const float MaxVolume = 1.5f;
 
     private SoundDef soundDef = null!;
     private float volume = 0.5f;
@@ -28,7 +28,9 @@ public class SoundAction : LevelingAction
 
     public SoundAction()
     {
-        soundDef = allSounds.RandomElement();
+        soundDef = DefDatabase<SoundDef>.AllDefs
+                .Where(x => x.HasModExtension<SoundDefExtension>())
+                .RandomElement();
     }
 
     public override void Prepare()
@@ -45,52 +47,29 @@ public class SoundAction : LevelingAction
 
     public override void Draw(Rect rect)
     {
-        var rowRect = new Rect(rect) { height = 24f };
-        var soundDefRect = new Rect(rowRect) { width = rect.width / 2 };
-        if (CustomWidgets.ButtonText(soundDefRect, soundDef.LabelCap))
+        Rect rowRect = new Rect(rect) { height = 24f };
+
+        Rect dropDownRect = new Rect(rowRect) { width = rect.width / 2 };
+
+        if (Widgets.ButtonText(dropDownRect, soundDef.LabelCap))
         {
-            var options = allSounds
+            List<FloatMenuOption> options = DefDatabase<SoundDef>.AllDefs
+                .Where(x => x.HasModExtension<SoundDefExtension>())
                 .Select(x => new FloatMenuOption(x.LabelCap, () => soundDef = x))
                 .ToList();
 
             Find.WindowStack.Add(new FloatMenu(options));
         }
-
-        rowRect.y = rowRect.yMax + 5f;
-        var sliderRect = new Rect(rowRect) { width = rect.width / 2 };
-        DrawVolumeSlider(sliderRect, ref volume);
-
-        rowRect.y = rowRect.yMax + 5f;
-        var playButtonRect = new Rect(rowRect) { height = rowRect.height * 2, width = rowRect.height * 2 };
-        if (Widgets.ButtonImage(playButtonRect, GenTextures.PlayButton) && SoundDef != null)
+        Rect slideControlRect = new Rect(rowRect) { xMin = dropDownRect.xMax }.ContractedBy(5f, 0f);
+        Rect iconRect = new Rect(slideControlRect) { x = dropDownRect.xMax + 5f, width = slideControlRect.height };
+        if (Widgets.ButtonImageFitted(iconRect, TexButton.Play))
         {
             Execute(default);
         }
-    }
 
-    private static void DrawVolumeSlider(Rect rect, ref float volume)
-    {
-        const float Min = 0f;
-        const float Max = 1.5f;
+        Rect sliderRect = new Rect(slideControlRect) { xMin = iconRect.xMax + 5f };
 
-        Texture2D image;
-        if (volume > Max * 0.8)
-        {
-            image = GenTextures.SpeakerFull;
-        }
-        else if (volume > Max * 0.4)
-        {
-            image = GenTextures.SpeakerMid;
-        }
-        else
-        {
-            image = volume > Min ? GenTextures.SpeakerLow : GenTextures.SpeakerMute;
-        }
-
-        var imageRect = new Rect(rect) { width = rect.height };
-        Widgets.DrawTextureFitted(imageRect, image, 1f);
-        var sliderRect = new Rect(rect) { xMin = imageRect.xMax, yMin = rect.y };
-        volume = Widgets.HorizontalSlider(sliderRect, volume, Min, Max, middleAlignment: true);
+        volume = Widgets.HorizontalSlider(sliderRect, volume, MinVolume, MaxVolume, middleAlignment: true);
     }
 
     public override void ExposeData()
