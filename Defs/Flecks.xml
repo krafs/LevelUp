@@ -47,7 +47,7 @@
       </li>
     </modExtensions>
     <graphicData>
-      <texPath>LevelUp/Mote/DoubleChevron</texPath>
+      <texPath>LevelUp/DoubleChevron</texPath>
       <shaderType>MoteGlow</shaderType>
       <color>(255,255,0,100)</color>
     </graphicData>
@@ -67,7 +67,7 @@
       </li>
     </modExtensions>
     <graphicData>
-      <texPath>LevelUp/Mote/DoubleChevron</texPath>
+      <texPath>LevelUp/DoubleChevron</texPath>
       <shaderType>MoteGlow</shaderType>
       <color>(255,0,0,100)</color>
     </graphicData>
