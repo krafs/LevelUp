@@ -34,11 +34,15 @@ internal sealed class CooldownTracker
     internal void ExposeData()
     {
         Scribe_Values.Look(ref cooldownSeconds, "cooldownSeconds", CooldownSecondsDefault);
+
+        if (Scribe.mode == LoadSaveMode.Saving)
+        {
+            UpdateCache();
+        }
     }
 
-    internal void Maintain()
+    internal void UpdateCache()
     {
-        // TODO: Remove from existing instance instead of creating new.
         cache = cache.Where(ShouldKeepEntry).ToDictionary(x => x.Key, x => x.Value);
     }
 
