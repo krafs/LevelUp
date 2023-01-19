@@ -15,7 +15,6 @@ Start the game and enable the mod in the Mod menu. Place it anywhere below **Cor
 Level Up is compatible with Rimworld 1.4.
 
 Known incompatible mods:
-* Static Quality Plus
 * Ducks' Insane Skills
 
 ## Usage
