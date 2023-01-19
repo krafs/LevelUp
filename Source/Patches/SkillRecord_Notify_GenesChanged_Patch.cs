@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+using System.Diagnostics.CodeAnalysis;
+using System.Reflection;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -6,6 +7,7 @@ using Verse;
 namespace LevelUp;
 
 [StaticConstructorOnStartup]
+[SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Injected Harmony parameters must be prefixed with underscores")]
 public static class SkillRecord_Notify_GenesChanged_Patch
 {
     static SkillRecord_Notify_GenesChanged_Patch()

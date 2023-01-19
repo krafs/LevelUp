@@ -1,4 +1,4 @@
-﻿namespace LevelUp;
+namespace LevelUp;
 
 internal static class StringFormatExtensions
 {

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
@@ -83,10 +83,6 @@ public static class SkillRecord_Learn_Patch
         }
     }
 
-#pragma warning disable IDE0060 // Remove unused parameter
-
     private static void MoteThrowTextProxy(Vector3 loc, Map map, string text, float timeBeforeStartFadeout)
     { }
-
-#pragma warning restore IDE0060 // Remove unused parameter
 }

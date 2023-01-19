@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -12,17 +12,18 @@ public class OverheadMessageAction : TextAction
 
     internal override void Execute(LevelingInfo levelingInfo)
     {
-        var pawn = levelingInfo.Pawn;
+        Pawn pawn = levelingInfo.Pawn;
         if (pawn.Map is null)
         {
             return;
         }
-        var resolvedText = ResolveText(levelingInfo, Text);
+
+        string resolvedText = ResolveText(levelingInfo, Text);
         MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, resolvedText);
 
         if (historical)
         {
-            var message = new Message(resolvedText, MessageTypeDefOf.SilentInput, pawn);
+            Message message = new(resolvedText, MessageTypeDefOf.SilentInput, pawn);
             Find.Archive.Add(message);
         }
     }
@@ -31,8 +32,8 @@ public class OverheadMessageAction : TextAction
     {
         rect.yMin = DrawTextBuilder(rect).yMax;
 
-        var rowRect = new Rect(rect) { height = 24f };
-        var historicalLabel = I18n.HistoricalLabel;
+        Rect rowRect = new(rect) { height = 24f };
+        string historicalLabel = I18n.HistoricalLabel;
         TooltipHandler.TipRegion(rowRect, I18n.HistoricalDescription);
         Widgets.CheckboxLabeled(rowRect, historicalLabel, ref historical, placeCheckboxNearText: true);
     }

@@ -5,7 +5,6 @@
     <LangVersion>11</LangVersion>
     <Nullable>enable</Nullable>
     <DebugType>none</DebugType>
-    <NoWarn>$(NoWarn);IDE1006</NoWarn>
     <ModOutput Condition="$(ModOutput) == ''">$(MSBuildThisFileDirectory)bin\</ModOutput>
     <LevelUpFolder>$(ModOutput)LevelUp\</LevelUpFolder>
     <OutDir>$(LevelUpFolder)Assemblies</OutDir>

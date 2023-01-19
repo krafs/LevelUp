@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Verse;
 
@@ -12,7 +12,7 @@ public class ActionDef : Def
 
     public override IEnumerable<string> ConfigErrors()
     {
-        foreach (var configError in base.ConfigErrors())
+        foreach (string configError in base.ConfigErrors())
         {
             yield return configError;
         }

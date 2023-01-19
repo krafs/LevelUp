@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using RimWorld;
 using Verse;
@@ -18,11 +18,11 @@ public static class PawnSkillTimerCache
 
     public static bool EnoughTimeHasPassed(LevelingInfo levelingInfo)
     {
-        var currentDateTime = DateTime.UtcNow;
-        var key = new ValueTuple<Pawn, SkillDef>(levelingInfo.Pawn, levelingInfo.SkillRecord.def);
-        if (timerCache.TryGetValue(key, out var lastEntryDateTime))
+        DateTime currentDateTime = DateTime.UtcNow;
+        (Pawn, SkillDef) key = new(levelingInfo.Pawn, levelingInfo.SkillRecord.def);
+        if (timerCache.TryGetValue(key, out DateTime lastEntryDateTime))
         {
-            var nextAllowedDateTime = lastEntryDateTime.AddSeconds(settings.Profile.GeneralSettingsContent.CooldownSeconds);
+            DateTime nextAllowedDateTime = lastEntryDateTime.AddSeconds(settings.Profile.GeneralSettingsContent.CooldownSeconds);
             if (currentDateTime < nextAllowedDateTime)
             {
                 return false;

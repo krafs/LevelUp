@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Text;
 using RimWorld;
@@ -38,28 +38,28 @@ public abstract class TextAction : LevelingAction
 
     protected Rect DrawTextBuilder(Rect rect)
     {
-        var pawnLabel = "Levelyn";
-        var skillLevel = 18;
-        var skillLabel = SkillDefOf.Intellectual.LabelCap;
+        string pawnLabel = "Levelyn";
+        int skillLevel = 18;
+        TaggedString skillLabel = SkillDefOf.Intellectual.LabelCap;
 
-        var rowRect = new Rect(rect) { height = 24f };
+        Rect rowRect = new(rect) { height = 24f };
 
-        var exampleTextRect = new Rect(rowRect) { height = rowRect.height * 2 };
-        var curAnchor = Verse.Text.Anchor;
+        Rect exampleTextRect = new(rowRect) { height = rowRect.height * 2 };
+        TextAnchor curAnchor = Verse.Text.Anchor;
         Verse.Text.Anchor = TextAnchor.MiddleCenter;
         Widgets.Label(exampleTextRect, ResolveText(pawnLabel, skillLevel, skillLabel, Text));
         Verse.Text.Anchor = curAnchor;
 
         rowRect.y = rowRect.yMax + 5f;
-        var textEntryRect = new Rect(rowRect) { y = exampleTextRect.yMax, height = rowRect.height * 3 };
+        Rect textEntryRect = new(rowRect) { y = exampleTextRect.yMax, height = rowRect.height * 3 };
         text = Widgets.TextArea(textEntryRect, Text);
 
         rowRect.y = textEntryRect.yMax + 5f;
-        var guideRect = new Rect(rowRect) { height = 24f * 11 };
-        var innerGuideRect = guideRect.GetInnerRect();
+        Rect guideRect = new(rowRect) { height = 24f * 11 };
+        Rect innerGuideRect = guideRect.GetInnerRect();
         Widgets.DrawMenuSection(guideRect);
-        var guideRowRect = new Rect(innerGuideRect) { height = 24f };
-        var label2Rect = new Rect(guideRowRect) { x = guideRowRect.x + (guideRowRect.width / 2) };
+        Rect guideRowRect = new(innerGuideRect) { height = 24f };
+        Rect label2Rect = new(guideRowRect) { x = guideRowRect.x + (guideRowRect.width / 2) };
         Widgets.Label(guideRowRect, I18n.InjectableValuesLabel.Bold());
 
         guideRowRect.y = guideRowRect.yMax;

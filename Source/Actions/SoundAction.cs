@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -40,16 +40,16 @@ public class SoundAction : LevelingAction
 
     internal override void Execute(LevelingInfo levelingInfo)
     {
-        var soundInfo = SoundInfo.OnCamera();
+        SoundInfo soundInfo = SoundInfo.OnCamera();
         soundInfo.volumeFactor = volume;
         soundDef.PlayOneShot(soundInfo);
     }
 
     public override void Draw(Rect rect)
     {
-        Rect rowRect = new Rect(rect) { height = 24f };
+        Rect rowRect = new(rect) { height = 24f };
 
-        Rect dropDownRect = new Rect(rowRect) { width = rect.width / 2 };
+        Rect dropDownRect = new(rowRect) { width = rect.width / 2 };
 
         if (Widgets.ButtonText(dropDownRect, soundDef.LabelCap))
         {
@@ -61,13 +61,13 @@ public class SoundAction : LevelingAction
             Find.WindowStack.Add(new FloatMenu(options));
         }
         Rect slideControlRect = new Rect(rowRect) { xMin = dropDownRect.xMax }.ContractedBy(5f, 0f);
-        Rect iconRect = new Rect(slideControlRect) { x = dropDownRect.xMax + 5f, width = slideControlRect.height };
+        Rect iconRect = new(slideControlRect) { x = dropDownRect.xMax + 5f, width = slideControlRect.height };
         if (Widgets.ButtonImageFitted(iconRect, TexButton.Play))
         {
             Execute(default);
         }
 
-        Rect sliderRect = new Rect(slideControlRect) { xMin = iconRect.xMax + 5f };
+        Rect sliderRect = new(slideControlRect) { xMin = iconRect.xMax + 5f };
 
         volume = Widgets.HorizontalSlider(sliderRect, volume, MinVolume, MaxVolume, middleAlignment: true);
     }

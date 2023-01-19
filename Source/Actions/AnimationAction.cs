@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -71,19 +71,19 @@ public class AnimationAction : LevelingAction
 
     public override void Draw(Rect rect)
     {
-        Rect rowRect = new Rect(rect) { height = 24f };
-        Rect buttonRect = new Rect(rowRect) { width = rowRect.width / 2 };
+        Rect rowRect = new(rect) { height = 24f };
+        Rect buttonRect = new(rowRect) { width = rowRect.width / 2 };
         if (Widgets.ButtonText(buttonRect, fleckDef.LabelCap))
         {
             List<FloatMenuOption> options = DefDatabase<FleckDef>.AllDefs
                 .Where(x => x.HasModExtension<FleckDefExtension>())
-                .Select(x => new FloatMenuOption(fleckDef.LabelCap, () => this.fleckDef = x))
+                .Select(x => new FloatMenuOption(fleckDef.LabelCap, () => fleckDef = x))
                 .ToList();
 
             Find.WindowStack.Add(new FloatMenu(options));
         }
 
-        Rect imageRect = new Rect(rect.x, buttonRect.yMax + 10f, rect.width / 2, rect.width / 2);
+        Rect imageRect = new(rect.x, buttonRect.yMax + 10f, rect.width / 2, rect.width / 2);
         Widgets.DrawMenuSection(imageRect);
         DrawGraphic(imageRect);
     }

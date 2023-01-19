@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
@@ -21,7 +21,7 @@ public class ActionMaker : IExposable
         preparedActions.Clear();
         preparedCooldownActions.Clear();
 
-        foreach (var action in actions)
+        foreach (LevelingAction action in actions)
         {
             if (!action.Active)
             {
@@ -48,18 +48,18 @@ public class ActionMaker : IExposable
             return;
         }
 
-        for (var i = 0; i < preparedActions.Count; i++)
+        for (int i = 0; i < preparedActions.Count; i++)
         {
             preparedActions[i].Execute(levelingInfo);
         }
 
-        var cooldownPassed = PawnSkillTimerCache.EnoughTimeHasPassed(levelingInfo);
+        bool cooldownPassed = PawnSkillTimerCache.EnoughTimeHasPassed(levelingInfo);
         if (!cooldownPassed)
         {
             return;
         }
 
-        for (var i = 0; i < preparedCooldownActions.Count; i++)
+        for (int i = 0; i < preparedCooldownActions.Count; i++)
         {
             preparedCooldownActions[i].Execute(levelingInfo);
         }
@@ -67,19 +67,19 @@ public class ActionMaker : IExposable
 
     public void Draw(Rect rect, ref IDrawer selectedAction)
     {
-        var listHeight = actions.Count * 24f;
-        var viewRect = new Rect(rect) { xMax = rect.xMax - 15f, height = listHeight };
+        float listHeight = actions.Count * 24f;
+        Rect viewRect = new(rect) { xMax = rect.xMax - 15f, height = listHeight };
         Widgets.BeginScrollView(rect, ref scrollPosition, viewRect);
-        var rowRect = new Rect(viewRect) { height = 24f };
-        for (var i = 0; i < actions.Count; i++)
+        Rect rowRect = new(viewRect) { height = 24f };
+        for (int i = 0; i < actions.Count; i++)
         {
-            var action = actions[i];
-            var checkboxRect = new Rect(rowRect) { xMin = rowRect.xMax - rowRect.height, width = rowRect.height };
-            var isActive = action.Active;
+            LevelingAction action = actions[i];
+            Rect checkboxRect = new(rowRect) { xMin = rowRect.xMax - rowRect.height, width = rowRect.height };
+            bool isActive = action.Active;
             Widgets.Checkbox(checkboxRect.x, checkboxRect.y, ref isActive);
             action.Active = isActive;
 
-            var labelRect = new Rect(rowRect) { xMax = checkboxRect.xMin };
+            Rect labelRect = new(rowRect) { xMax = checkboxRect.xMin };
             Widgets.Label(labelRect, action.ActionDef.label);
 
             if (Widgets.ButtonInvisible(labelRect))

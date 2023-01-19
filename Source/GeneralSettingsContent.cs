@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 using Verse;
 
@@ -14,13 +14,13 @@ public class GeneralSettingsContent : IExposable, IDrawer
 
     public void Draw(Rect rect)
     {
-        var rowRect = new Rect(rect) { height = 24f };
-        var cooldownLabel = I18n.CooldownLabel;
-        var cooldownSize = Text.CalcSize(cooldownLabel);
-        var cooldownLabelRect = new Rect(rowRect) { width = cooldownSize.x };
+        Rect rowRect = new(rect) { height = 24f };
+        string cooldownLabel = I18n.CooldownLabel;
+        Vector2 cooldownSize = Text.CalcSize(cooldownLabel);
+        Rect cooldownLabelRect = new(rowRect) { width = cooldownSize.x };
         Widgets.Label(cooldownLabelRect, cooldownLabel);
         TooltipHandler.TipRegion(cooldownLabelRect, I18n.CooldownEntryDescription);
-        var cooldownEntryRect = new Rect(rowRect) { x = cooldownLabelRect.xMax + 5f, width = 180f };
+        Rect cooldownEntryRect = new(rowRect) { x = cooldownLabelRect.xMax + 5f, width = 180f };
         Widgets.IntEntry(cooldownEntryRect, ref cooldownSeconds, ref cooldownEditBuffer);
     }
 

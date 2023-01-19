@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Verse;
 
 namespace LevelUp;
@@ -8,7 +8,7 @@ public static class ProfileInitializer
     public static void InitializeProfile(Profile profile)
     {
         // Level up
-        foreach (var actionDef in DefDatabase<ActionDef>.AllDefs)
+        foreach (ActionDef actionDef in DefDatabase<ActionDef>.AllDefs)
         {
             if (!profile.LevelUpActionMaker.Actions.Any(x => x.ActionDef == actionDef))
             {
@@ -44,7 +44,7 @@ public static class ProfileInitializer
         profile.LevelUpActionMaker.Actions.SortBy(x => x.ActionDef.LabelCap.RawText);
 
         // Level down
-        foreach (var actionDef in DefDatabase<ActionDef>.AllDefs)
+        foreach (ActionDef actionDef in DefDatabase<ActionDef>.AllDefs)
         {
             if (!profile.LevelDownActionMaker.Actions.Any(x => x.ActionDef == actionDef))
             {

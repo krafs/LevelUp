@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -12,8 +12,8 @@ public class MessageAction : TextAction
 
     internal override void Execute(LevelingInfo levelingInfo)
     {
-        var resolvedText = ResolveText(levelingInfo, Text);
-        var message = new Message(resolvedText, MessageTypeDefOf.SilentInput, levelingInfo.Pawn);
+        string resolvedText = ResolveText(levelingInfo, Text);
+        Message message = new(resolvedText, MessageTypeDefOf.SilentInput, levelingInfo.Pawn);
 
         Messages.Message(message, historical);
     }
@@ -22,8 +22,8 @@ public class MessageAction : TextAction
     {
         rect.yMin = DrawTextBuilder(rect).yMax;
 
-        var rowRect = new Rect(rect) { height = 24f };
-        var historicalLabel = I18n.HistoricalLabel;
+        Rect rowRect = new(rect) { height = 24f };
+        string historicalLabel = I18n.HistoricalLabel;
         TooltipHandler.TipRegion(rowRect, I18n.HistoricalDescription);
         Widgets.CheckboxLabeled(rowRect, historicalLabel, ref historical, placeCheckboxNearText: true);
     }

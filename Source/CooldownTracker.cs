@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -8,8 +8,8 @@ namespace LevelUp;
 internal sealed class CooldownTracker
 {
     private Dictionary<int, DateTime> cache = new();
-    internal int CooldownSecondsDefault;
-    internal int CooldownSeconds;
+    internal int cooldownSecondsDefault;
+    internal int cooldownSeconds;
 
     internal bool EnoughTimeHasPassed(LevelingInfo levelingInfo)
     {
@@ -19,7 +19,7 @@ internal sealed class CooldownTracker
 
         if (cache.TryGetValue(key, out DateTime lastCacheTime))
         {
-            if (lastCacheTime.AddSeconds(CooldownSeconds) > now)
+            if (lastCacheTime.AddSeconds(cooldownSeconds) > now)
             {
                 return false;
             }
@@ -32,7 +32,7 @@ internal sealed class CooldownTracker
 
     internal void ExposeData()
     {
-        Scribe_Values.Look(ref CooldownSeconds, "cooldownSeconds", CooldownSecondsDefault);
+        Scribe_Values.Look(ref cooldownSeconds, "cooldownSeconds", cooldownSecondsDefault);
     }
 
     internal void Maintain()
@@ -43,7 +43,7 @@ internal sealed class CooldownTracker
 
     private bool ShouldKeepEntry(KeyValuePair<int, DateTime> entry)
     {
-        TimeSpan cooldown = TimeSpan.FromSeconds(CooldownSeconds);
+        TimeSpan cooldown = TimeSpan.FromSeconds(cooldownSeconds);
         DateTime now = DateTime.UtcNow;
 
         return entry.Value + cooldown < now;

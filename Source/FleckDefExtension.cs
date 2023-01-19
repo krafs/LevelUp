@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using Verse;
 
 namespace LevelUp;
 
-internal class FleckDefExtension : DefModExtension
+internal sealed class FleckDefExtension : DefModExtension
 {
     internal readonly float scale = 1f;
     internal readonly float rotation;

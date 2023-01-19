@@ -1,34 +1,28 @@
-﻿using Verse;
+using Verse;
 
 namespace LevelUp;
-public static class I18n
+internal static class I18n
 {
-    public const string TranslatePrefix = "LevelUp.";
-
-    public static readonly string LevelUpActionsLabel = "LevelUpActionsLabel".TranslateInternal();
-    public static readonly string LevelDownActionsLabel = "LevelDownActionsLabel".TranslateInternal();
-
-    public static readonly string LevelUpActionHeaderDescription = "LevelUpActionHeaderDescription".TranslateInternal();
-    public static readonly string LevelDownActionHeaderDescription = "LevelDownActionHeaderDescription".TranslateInternal();
-
-    public static readonly string CooldownLabel = "CooldownLabel".TranslateInternal();
-    public static readonly string CooldownEntryDescription = "CooldownEntryDescription".TranslateInternal();
-    public static readonly string CooldownOnActionDescription = "CooldownOnActionDescription".TranslateInternal();
-
-    public static readonly string GeneralSettingsLabel = "GeneralSettingsLabel".TranslateInternal();
-    public static readonly string HistoricalLabel = "HistoricalLabel".TranslateInternal();
-    public static readonly string HistoricalDescription = "HistoricalDescription".TranslateInternal();
-
-    public static readonly string InjectableValuesLabel = "InjectableValuesLabel".TranslateInternal();
-    public static readonly string FormattingLabel = "FormattingLabel".TranslateInternal();
-    public static readonly string FormattingBoldLabel = "FormattingBoldLabel".TranslateInternal();
-    public static readonly string FormattingItalicLabel = "FormattingItalicLabel".TranslateInternal();
-    public static readonly string FormattingColorLabel = "FormattingColorLabel".TranslateInternal();
-
-    public static readonly string DefaultLevelUpMessage = "DefaultLevelUpMessage".TranslateInternal();
-    public static readonly string DefaultLevelDownMessage = "DefaultLevelDownMessage".TranslateInternal();
-    public static readonly string DefaultLevelUpOverheadMessage = "DefaultLevelUpOverheadMessage".TranslateInternal();
-    public static readonly string DefaultLevelDownOverheadMessage = "DefaultLevelDownOverheadMessage".TranslateInternal();
+    private const string TranslatePrefix = "LevelUp.";
+    internal static string LevelUpActionsLabel { get; } = "LevelUpActionsLabel".TranslateInternal();
+    internal static string LevelDownActionsLabel { get; } = "LevelDownActionsLabel".TranslateInternal();
+    internal static string LevelUpActionHeaderDescription { get; } = "LevelUpActionHeaderDescription".TranslateInternal();
+    internal static string LevelDownActionHeaderDescription { get; } = "LevelDownActionHeaderDescription".TranslateInternal();
+    internal static string CooldownLabel { get; } = "CooldownLabel".TranslateInternal();
+    internal static string CooldownEntryDescription { get; } = "CooldownEntryDescription".TranslateInternal();
+    internal static string CooldownOnActionDescription { get; } = "CooldownOnActionDescription".TranslateInternal();
+    internal static string GeneralSettingsLabel { get; } = "GeneralSettingsLabel".TranslateInternal();
+    internal static string HistoricalLabel { get; } = "HistoricalLabel".TranslateInternal();
+    internal static string HistoricalDescription { get; } = "HistoricalDescription".TranslateInternal();
+    internal static string InjectableValuesLabel { get; } = "InjectableValuesLabel".TranslateInternal();
+    internal static string FormattingLabel { get; } = "FormattingLabel".TranslateInternal();
+    internal static string FormattingBoldLabel { get; } = "FormattingBoldLabel".TranslateInternal();
+    internal static string FormattingItalicLabel { get; } = "FormattingItalicLabel".TranslateInternal();
+    internal static string FormattingColorLabel { get; } = "FormattingColorLabel".TranslateInternal();
+    internal static string DefaultLevelUpMessage { get; } = "DefaultLevelUpMessage".TranslateInternal();
+    internal static string DefaultLevelDownMessage { get; } = "DefaultLevelDownMessage".TranslateInternal();
+    internal static string DefaultLevelUpOverheadMessage { get; } = "DefaultLevelUpOverheadMessage".TranslateInternal();
+    internal static string DefaultLevelDownOverheadMessage { get; } = "DefaultLevelDownOverheadMessage".TranslateInternal();
 
     private static string TranslateInternal(this string key)
     {
