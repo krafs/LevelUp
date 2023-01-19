@@ -7,9 +7,10 @@ namespace LevelUp;
 
 internal sealed class CooldownTracker
 {
+    private const int CooldownSecondsDefault = 20;
+
     private Dictionary<int, DateTime> cache = new();
-    internal int cooldownSecondsDefault;
-    internal int cooldownSeconds;
+    internal int cooldownSeconds = CooldownSecondsDefault;
 
     internal bool EnoughTimeHasPassed(LevelingInfo levelingInfo)
     {
@@ -32,7 +33,7 @@ internal sealed class CooldownTracker
 
     internal void ExposeData()
     {
-        Scribe_Values.Look(ref cooldownSeconds, "cooldownSeconds", cooldownSecondsDefault);
+        Scribe_Values.Look(ref cooldownSeconds, "cooldownSeconds", CooldownSecondsDefault);
     }
 
     internal void Maintain()
