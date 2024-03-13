@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
@@ -8,7 +8,7 @@
     <ModOutput Condition="$(ModOutput) == ''">$(MSBuildThisFileDirectory)bin\</ModOutput>
     <LevelUpFolder>$(ModOutput)LevelUp\</LevelUpFolder>
     <OutDir>$(LevelUpFolder)Assemblies</OutDir>
-    <Version>4.2.0</Version>
+    <Version>4.3.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
