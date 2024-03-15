@@ -9,7 +9,7 @@ internal sealed class CooldownTracker
 {
     private const int CooldownSecondsDefault = 20;
 
-    private Dictionary<int, DateTime> cache = new();
+    private Dictionary<int, DateTime> cache = [];
     internal int cooldownSeconds = CooldownSecondsDefault;
 
     internal bool EnoughTimeHasPassed(LevelingInfo levelingInfo)

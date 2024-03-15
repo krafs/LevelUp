@@ -77,7 +77,7 @@ public class AnimationAction : LevelingAction
         {
             List<FloatMenuOption> options = DefDatabase<FleckDef>.AllDefs
                 .Where(x => x.HasModExtension<FleckDefExtension>())
-                .Select(x => new FloatMenuOption(fleckDef.LabelCap, () => fleckDef = x))
+                .Select(x => new FloatMenuOption(x.LabelCap, () => FleckDef = x))
                 .ToList();
 
             Find.WindowStack.Add(new FloatMenu(options));

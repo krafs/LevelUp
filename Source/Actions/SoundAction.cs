@@ -12,7 +12,6 @@ public class SoundAction : LevelingAction
 {
     private const float MinVolume = 0f;
     private const float MaxVolume = 1.5f;
-    private static readonly FloatRange volumeRange = new(MinVolume, MaxVolume);
 
     private SoundDef soundDef = null!;
     private float volume = 0.5f;
@@ -68,8 +67,8 @@ public class SoundAction : LevelingAction
             Execute(default);
         }
 
-        Rect sliderRect = new(slideControlRect) { xMin = iconRect.xMax + 5f, yMin = slideControlRect.yMin + 8f };
-        Widgets.HorizontalSlider(sliderRect, ref volume, volumeRange);
+        Rect sliderRect = new(slideControlRect) { xMin = iconRect.xMax + 5f };
+        volume = Widgets.HorizontalSlider(sliderRect, volume, MinVolume, MaxVolume, middleAlignment: true);
     }
 
     public override void ExposeData()
