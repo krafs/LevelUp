@@ -7,14 +7,8 @@ namespace LevelUp;
 
 public static class PawnSkillTimerCache
 {
-    private static readonly Dictionary<ValueTuple<Pawn, SkillDef>, DateTime> timerCache;
-    private static readonly Settings settings;
-
-    static PawnSkillTimerCache()
-    {
-        settings = LoadedModManager.GetMod<LevelUpMod>().GetSettings<Settings>();
-        timerCache = new Dictionary<ValueTuple<Pawn, SkillDef>, DateTime>();
-    }
+    private static readonly Dictionary<ValueTuple<Pawn, SkillDef>, DateTime> timerCache = [];
+    private static readonly Settings settings = LoadedModManager.GetMod<LevelUpMod>().GetSettings<Settings>();
 
     public static bool EnoughTimeHasPassed(LevelingInfo levelingInfo)
     {

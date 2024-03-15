@@ -1,6 +1,6 @@
+using RimWorld;
 using System;
 using System.Collections.Generic;
-using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
@@ -10,10 +10,10 @@ namespace LevelUp;
 [Serializable]
 public class ActionMaker : IExposable
 {
-    private List<LevelingAction> actions = new();
+    private List<LevelingAction> actions = [];
     private Vector2 scrollPosition;
-    private readonly List<LevelingAction> preparedActions = new();
-    private readonly List<LevelingAction> preparedCooldownActions = new();
+    private readonly List<LevelingAction> preparedActions = [];
+    private readonly List<LevelingAction> preparedCooldownActions = [];
     public List<LevelingAction> Actions => actions;
 
     public void Prepare()
@@ -53,8 +53,12 @@ public class ActionMaker : IExposable
             preparedActions[i].Execute(levelingInfo);
         }
 
+        bool changedExactlyOneLevel = Math.Abs(levelingInfo.OldLevel - levelingInfo.SkillRecord.Level) == 1;
         bool cooldownPassed = PawnSkillTimerCache.EnoughTimeHasPassed(levelingInfo);
-        if (!cooldownPassed)
+
+        // If changed more than one level we want to ignore cooldown, because this is an event the player probably wants to know about
+        // E.g. used neurotrainer directly after leveled in that same skill
+        if (changedExactlyOneLevel && !cooldownPassed)
         {
             return;
         }

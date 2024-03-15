@@ -11,12 +11,6 @@ Subscribe to the mod on [Steam Workshop](https://steamcommunity.com/sharedfiles/
 
 Start the game and enable the mod in the Mod menu. Place it anywhere below **Core** and **Harmony**[^1] in the load order.
 
-## Compatibility
-Level Up is compatible with Rimworld 1.4.
-
-Known incompatible mods:
-* Ducks' Insane Skills
-
 ## Usage
 You will automatically get notified whenever a colonist level up.
 Advanced configuration is available in the Mod settings.
