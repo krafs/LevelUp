@@ -1,37 +1,21 @@
-using System;
-using RimWorld;
 using UnityEngine;
 using Verse;
-using Verse.Sound;
 
 namespace LevelUp;
 
-[Serializable]
-public class Profile : IExposable
+public sealed class Profile : IExposable
 {
-    private ActionMaker levelUpActionMaker;
-    private ActionMaker levelDownActionMaker;
-    private GeneralSettingsContent generalSettingsContent;
-    private IDrawer selected = Drawer.Empty;
+    internal ActionMaker levelUpActionMaker = new();
+    internal ActionMaker levelDownActionMaker = new();
+    private LevelingAction? selected;
 
-    public ActionMaker LevelUpActionMaker => levelUpActionMaker;
-    public ActionMaker LevelDownActionMaker => levelDownActionMaker;
-    public GeneralSettingsContent GeneralSettingsContent => generalSettingsContent;
-
-    public Profile()
-    {
-        levelUpActionMaker = new ActionMaker();
-        levelDownActionMaker = new ActionMaker();
-        generalSettingsContent = new GeneralSettingsContent();
-    }
-
-    public void Prepare()
+    internal void Prepare()
     {
         levelUpActionMaker.Prepare();
         levelDownActionMaker.Prepare();
     }
 
-    public void Draw(Rect rect)
+    internal void Draw(Rect rect)
     {
         Rect leftRect = new(rect) { width = rect.width / 3 };
         Rect rightRect = new(rect) { xMin = leftRect.xMax };
@@ -47,23 +31,17 @@ public class Profile : IExposable
 
     private void DoLeft(Rect rect)
     {
-        Rect generalRect = new(rect) { height = 24f, xMax = rect.xMax - 15f };
-        DoGeneralRect(generalRect);
+        Rect levelUpListRect = new(rect) { height = rect.height / 2 };
+        DoList(levelUpListRect, levelUpActionMaker, I18n.LevelUpActionsLabel, I18n.LevelUpActionHeaderDescription);
 
-        Widgets.DrawLineHorizontal(generalRect.x, generalRect.yMax + 5f, generalRect.width);
-        Rect levelList = new(rect) { yMin = generalRect.yMax + 10f };
-
-        Rect levelUpListRect = new(levelList) { height = levelList.height / 2 };
-        DoList(levelUpListRect, LevelUpActionMaker, I18n.LevelUpActionsLabel, I18n.LevelUpActionHeaderDescription);
-
-        Rect levelDownListRect = new(levelList) { yMin = levelUpListRect.yMax };
-        DoList(levelDownListRect, LevelDownActionMaker, I18n.LevelDownActionsLabel, I18n.LevelDownActionHeaderDescription);
+        Rect levelDownListRect = new(rect) { yMin = levelUpListRect.yMax };
+        DoList(levelDownListRect, levelDownActionMaker, I18n.LevelDownActionsLabel, I18n.LevelDownActionHeaderDescription);
     }
 
     private void DoList(Rect rect, ActionMaker actionMaker, string header, string headerTooltip)
     {
         Rect labelRect = new(rect) { height = 24f, xMax = rect.xMax - 15f };
-        Widgets.Label(labelRect, header.Bold());
+        Widgets.Label(labelRect, $"<b>{header}</b>");
         TooltipHandler.TipRegion(labelRect, headerTooltip);
         Widgets.DrawHighlight(labelRect);
 
@@ -72,59 +50,24 @@ public class Profile : IExposable
         actionMaker.Draw(rect, ref selected);
     }
 
-    private void DoGeneralRect(Rect rect)
-    {
-        string generalLabel = I18n.GeneralSettingsLabel;
-        Widgets.Label(rect, generalLabel.Bold());
-        Widgets.DrawLightHighlight(rect);
-        if (Widgets.ButtonInvisible(rect))
-        {
-            SoundDefOf.Click.PlayOneShotOnCamera();
-            selected = selected == GeneralSettingsContent ? Drawer.Empty : GeneralSettingsContent;
-        }
-
-        if (selected == GeneralSettingsContent)
-        {
-            Widgets.DrawHighlightSelected(rect);
-        }
-        else if (Mouse.IsOver(rect))
-        {
-            Widgets.DrawHighlight(rect);
-        }
-    }
-
     private void DoRight(Rect rect)
     {
-        if (selected is LevelingAction selectedAction)
+        if (selected is not null)
         {
-            DoActionContent(rect, ref selectedAction);
-        }
-        else
-        {
-            selected.Draw(rect);
+            DoActionContent(rect, ref selected);
         }
     }
 
     private static void DoActionContent(Rect rect, ref LevelingAction selectedAction)
     {
         Rect rowRect = new(rect) { height = 24f };
-        Rect cooldownCheckbox = new(rowRect) { xMin = rowRect.xMax - rowRect.height };
-        string cooldownLabel = I18n.CooldownLabel;
-        Vector2 cooldownLabelSize = Text.CalcSize(cooldownLabel);
-        Rect cooldownLabelRect = new(cooldownCheckbox.xMin - cooldownLabelSize.x, rowRect.y, cooldownLabelSize.x, rowRect.height);
-        Widgets.Label(cooldownLabelRect, cooldownLabel);
 
-        TooltipHandler.TipRegion(cooldownLabelRect, I18n.CooldownOnActionDescription);
-        bool hasCooldown = selectedAction.Cooldown;
-        Widgets.Checkbox(cooldownCheckbox.x, cooldownCheckbox.y, ref hasCooldown);
-        selectedAction.Cooldown = hasCooldown;
-
-        string actionLabel = selectedAction.ActionDef.label;
+        string actionLabel = selectedAction.actionDef.label;
         Vector2 actionLabelSize = Text.CalcSize(actionLabel);
         actionLabelSize.x += 15f;
         Rect actionLabelRect = new(rowRect) { width = actionLabelSize.x };
-        Widgets.Label(actionLabelRect, selectedAction.ActionDef.label.Bold());
-        TooltipHandler.TipRegion(actionLabelRect, selectedAction.ActionDef.description);
+        Widgets.Label(actionLabelRect, $"<b>{selectedAction.actionDef.label}</b>");
+        TooltipHandler.TipRegion(actionLabelRect, selectedAction.actionDef.description);
 
         rect.y = rowRect.yMax;
         Widgets.DrawLineHorizontal(rect.x, rect.y, rect.width);
@@ -137,6 +80,5 @@ public class Profile : IExposable
     {
         Scribe_Deep.Look(ref levelUpActionMaker, "levelUpActionMaker");
         Scribe_Deep.Look(ref levelDownActionMaker, "levelDownActionMaker");
-        Scribe_Deep.Look(ref generalSettingsContent, "generalSettingsContent");
     }
 }

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+    
   <FleckDef ParentName="FleckBase_Thrown">
     <defName>LevelUpAnimation_Radiance</defName>
     <label>Radiance</label>
@@ -76,4 +77,5 @@
     <fadeOutTime>0.5</fadeOutTime>
     <unattachedDrawOffset>(0,0,2)</unattachedDrawOffset>
   </FleckDef>
+    
 </Defs>

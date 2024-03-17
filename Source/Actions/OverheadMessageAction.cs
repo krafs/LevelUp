@@ -1,12 +1,10 @@
-using System;
 using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace LevelUp;
 
-[Serializable]
-public class OverheadMessageAction : TextAction
+public sealed class OverheadMessageAction : TextAction
 {
     private bool historical;
 
@@ -18,7 +16,7 @@ public class OverheadMessageAction : TextAction
             return;
         }
 
-        string resolvedText = ResolveText(levelingInfo, Text);
+        string resolvedText = ResolveText(levelingInfo, text);
         MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, resolvedText);
 
         if (historical)
@@ -28,7 +26,7 @@ public class OverheadMessageAction : TextAction
         }
     }
 
-    public override void Draw(Rect rect)
+    internal override void Draw(Rect rect)
     {
         rect.yMin = DrawTextBuilder(rect).yMax;
 

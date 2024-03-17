@@ -3,8 +3,8 @@ using Verse;
 
 namespace LevelUp;
 
-public readonly ref struct LevelingInfo(Pawn pawn, SkillRecord skillRecord)
+internal readonly ref struct LevelingInfo(Pawn pawn, SkillRecord skillRecord)
 {
-    public readonly Pawn Pawn => pawn;
-    public readonly SkillRecord SkillRecord => skillRecord;
+    internal readonly Pawn Pawn => pawn;
+    internal readonly SkillRecord SkillRecord => skillRecord;
 }

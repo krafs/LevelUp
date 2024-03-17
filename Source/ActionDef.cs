@@ -4,11 +4,9 @@ using Verse;
 
 namespace LevelUp;
 
-[Serializable]
-public class ActionDef : Def
+public sealed class ActionDef : Def
 {
-    private readonly Type actionClass = null!;
-    public Type ActionClass => actionClass;
+    internal readonly Type actionClass = null!;
 
     public override IEnumerable<string> ConfigErrors()
     {

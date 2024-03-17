@@ -1,14 +1,12 @@
-using System;
+using System.Collections.Generic;
 using Verse;
 
 namespace LevelUp;
 
-[Serializable]
-public class Settings : ModSettings
+public sealed class Settings : ModSettings
 {
-    private Profile profile = null!;
-    public Profile Profile => profile;
-    public static Profile CurrentProfile { get; private set; } = null!;
+    internal static Dictionary<int, int> timerCache = [];
+    internal static Profile profile = new();
 
     public Settings()
     {
@@ -31,9 +29,8 @@ public class Settings : ModSettings
         }
     }
 
-    private void EnsureInitialized()
+    private static void EnsureInitialized()
     {
-        CurrentProfile = profile ??= new Profile();
         ProfileInitializer.InitializeProfile(profile);
         profile.Prepare();
     }

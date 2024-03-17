@@ -1,26 +1,17 @@
-using System;
+using RimWorld;
 using System.Globalization;
 using System.Text;
-using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace LevelUp;
 
-[Serializable]
 public abstract class TextAction : LevelingAction
 {
     private static readonly StringBuilder stringBuilder = new();
-    private string text = string.Empty;
-    public string Text { get => text; set => text = value; }
+    internal string text = string.Empty;
 
-    internal override void Prepare()
-    {
-        base.Prepare();
-        text ??= string.Empty;
-    }
-
-    protected static string ResolveText(LevelingInfo levelingInfo, string text)
+    internal static string ResolveText(LevelingInfo levelingInfo, string text)
     {
         return ResolveText(levelingInfo.Pawn.LabelShortCap, levelingInfo.SkillRecord.Level, levelingInfo.SkillRecord.def.LabelCap, text);
     }
@@ -45,14 +36,14 @@ public abstract class TextAction : LevelingAction
         Rect rowRect = new(rect) { height = 24f };
 
         Rect exampleTextRect = new(rowRect) { height = rowRect.height * 2 };
-        TextAnchor curAnchor = Verse.Text.Anchor;
-        Verse.Text.Anchor = TextAnchor.MiddleCenter;
-        Widgets.Label(exampleTextRect, ResolveText(pawnLabel, skillLevel, skillLabel, Text));
-        Verse.Text.Anchor = curAnchor;
+        TextAnchor curAnchor = Text.Anchor;
+        Text.Anchor = TextAnchor.MiddleCenter;
+        Widgets.Label(exampleTextRect, ResolveText(pawnLabel, skillLevel, skillLabel, text));
+        Text.Anchor = curAnchor;
 
         rowRect.y = rowRect.yMax + 5f;
         Rect textEntryRect = new(rowRect) { y = exampleTextRect.yMax, height = rowRect.height * 3 };
-        text = Widgets.TextArea(textEntryRect, Text);
+        text = Widgets.TextArea(textEntryRect, text);
 
         rowRect.y = textEntryRect.yMax + 5f;
         Rect guideRect = new(rowRect) { height = 24f * 11 };
@@ -60,7 +51,7 @@ public abstract class TextAction : LevelingAction
         Widgets.DrawMenuSection(guideRect);
         Rect guideRowRect = new(innerGuideRect) { height = 24f };
         Rect label2Rect = new(guideRowRect) { x = guideRowRect.x + (guideRowRect.width / 2) };
-        Widgets.Label(guideRowRect, I18n.InjectableValuesLabel.Bold());
+        Widgets.Label(guideRowRect, $"<b>{I18n.InjectableValuesLabel}</b>");
 
         guideRowRect.y = guideRowRect.yMax;
         label2Rect.y = label2Rect.yMax;
@@ -79,34 +70,34 @@ public abstract class TextAction : LevelingAction
 
         guideRowRect.y = guideRowRect.yMax + 5f;
         label2Rect.y = label2Rect.yMax + 5f;
-        Widgets.Label(guideRowRect, I18n.FormattingLabel.Bold());
+        Widgets.Label(guideRowRect, $"<b>{I18n.FormattingLabel}</b>");
 
         guideRowRect.y = guideRowRect.yMax;
         label2Rect.y = label2Rect.yMax;
-        Verse.Text.CurFontStyle.richText = false;
-        Widgets.Label(guideRowRect, I18n.FormattingBoldLabel.Bold());
-        Verse.Text.CurFontStyle.richText = true;
-        Widgets.Label(label2Rect, I18n.FormattingBoldLabel.Bold());
+        Text.CurFontStyle.richText = false;
+        Widgets.Label(guideRowRect, $"<b>{I18n.FormattingBoldLabel}</b>");
+        Text.CurFontStyle.richText = true;
+        Widgets.Label(label2Rect, $"<b>{I18n.FormattingBoldLabel}</b>");
 
         guideRowRect.y = guideRowRect.yMax;
         label2Rect.y = label2Rect.yMax;
-        Verse.Text.CurFontStyle.richText = false;
-        Widgets.Label(guideRowRect, I18n.FormattingItalicLabel.Italic());
-        Verse.Text.CurFontStyle.richText = true;
-        Widgets.Label(label2Rect, I18n.FormattingItalicLabel.Italic());
+        Text.CurFontStyle.richText = false;
+        Widgets.Label(guideRowRect, $"<i>{I18n.FormattingItalicLabel}</i>");
+        Text.CurFontStyle.richText = true;
+        Widgets.Label(label2Rect, $"<i>{I18n.FormattingItalicLabel}</i>");
 
         guideRowRect.y = guideRowRect.yMax;
         label2Rect.y = label2Rect.yMax;
-        Verse.Text.CurFontStyle.richText = false;
+        Text.CurFontStyle.richText = false;
         Widgets.Label(guideRowRect, $"<color=green>{I18n.FormattingColorLabel}</color>");
-        Verse.Text.CurFontStyle.richText = true;
+        Text.CurFontStyle.richText = true;
         Widgets.Label(label2Rect, $"<color=green>{I18n.FormattingColorLabel}</color>");
 
         guideRowRect.y = guideRowRect.yMax;
         label2Rect.y = label2Rect.yMax;
-        Verse.Text.CurFontStyle.richText = false;
+        Text.CurFontStyle.richText = false;
         Widgets.Label(guideRowRect, $"<color=#F0CC1E>{I18n.FormattingColorLabel}</color>");
-        Verse.Text.CurFontStyle.richText = true;
+        Text.CurFontStyle.richText = true;
         Widgets.Label(label2Rect, $"<color=#F0CC1E>{I18n.FormattingColorLabel}</color>");
 
         return new Rect(rect) { yMax = guideRect.yMax + 15f };

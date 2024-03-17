@@ -3,77 +3,77 @@ using Verse;
 
 namespace LevelUp;
 
-public static class ProfileInitializer
+internal static class ProfileInitializer
 {
-    public static void InitializeProfile(Profile profile)
+    internal static void InitializeProfile(Profile profile)
     {
         // Level up
         foreach (ActionDef actionDef in DefDatabase<ActionDef>.AllDefs)
         {
-            if (!profile.LevelUpActionMaker.Actions.Any(x => x.ActionDef == actionDef))
+            if (!profile.levelUpActionMaker.actions.Any(x => x.actionDef == actionDef))
             {
-                if (Activator.CreateInstance(actionDef.ActionClass) is not LevelingAction action)
+                if (Activator.CreateInstance(actionDef.actionClass) is not LevelingAction action)
                 {
                     throw new InvalidOperationException("action is null");
                 }
-                action.ActionDef = actionDef;
-                profile.LevelUpActionMaker.Actions.Add(action);
+                action.actionDef = actionDef;
+                profile.levelUpActionMaker.actions.Add(action);
 
                 if (action is SoundAction soundAction)
                 {
-                    soundAction.Active = true;
-                    soundAction.SoundDef = DefDatabase<SoundDef>.GetNamed("LevelUpSound_Ding");
+                    soundAction.active = true;
+                    soundAction.SoundDef = DefOfs.Ding;
                 }
                 else if (action is MessageAction messageAction)
                 {
-                    messageAction.Active = true;
-                    messageAction.Text = I18n.DefaultLevelUpMessage;
+                    messageAction.active = true;
+                    messageAction.text = I18n.DefaultLevelUpMessage;
                 }
                 else if (action is OverheadMessageAction overheadMessageAction)
                 {
-                    overheadMessageAction.Text = I18n.DefaultLevelUpOverheadMessage;
+                    overheadMessageAction.text = I18n.DefaultLevelUpOverheadMessage;
                 }
                 else if (action is AnimationAction animationAction)
                 {
-                    animationAction.Active = true;
-                    animationAction.FleckDef = DefDatabase<FleckDef>.GetNamed("LevelUpAnimation_Radiance");
+                    animationAction.active = true;
+                    animationAction.FleckDef = DefOfs.Radiance;
                 }
             }
         }
 
-        profile.LevelUpActionMaker.Actions.SortBy(x => x.ActionDef.LabelCap.RawText);
+        profile.levelUpActionMaker.actions.SortBy(x => x.actionDef.LabelCap.RawText);
 
         // Level down
         foreach (ActionDef actionDef in DefDatabase<ActionDef>.AllDefs)
         {
-            if (!profile.LevelDownActionMaker.Actions.Any(x => x.ActionDef == actionDef))
+            if (!profile.levelDownActionMaker.actions.Any(x => x.actionDef == actionDef))
             {
-                if (Activator.CreateInstance(actionDef.ActionClass) is not LevelingAction action)
+                if (Activator.CreateInstance(actionDef.actionClass) is not LevelingAction action)
                 {
                     throw new InvalidOperationException("action is null");
                 }
-                action.ActionDef = actionDef;
-                profile.LevelDownActionMaker.Actions.Add(action);
+                action.actionDef = actionDef;
+                profile.levelDownActionMaker.actions.Add(action);
 
                 if (action is SoundAction soundAction)
                 {
-                    soundAction.SoundDef = DefDatabase<SoundDef>.GetNamed("LevelUpSound_Negative");
+                    soundAction.SoundDef = DefOfs.Negative;
                 }
                 else if (action is MessageAction messageAction)
                 {
-                    messageAction.Text = I18n.DefaultLevelDownMessage;
+                    messageAction.text = I18n.DefaultLevelDownMessage;
                 }
                 else if (action is OverheadMessageAction overheadMessageAction)
                 {
-                    overheadMessageAction.Text = I18n.DefaultLevelDownOverheadMessage;
+                    overheadMessageAction.text = I18n.DefaultLevelDownOverheadMessage;
                 }
                 else if (action is AnimationAction animationAction)
                 {
-                    animationAction.FleckDef = DefDatabase<FleckDef>.GetNamed("LevelUpAnimation_Drain");
+                    animationAction.FleckDef = DefOfs.Drain;
                 }
             }
         }
 
-        profile.LevelDownActionMaker.Actions.SortBy(x => x.ActionDef.LabelCap.RawText);
+        profile.levelDownActionMaker.actions.SortBy(x => x.actionDef.LabelCap.RawText);
     }
 }

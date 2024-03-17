@@ -1,5 +1,4 @@
 using RimWorld;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
@@ -7,41 +6,30 @@ using Verse.Sound;
 
 namespace LevelUp;
 
-[Serializable]
-public class ActionMaker : IExposable
+public sealed class ActionMaker : IExposable
 {
-    private List<LevelingAction> actions = [];
+    internal List<LevelingAction> actions = [];
     private Vector2 scrollPosition;
     private readonly List<LevelingAction> preparedActions = [];
-    private readonly List<LevelingAction> preparedCooldownActions = [];
-    public List<LevelingAction> Actions => actions;
 
-    public void Prepare()
+    internal void Prepare()
     {
         preparedActions.Clear();
-        preparedCooldownActions.Clear();
 
         foreach (LevelingAction action in actions)
         {
-            if (!action.Active)
+            if (!action.active)
             {
                 continue;
             }
 
-            if (action.Cooldown)
-            {
-                preparedCooldownActions.Add(action);
-            }
-            else
-            {
-                preparedActions.Add(action);
-            }
+            preparedActions.Add(action);
 
             action.Prepare();
         }
     }
 
-    public void ExecuteActions(LevelingInfo levelingInfo)
+    internal void ExecuteActions(LevelingInfo levelingInfo)
     {
         if (!levelingInfo.Pawn.IsFreeColonist)
         {
@@ -52,24 +40,9 @@ public class ActionMaker : IExposable
         {
             preparedActions[i].Execute(levelingInfo);
         }
-
-        bool changedExactlyOneLevel = Math.Abs(levelingInfo.OldLevel - levelingInfo.SkillRecord.Level) == 1;
-        bool cooldownPassed = PawnSkillTimerCache.EnoughTimeHasPassed(levelingInfo);
-
-        // If changed more than one level we want to ignore cooldown, because this is an event the player probably wants to know about
-        // E.g. used neurotrainer directly after leveled in that same skill
-        if (changedExactlyOneLevel && !cooldownPassed)
-        {
-            return;
-        }
-
-        for (int i = 0; i < preparedCooldownActions.Count; i++)
-        {
-            preparedCooldownActions[i].Execute(levelingInfo);
-        }
     }
 
-    public void Draw(Rect rect, ref IDrawer selectedAction)
+    internal void Draw(Rect rect, ref LevelingAction? selectedAction)
     {
         float listHeight = actions.Count * 24f;
         Rect viewRect = new(rect) { xMax = rect.xMax - 15f, height = listHeight };
@@ -79,17 +52,17 @@ public class ActionMaker : IExposable
         {
             LevelingAction action = actions[i];
             Rect checkboxRect = new(rowRect) { xMin = rowRect.xMax - rowRect.height, width = rowRect.height };
-            bool isActive = action.Active;
+            bool isActive = action.active;
             Widgets.Checkbox(checkboxRect.x, checkboxRect.y, ref isActive);
-            action.Active = isActive;
+            action.active = isActive;
 
             Rect labelRect = new(rowRect) { xMax = checkboxRect.xMin };
-            Widgets.Label(labelRect, action.ActionDef.label);
+            Widgets.Label(labelRect, action.actionDef.label);
 
             if (Widgets.ButtonInvisible(labelRect))
             {
                 SoundDefOf.Click.PlayOneShotOnCamera();
-                selectedAction = selectedAction == action ? Drawer.Empty : action;
+                selectedAction = selectedAction == action ? null : action;
             }
 
             if (selectedAction == action)

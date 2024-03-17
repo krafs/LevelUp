@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,35 +6,18 @@ using Verse.Sound;
 
 namespace LevelUp;
 
-[Serializable]
-public class SoundAction : LevelingAction
+public sealed class SoundAction : LevelingAction
 {
     private const float MinVolume = 0f;
     private const float MaxVolume = 1.5f;
 
-    private SoundDef soundDef = null!;
+    private SoundDef soundDef = DefOfs.Ding;
     private float volume = 0.5f;
 
     public SoundDef SoundDef
     {
         get => soundDef;
-        set
-        {
-            soundDef = value;
-            Prepare();
-        }
-    }
-
-    public SoundAction()
-    {
-        soundDef = DefDatabase<SoundDef>.AllDefs
-                .Where(x => x.HasModExtension<SoundDefExtension>())
-                .RandomElement();
-    }
-
-    internal override void Prepare()
-    {
-        base.Prepare();
+        set => soundDef = value;
     }
 
     internal override void Execute(LevelingInfo levelingInfo)
@@ -45,10 +27,9 @@ public class SoundAction : LevelingAction
         soundDef.PlayOneShot(soundInfo);
     }
 
-    public override void Draw(Rect rect)
+    internal override void Draw(Rect rect)
     {
         Rect rowRect = new(rect) { height = 24f };
-
         Rect dropDownRect = new(rowRect) { width = rect.width / 2 };
 
         if (Widgets.ButtonText(dropDownRect, soundDef.LabelCap))
