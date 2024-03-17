@@ -4,12 +4,13 @@ using Verse;
 
 namespace LevelUp;
 
-public class LevelUpMod : Mod
+public sealed class LevelUpMod : Mod
 {
     public LevelUpMod(ModContentPack content) : base(content)
     {
-        Harmony harmony = new("krafs.levelup");
-        HarmonyPatching.ApplyPatches(harmony);
+        Harmony harmony = new(content.PackageId);
+        Patcher.ApplyPatches(harmony);
+        LongEventHandler.ExecuteWhenFinished(() => LoadedModManager.GetMod<LevelUpMod>().GetSettings<Settings>());
     }
 
     public override string SettingsCategory()
@@ -19,6 +20,6 @@ public class LevelUpMod : Mod
 
     public override void DoSettingsWindowContents(Rect inRect)
     {
-        GetSettings<Settings>().Profile.Draw(inRect);
+        Settings.profile.Draw(inRect);
     }
 }

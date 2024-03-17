@@ -1,24 +1,22 @@
-using System;
 using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace LevelUp;
 
-[Serializable]
-public class MessageAction : TextAction
+public sealed class MessageAction : TextAction
 {
     private bool historical;
 
     internal override void Execute(LevelingInfo levelingInfo)
     {
-        string resolvedText = ResolveText(levelingInfo, Text);
+        string resolvedText = ResolveText(levelingInfo, text);
         Message message = new(resolvedText, MessageTypeDefOf.SilentInput, levelingInfo.Pawn);
 
         Messages.Message(message, historical);
     }
 
-    public override void Draw(Rect rect)
+    internal override void Draw(Rect rect)
     {
         rect.yMin = DrawTextBuilder(rect).yMax;
 

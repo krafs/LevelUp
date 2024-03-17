@@ -2,5 +2,4 @@ using Verse;
 
 namespace LevelUp;
 
-internal sealed class SoundDefExtension : DefModExtension
-{ }
+internal sealed class SoundDefExtension : DefModExtension;

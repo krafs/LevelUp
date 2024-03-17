@@ -7,12 +7,7 @@
 	
 	<LevelUp.LevelUpActionHeaderDescription>Elenco di azioni che, se attive, vengono eseguite quando un colono aumenta di livello un'abilità.</LevelUp.LevelUpActionHeaderDescription>
 	<LevelUp.LevelDownActionHeaderDescription>Elenco di azioni che, se attive, vengono eseguite quando un colono diminuisce di livello un'abilità.</LevelUp.LevelDownActionHeaderDescription>
-	
-	<LevelUp.CooldownLabel>Cooldown</LevelUp.CooldownLabel>
-	<LevelUp.CooldownEntryDescription>La durata di un cooldown è specificato in secondi (del tempo reale).\n\nSe viene applicato a un'azione, questa non verrà eseguita per lo stesso colono e stessa abilità fino a quando il cooldown non sarà terminato.</LevelUp.CooldownEntryDescription>
-	<LevelUp.CooldownOnActionDescription>Indipendentemente dal fatto che il cooldown debba essere applicato per questa azione.\n\nSe applicato, l'azione non verrà eseguita nuovamente per lo stesso colono e stessa abilità fino a quando il cooldown non sarà terminato.</LevelUp.CooldownOnActionDescription>
-	
-	<LevelUp.GeneralSettingsLabel>Generale</LevelUp.GeneralSettingsLabel>
+
 	<LevelUp.HistoricalLabel>Cronologia</LevelUp.HistoricalLabel>
 	<LevelUp.HistoricalDescription>Indipendentemente dal fatto che il messaggio debba essere salvato nella cronologia.</LevelUp.HistoricalDescription>
 	
@@ -27,4 +22,5 @@
 	<LevelUp.DefaultLevelDownMessage><![CDATA[<color=orange>{PAWN}</color> ha raggiunto il livello {LEVEL} in {SKILL}.]]></LevelUp.DefaultLevelDownMessage>
 	<LevelUp.DefaultLevelUpOverheadMessage>{SKILL}\nlivello {LEVEL}</LevelUp.DefaultLevelUpOverheadMessage>
 	<LevelUp.DefaultLevelDownOverheadMessage>{SKILL}\nlivello {LEVEL}</LevelUp.DefaultLevelDownOverheadMessage>
+    
 </LanguageData>

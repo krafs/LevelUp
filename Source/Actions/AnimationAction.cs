@@ -1,13 +1,12 @@
-using System;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
-using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace LevelUp;
 
-public class AnimationAction : LevelingAction
+public sealed class AnimationAction : LevelingAction
 {
     private FleckDef fleckDef;
     private Graphic_Single graphic = null!;
@@ -26,9 +25,7 @@ public class AnimationAction : LevelingAction
 
     public AnimationAction()
     {
-        fleckDef = DefDatabase<FleckDef>.AllDefs
-                .Where(x => x.HasModExtension<FleckDefExtension>())
-                .RandomElement();
+        fleckDef = DefOfs.Radiance;
         Prepare();
     }
 
@@ -61,15 +58,11 @@ public class AnimationAction : LevelingAction
     internal override void Prepare()
     {
         defExtension = fleckDef.GetModExtension<FleckDefExtension>();
-
-        graphic = fleckDef.graphicData.Graphic is Graphic_Single graphicSingle
-            ? graphicSingle
-            : throw new InvalidOperationException("Null graphic on FleckDef.");
-
+        graphic = (Graphic_Single)fleckDef.graphicData.Graphic;
         texture = ContentFinder<Texture2D>.Get(fleckDef.graphicData.texPath);
     }
 
-    public override void Draw(Rect rect)
+    internal override void Draw(Rect rect)
     {
         Rect rowRect = new(rect) { height = 24f };
         Rect buttonRect = new(rowRect) { width = rowRect.width / 2 };
@@ -85,13 +78,8 @@ public class AnimationAction : LevelingAction
 
         Rect imageRect = new(rect.x, buttonRect.yMax + 10f, rect.width / 2, rect.width / 2);
         Widgets.DrawMenuSection(imageRect);
-        DrawGraphic(imageRect);
-    }
-
-    private void DrawGraphic(Rect rect)
-    {
         Widgets.DrawTextureFitted(
-            outerRect: rect,
+            outerRect: imageRect,
             tex: texture,
             scale: 1f,
             texProportions: new Vector2(texture.width, texture.height),

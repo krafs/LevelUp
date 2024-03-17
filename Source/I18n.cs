@@ -1,6 +1,7 @@
 using Verse;
 
 namespace LevelUp;
+
 internal static class I18n
 {
     private const string TranslatePrefix = "LevelUp.";
@@ -8,10 +9,6 @@ internal static class I18n
     internal static string LevelDownActionsLabel { get; } = "LevelDownActionsLabel".TranslateInternal();
     internal static string LevelUpActionHeaderDescription { get; } = "LevelUpActionHeaderDescription".TranslateInternal();
     internal static string LevelDownActionHeaderDescription { get; } = "LevelDownActionHeaderDescription".TranslateInternal();
-    internal static string CooldownLabel { get; } = "CooldownLabel".TranslateInternal();
-    internal static string CooldownEntryDescription { get; } = "CooldownEntryDescription".TranslateInternal();
-    internal static string CooldownOnActionDescription { get; } = "CooldownOnActionDescription".TranslateInternal();
-    internal static string GeneralSettingsLabel { get; } = "GeneralSettingsLabel".TranslateInternal();
     internal static string HistoricalLabel { get; } = "HistoricalLabel".TranslateInternal();
     internal static string HistoricalDescription { get; } = "HistoricalDescription".TranslateInternal();
     internal static string InjectableValuesLabel { get; } = "InjectableValuesLabel".TranslateInternal();
