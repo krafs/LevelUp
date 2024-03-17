@@ -4,16 +4,26 @@ using Verse;
 
 namespace LevelUp;
 
-public sealed class MessageAction : TextAction
+public sealed class LevelingAction_OverheadMessage : LevelingAction_Text
 {
     private bool historical;
 
     internal override void Execute(LevelingInfo levelingInfo)
     {
-        string resolvedText = ResolveText(levelingInfo, text);
-        Message message = new(resolvedText, MessageTypeDefOf.SilentInput, levelingInfo.Pawn);
+        Pawn pawn = levelingInfo.Pawn;
+        if (pawn.Map is null)
+        {
+            return;
+        }
 
-        Messages.Message(message, historical);
+        string resolvedText = ResolveText(levelingInfo, text);
+        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, resolvedText);
+
+        if (historical)
+        {
+            Message message = new(resolvedText, MessageTypeDefOf.SilentInput, pawn);
+            Find.Archive.Add(message);
+        }
     }
 
     internal override void Draw(Rect rect)

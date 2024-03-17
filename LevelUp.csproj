@@ -20,7 +20,7 @@
     <PackageReference Include="Lib.Harmony" Version="2.3.1.1" ExcludeAssets="runtime" />
   </ItemGroup>
 
-  <Target Name="CopyModItemsToModOutput" AfterTargets="Build">
+  <Target Name="CopyToModOutput" AfterTargets="Build">
     <Copy SourceFiles="@(ModItem)" DestinationFiles="$(LevelUpFolder)%(Identity)" />
   </Target>
 

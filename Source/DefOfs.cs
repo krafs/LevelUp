@@ -1,8 +1,9 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 
 namespace LevelUp;
 
+#pragma warning disable IDE1006 // Naming Styles
 [DefOf]
 internal static class DefOfs
 {

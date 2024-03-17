@@ -9,12 +9,6 @@ public sealed class Profile : IExposable
     internal ActionMaker levelDownActionMaker = new();
     private LevelingAction? selected;
 
-    internal void Prepare()
-    {
-        levelUpActionMaker.Prepare();
-        levelDownActionMaker.Prepare();
-    }
-
     internal void Draw(Rect rect)
     {
         Rect leftRect = new(rect) { width = rect.width / 3 };
