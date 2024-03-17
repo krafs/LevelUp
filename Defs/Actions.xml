@@ -5,28 +5,28 @@
     <defName>LevelUpActionDef_Sound</defName>
     <label>Sound</label>
     <description>Plays a sound.</description>
-    <actionClass>LevelUp.SoundAction</actionClass>
+    <actionClass>LevelUp.LevelingAction_Sound</actionClass>
   </LevelUp.ActionDef>
 
   <LevelUp.ActionDef>
     <defName>LevelUpActionDef_Animation</defName>
     <label>Animation</label>
     <description>Displays a simple, possibly animated, graphic on the colonist.</description>
-    <actionClass>LevelUp.AnimationAction</actionClass>
+    <actionClass>LevelUp.LevelingAction_Animation</actionClass>
   </LevelUp.ActionDef>
 
   <LevelUp.ActionDef>
     <defName>LevelUpActionDef_Message</defName>
     <label>Text message</label>
     <description>Displays a text message in the top-left corner of the screen.</description>
-    <actionClass>LevelUp.MessageAction</actionClass>
+    <actionClass>LevelUp.LevelingAction_Message</actionClass>
   </LevelUp.ActionDef>
 
   <LevelUp.ActionDef>
     <defName>LevelUpActionDef_OverheadMessage</defName>
     <label>Overhead message</label>
     <description>Displays a text message on the colonist.</description>
-    <actionClass>LevelUp.OverheadMessageAction</actionClass>
+    <actionClass>LevelUp.LevelingAction_OverheadMessage</actionClass>
   </LevelUp.ActionDef>
     
 </Defs>

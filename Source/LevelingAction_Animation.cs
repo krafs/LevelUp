@@ -6,9 +6,9 @@ using Verse;
 
 namespace LevelUp;
 
-public sealed class AnimationAction : LevelingAction
+public sealed class LevelingAction_Animation : LevelingAction
 {
-    private FleckDef fleckDef;
+    private FleckDef fleckDef = null!;
     private Graphic_Single graphic = null!;
     private Texture2D texture = null!;
     private FleckDefExtension defExtension = null!;
@@ -19,14 +19,15 @@ public sealed class AnimationAction : LevelingAction
         set
         {
             fleckDef = value;
-            Prepare();
+            defExtension = fleckDef.GetModExtension<FleckDefExtension>();
+            graphic = (Graphic_Single)fleckDef.graphicData.Graphic;
+            texture = ContentFinder<Texture2D>.Get(fleckDef.graphicData.texPath);
         }
     }
 
-    public AnimationAction()
+    public LevelingAction_Animation()
     {
-        fleckDef = DefOfs.Radiance;
-        Prepare();
+        FleckDef = DefOfs.Radiance;
     }
 
     internal override void Execute(LevelingInfo levelingInfo)
@@ -53,13 +54,6 @@ public sealed class AnimationAction : LevelingAction
         fleckData.link = new FleckAttachLink(pawn);
 
         map.flecks.CreateFleck(fleckData);
-    }
-
-    internal override void Prepare()
-    {
-        defExtension = fleckDef.GetModExtension<FleckDefExtension>();
-        graphic = (Graphic_Single)fleckDef.graphicData.Graphic;
-        texture = ContentFinder<Texture2D>.Get(fleckDef.graphicData.texPath);
     }
 
     internal override void Draw(Rect rect)

@@ -10,24 +10,6 @@ public sealed class ActionMaker : IExposable
 {
     internal List<LevelingAction> actions = [];
     private Vector2 scrollPosition;
-    private readonly List<LevelingAction> preparedActions = [];
-
-    internal void Prepare()
-    {
-        preparedActions.Clear();
-
-        foreach (LevelingAction action in actions)
-        {
-            if (!action.active)
-            {
-                continue;
-            }
-
-            preparedActions.Add(action);
-
-            action.Prepare();
-        }
-    }
 
     internal void ExecuteActions(LevelingInfo levelingInfo)
     {
@@ -36,9 +18,12 @@ public sealed class ActionMaker : IExposable
             return;
         }
 
-        for (int i = 0; i < preparedActions.Count; i++)
+        foreach (LevelingAction action in actions)
         {
-            preparedActions[i].Execute(levelingInfo);
+            if (action.active)
+            {
+                action.Execute(levelingInfo);
+            }
         }
     }
 

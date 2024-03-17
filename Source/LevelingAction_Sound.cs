@@ -6,7 +6,7 @@ using Verse.Sound;
 
 namespace LevelUp;
 
-public sealed class SoundAction : LevelingAction
+public sealed class LevelingAction_Sound : LevelingAction
 {
     private const float MinVolume = 0f;
     private const float MaxVolume = 1.5f;

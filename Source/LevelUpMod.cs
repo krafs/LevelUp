@@ -10,7 +10,12 @@ public sealed class LevelUpMod : Mod
     {
         Harmony harmony = new(content.PackageId);
         Patcher.ApplyPatches(harmony);
-        LongEventHandler.ExecuteWhenFinished(() => LoadedModManager.GetMod<LevelUpMod>().GetSettings<Settings>());
+        LongEventHandler.ExecuteWhenFinished(static () =>
+        {
+            // Retrieve settings to initialize values, so they're in place.
+            // We do this in LongEvent because defs aren't loaded in Mod constructor.
+            LoadedModManager.GetMod<LevelUpMod>().GetSettings<Settings>();
+        });
     }
 
     public override string SettingsCategory()

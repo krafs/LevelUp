@@ -6,7 +6,7 @@ using Verse;
 
 namespace LevelUp;
 
-public abstract class TextAction : LevelingAction
+public abstract class LevelingAction_Text : LevelingAction
 {
     private static readonly StringBuilder stringBuilder = new();
     internal string text = string.Empty;
