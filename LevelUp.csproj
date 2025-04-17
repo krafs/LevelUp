@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4409" />
-    <PackageReference Include="Lib.Harmony" Version="2.3.5" ExcludeAssets="runtime" />
+    <PackageReference Include="Lib.Harmony" Version="2.3.6" ExcludeAssets="runtime" />
   </ItemGroup>
 
   <Target Name="CopyToModOutput" AfterTargets="Build">
