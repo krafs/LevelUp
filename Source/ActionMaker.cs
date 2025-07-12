@@ -13,11 +13,6 @@ public sealed class ActionMaker : IExposable
 
     internal void ExecuteActions(LevelingInfo levelingInfo)
     {
-        if (!levelingInfo.Pawn.IsFreeColonist)
-        {
-            return;
-        }
-
         foreach (LevelingAction action in actions)
         {
             if (action.active)
