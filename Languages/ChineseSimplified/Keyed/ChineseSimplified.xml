@@ -1,5 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <LevelUp.DefaultLevelUpMessage><![CDATA[升级! <color=orange>{PAWN}</color> 的{SKILL}技能到达{LEVEL}级。]]></LevelUp.DefaultLevelUpMessage>
+
+	<!-- UI -->
+	<!-- EN: Level up actions -->
+  <LevelUp.LevelUpActionsLabel>升级操作</LevelUp.LevelUpActionsLabel>
+	<!-- EN: Level down actions -->
+  <LevelUp.LevelDownActionsLabel>降级操作</LevelUp.LevelDownActionsLabel>
+	
+	<!-- EN: List of actions that, if active, are executed when a colonist levels up a skill. -->
+  <LevelUp.LevelUpActionHeaderDescription>殖民者技能升级时，将执行此处启用的动作列表。</LevelUp.LevelUpActionHeaderDescription>
+	<!-- EN: List of actions that, if active, are executed when a colonist levels down a skill. -->
+  <LevelUp.LevelDownActionHeaderDescription>殖民者技能降级时，将执行此处启用的动作列表。</LevelUp.LevelDownActionHeaderDescription>
+	
+	<!-- EN: Historical -->
+  <LevelUp.HistoricalLabel>历史记录</LevelUp.HistoricalLabel>
+	<!-- EN: Whether or not the message should be saved in history. -->
+  <LevelUp.HistoricalDescription>是否将此消息保存至历史记录。</LevelUp.HistoricalDescription>
+	
+	<!-- EN: Injectable values -->
+  <LevelUp.InjectableValuesLabel>可注入值</LevelUp.InjectableValuesLabel>
+	<!-- EN: Formatting -->
+  <LevelUp.FormattingLabel>文本格式</LevelUp.FormattingLabel>
+	<!-- EN: Bold -->
+  <LevelUp.FormattingBoldLabel>粗体</LevelUp.FormattingBoldLabel>
+	<!-- EN: Italic -->
+  <LevelUp.FormattingItalicLabel>斜体</LevelUp.FormattingItalicLabel>
+	<!-- EN: Color -->
+  <LevelUp.FormattingColorLabel>文本颜色</LevelUp.FormattingColorLabel>
+	
+	<!-- Default message texts -->
+	<!-- EN: <color=orange>{PAWN}</color> reached level {LEVEL} in {SKILL}! -->
+  <LevelUp.DefaultLevelUpMessage><![CDATA[升级! <color=orange>{PAWN}</color> 的{SKILL}技能升至{LEVEL}级。]]></LevelUp.DefaultLevelUpMessage>
+	<!-- EN: <color=orange>{PAWN}</color> reached level {LEVEL} in {SKILL}. -->
   <LevelUp.DefaultLevelDownMessage><![CDATA[降级! <color=orange>{PAWN}</color> 的{SKILL}技能降至{LEVEL}级。]]></LevelUp.DefaultLevelDownMessage>
+	<!-- EN: {SKILL}\nlevel {LEVEL} -->
+  <LevelUp.DefaultLevelUpOverheadMessage>{SKILL}\n等级 {LEVEL}</LevelUp.DefaultLevelUpOverheadMessage>
+	<!-- EN: {SKILL}\nlevel {LEVEL} -->
+  <LevelUp.DefaultLevelDownOverheadMessage>{SKILL}\n等级 {LEVEL}</LevelUp.DefaultLevelDownOverheadMessage>
 </LanguageData>
