@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <LevelUpActionDef_Animation.label>动画效果</LevelUpActionDef_Animation.label>
+  <LevelUpActionDef_Animation.description>在殖民者身上显示简单的图形效果（可能包含动画）。</LevelUpActionDef_Animation.description>
+  
+  <LevelUpActionDef_Message.label>文字消息</LevelUpActionDef_Message.label>
+  <LevelUpActionDef_Message.description>在屏幕左上角显示文字提示信息。</LevelUpActionDef_Message.description>
+  
+  <LevelUpActionDef_OverheadMessage.label>头顶消息</LevelUpActionDef_OverheadMessage.label>
+  <LevelUpActionDef_OverheadMessage.description>在殖民者头顶上方显示文字提示信息。</LevelUpActionDef_OverheadMessage.description>
+  
+  <LevelUpActionDef_Sound.label>声音</LevelUpActionDef_Sound.label>
+  <LevelUpActionDef_Sound.description>播放一个音频。</LevelUpActionDef_Sound.description>
+  
+</LanguageData>

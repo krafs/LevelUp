@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <LevelUpSound_Classic.label>经典</LevelUpSound_Classic.label>
+  
+  <LevelUpSound_Deception.label>诡谲之音</LevelUpSound_Deception.label>
+  
+  <LevelUpSound_Ding.label>清脆叮声</LevelUpSound_Ding.label>
+  
+  <LevelUpSound_Dissonance.label>不谐和音</LevelUpSound_Dissonance.label>
+  
+  <LevelUpSound_DistortedSiren.label>失真警报</LevelUpSound_DistortedSiren.label>
+  
+  <LevelUpSound_Jazzy.label>爵士韵律</LevelUpSound_Jazzy.label>
+  
+  <LevelUpSound_Negative.label>消极音调</LevelUpSound_Negative.label>
+  
+  <LevelUpSound_Punchy.label>冲击</LevelUpSound_Punchy.label>
+  
+  <LevelUpSound_Strum.label>弦乐拨奏</LevelUpSound_Strum.label>
+  
+  <LevelUpSound_TadaFanfare.label>胜利号角</LevelUpSound_TadaFanfare.label>
+  
+</LanguageData>
