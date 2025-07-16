@@ -42,7 +42,6 @@ public sealed class LevelingAction_Animation : LevelingAction
         FleckCreationData fleckData = FleckMaker.GetDataStatic(pawn.DrawPos, map, fleckDef);
         fleckData.exactScale = defExtension.exactScale;
         fleckData.scale = defExtension.scale;
-        fleckData.rotation = defExtension.rotation;
         fleckData.rotationRate = defExtension.rotationRate;
         fleckData.solidTimeOverride = defExtension.solidTimeOverride;
         fleckData.airTimeLeft = defExtension.airTimeLeft;
@@ -78,8 +77,7 @@ public sealed class LevelingAction_Animation : LevelingAction
             scale: 1f,
             texProportions: new Vector2(texture.width, texture.height),
             texCoords: new Rect(0, 0, 1, 1),
-            defExtension.rotation,
-            graphic.MatSingle);
+            mat: graphic.MatSingle);
     }
 
     public override void ExposeData()
