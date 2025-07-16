@@ -48,7 +48,7 @@
       </li>
     </modExtensions>
     <graphicData>
-      <texPath>LevelUp/DoubleChevron</texPath>
+      <texPath>LevelUp/UpwardDoubleChevron</texPath>
       <shaderType>MoteGlow</shaderType>
       <color>(255,255,0,100)</color>
     </graphicData>
@@ -64,11 +64,10 @@
       <li Class="LevelUp.FleckDefExtension">
         <velocitySpeed>1</velocitySpeed>
         <velocityAngle>180</velocityAngle>
-        <rotation>180</rotation>
       </li>
     </modExtensions>
     <graphicData>
-      <texPath>LevelUp/DoubleChevron</texPath>
+      <texPath>LevelUp/DownwardDoubleChevron</texPath>
       <shaderType>MoteGlow</shaderType>
       <color>(255,0,0,100)</color>
     </graphicData>
