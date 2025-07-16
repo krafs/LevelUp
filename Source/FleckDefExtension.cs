@@ -6,7 +6,6 @@ namespace LevelUp;
 internal sealed class FleckDefExtension : DefModExtension
 {
     internal readonly float scale = 1f;
-    internal readonly float rotation;
     internal readonly float rotationRate = 1f;
     internal readonly Vector3 exactScale = new(1f, 1f, 1f);
     internal readonly Color instanceColor = Color.white;
