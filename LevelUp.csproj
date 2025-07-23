@@ -6,26 +6,22 @@
     <Nullable>enable</Nullable>
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <Configurations>13;14;15;16</Configurations>
-    <DefineConstants Condition="$(Configuration) >= 15">RW1_5_OR_GREATER</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup>
-    <RimworldVersion Condition="$(Configuration) == 13">1.3</RimworldVersion>
-    <RimworldVersion Condition="$(Configuration) == 14">1.4</RimworldVersion>
-    <RimworldVersion Condition="$(Configuration) == 15">1.5</RimworldVersion>
-    <RimworldVersion Condition="$(Configuration) == 16">1.6</RimworldVersion>
+    <Configurations>V1_3;V1_4;V1_5;V1_6</Configurations>
+    <RimworldVersion Condition="$(Configuration) == V1_3">1.3</RimworldVersion>
+    <RimworldVersion Condition="$(Configuration) == V1_4">1.4</RimworldVersion>
+    <RimworldVersion Condition="$(Configuration) == V1_5">1.5</RimworldVersion>
+    <RimworldVersion Condition="$(Configuration) == V1_6">1.6</RimworldVersion>
+    <DefineConstants Condition="$(RimworldVersion) >= 1.5">RW1_5_OR_GREATER</DefineConstants>
     <ModOutput Condition="$(ModOutput) == ''">$(MSBuildThisFileDirectory)bin\</ModOutput>
     <LevelUpFolder>$(ModOutput)LevelUp\</LevelUpFolder>
-    <VersionedLevelUpFolder>$(LevelUpFolder)$(RimworldVersion)\</VersionedLevelUpFolder>
-    <OutDir>$(VersionedLevelUpFolder)Assemblies</OutDir>
+    <OutDir>$(LevelUpFolder)$(RimworldVersion)\Assemblies</OutDir>
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.3.3389" Condition="$(Configuration) == 13" />
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.4.3901" Condition="$(Configuration) == 14" />
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4409" Condition="$(Configuration) == 15" />
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4528" Condition="$(Configuration) == 16" />
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="$(RimworldVersion).*"/>
     <PackageReference Include="Lib.Harmony" Version="2.3.6" ExcludeAssets="runtime" />
   </ItemGroup>
   

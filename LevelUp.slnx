@@ -1,9 +1,9 @@
 ﻿<Solution>
   <Configurations>
-    <BuildType Name="13" />
-    <BuildType Name="14" />
-    <BuildType Name="15" />
-    <BuildType Name="16" />
+    <BuildType Name="V1_3" />
+    <BuildType Name="V1_4" />
+    <BuildType Name="V1_5" />
+    <BuildType Name="V1_6" />
   </Configurations>
   <Project Path="LevelUp.csproj" />
 </Solution>
