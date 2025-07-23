@@ -2,25 +2,38 @@
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <LangVersion>12</LangVersion>
+    <LangVersion>13</LangVersion>
     <Nullable>enable</Nullable>
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <ModOutput Condition="$(ModOutput) == ''">$(MSBuildThisFileDirectory)bin\</ModOutput>
-    <LevelUpFolder>$(ModOutput)LevelUp\</LevelUpFolder>
-    <OutDir>$(LevelUpFolder)Assemblies</OutDir>
+    <Configurations>13;14;15;16</Configurations>
+    <DefineConstants Condition="$(Configuration) >= 15">RW1_5_OR_GREATER</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <RimworldVersion Condition="$(Configuration) == 13">1.3</RimworldVersion>
+    <RimworldVersion Condition="$(Configuration) == 14">1.4</RimworldVersion>
+    <RimworldVersion Condition="$(Configuration) == 15">1.5</RimworldVersion>
+    <RimworldVersion Condition="$(Configuration) == 16">1.6</RimworldVersion>
+    <ModOutput Condition="$(ModOutput) == ''">$(MSBuildThisFileDirectory)bin\</ModOutput>
+    <LevelUpFolder>$(ModOutput)LevelUp\</LevelUpFolder>
+    <VersionedLevelUpFolder>$(LevelUpFolder)$(RimworldVersion)\</VersionedLevelUpFolder>
+    <OutDir>$(VersionedLevelUpFolder)Assemblies</OutDir>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.3.3389" Condition="$(Configuration) == 13" />
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.4.3901" Condition="$(Configuration) == 14" />
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4409" Condition="$(Configuration) == 15" />
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4528" Condition="$(Configuration) == 16" />
+    <PackageReference Include="Lib.Harmony" Version="2.3.6" ExcludeAssets="runtime" />
+  </ItemGroup>
+  
   <ItemGroup>
     <ModItem Include="About\*;Defs\**\*;Languages\**\*;Sounds\**\*;Textures\**\*" />
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4523" />
-    <PackageReference Include="Lib.Harmony" Version="2.3.6" ExcludeAssets="runtime" />
-  </ItemGroup>
-
-  <Target Name="CopyToModOutput" AfterTargets="Build">
+  
+  <Target Name="CopyModFilesToModOutput">
     <Copy SourceFiles="@(ModItem)" DestinationFiles="$(LevelUpFolder)%(Identity)" />
   </Target>
 

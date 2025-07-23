@@ -6,6 +6,8 @@ updates:
       interval: "daily"
     assignees:
       - "krafs"
+    ignore:
+      - dependency-name: "Krafs.Rimworld.Ref"
       
   - package-ecosystem: "github-actions"
     directory: "/"
