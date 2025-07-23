@@ -13,7 +13,6 @@ internal static class Patcher
     internal static void ApplyPatches(Harmony harmony)
     {
         MethodInfo skillRecordLearnOriginal = AccessTools.Method(typeof(SkillRecord), nameof(SkillRecord.Learn));
-        MethodInfo skillRecordDirtyAptitudesOriginal = AccessTools.Method(typeof(SkillRecord), nameof(SkillRecord.DirtyAptitudes));
         MethodInfo compUseEffectLearnSkillDoEffectOriginal = AccessTools.Method(typeof(CompUseEffect_LearnSkill), nameof(CompUseEffect_LearnSkill.DoEffect));
 
         HarmonyMethod prefix = new(typeof(Patcher), nameof(Prefix));
@@ -24,12 +23,14 @@ internal static class Patcher
         HarmonyMethod removeMessageCallTranspiler = new(typeof(Patcher), nameof(RemoveMessageCall));
 
         harmony.Patch(skillRecordLearnOriginal, prefix, learnPostfix, removeMoteThrowCallTranspiler);
-        harmony.Patch(skillRecordDirtyAptitudesOriginal, prefix, dirtyAptitudesPostfix);
 
         harmony.Patch(compUseEffectLearnSkillDoEffectOriginal, transpiler: removeMessageCallTranspiler);
+#if RW1_5_OR_GREATER
+        MethodInfo skillRecordDirtyAptitudesOriginal = AccessTools.Method(typeof(SkillRecord), nameof(SkillRecord.DirtyAptitudes));
+        harmony.Patch(skillRecordDirtyAptitudesOriginal, prefix, dirtyAptitudesPostfix);
+#endif
     }
 
-    [SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Harmony naming convention")]
     private static void Prefix(out int __state, SkillRecord __instance, Pawn ___pawn)
     {
         if (!___pawn.IsFreeColonist)
@@ -41,7 +42,6 @@ internal static class Patcher
         __state = __instance.Level;
     }
 
-    [SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Harmony naming convention")]
     private static void DirtyAptitudesPostfix(int __state, SkillRecord __instance, Pawn ___pawn)
     {
         if (__state == -1)
@@ -74,7 +74,6 @@ internal static class Patcher
         }
     }
 
-    [SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Harmony naming convention")]
     private static void LearnPostfix(int __state, SkillRecord __instance, Pawn ___pawn, bool direct)
     {
         if (__state == -1)
