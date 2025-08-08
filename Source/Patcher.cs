@@ -1,7 +1,6 @@
 using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using UnityEngine;
 using Verse;
@@ -31,20 +30,14 @@ internal static class Patcher
 #endif
     }
 
-    private static void Prefix(out int __state, SkillRecord __instance, Pawn ___pawn)
+    private static void Prefix(out int __state, SkillRecord __instance)
     {
-        if (!___pawn.IsFreeColonist)
-        {
-            __state = -1;
-            return;
-        }
-        
         __state = __instance.Level;
     }
 
     private static void DirtyAptitudesPostfix(int __state, SkillRecord __instance, Pawn ___pawn)
     {
-        if (__state == -1)
+        if (!___pawn.IsFreeColonist)
         {
             return;
         }
@@ -76,7 +69,7 @@ internal static class Patcher
 
     private static void LearnPostfix(int __state, SkillRecord __instance, Pawn ___pawn, bool direct)
     {
-        if (__state == -1)
+        if (!___pawn.IsFreeColonist)
         {
             return;
         }

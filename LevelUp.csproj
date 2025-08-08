@@ -22,7 +22,7 @@
   
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref" Version="$(RimworldVersion).*"/>
-    <PackageReference Include="Lib.Harmony" Version="2.3.6" ExcludeAssets="runtime" />
+    <PackageReference Include="Lib.Harmony" Version="2.3.7-prerelease" ExcludeAssets="runtime" />
   </ItemGroup>
   
   <ItemGroup>
