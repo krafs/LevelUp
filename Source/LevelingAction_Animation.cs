@@ -1,6 +1,4 @@
 using RimWorld;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -19,6 +17,14 @@ public sealed class LevelingAction_Animation : LevelingAction
         set
         {
             fleckDef = value;
+            ResolveDefDependencies();
+        }
+    }
+
+    private void ResolveDefDependencies()
+    {
+        if (fleckDef is not null)
+        {
             defExtension = fleckDef.GetModExtension<FleckDefExtension>();
             graphic = (Graphic_Single)fleckDef.graphicData.Graphic;
             texture = ContentFinder<Texture2D>.Get(fleckDef.graphicData.texPath);
@@ -84,5 +90,6 @@ public sealed class LevelingAction_Animation : LevelingAction
     {
         base.ExposeData();
         Scribe_Defs.Look(ref fleckDef, "fleckDef");
+        ResolveDefDependencies();
     }
 }

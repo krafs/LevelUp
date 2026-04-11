@@ -2,8 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <LangVersion>13</LangVersion>
+    <LangVersion>14</LangVersion>
     <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
   </PropertyGroup>
@@ -22,7 +23,7 @@
   
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref" Version="$(RimworldVersion).*"/>
-    <PackageReference Include="Lib.Harmony" Version="2.3.7-prerelease" ExcludeAssets="runtime" />
+    <PackageReference Include="Lib.Harmony" Version="2.4.2" ExcludeAssets="runtime" />
   </ItemGroup>
   
   <ItemGroup>
