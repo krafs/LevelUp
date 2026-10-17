@@ -3,7 +3,7 @@
   <name>Level Up!</name>
   <author>krafs</author>
   <packageId>Krafs.LevelUp</packageId>
-  <modVersion IgnoreIfNoMatchingField="True">5.3.2</modVersion>
+  <modVersion IgnoreIfNoMatchingField="True">5.4.0</modVersion>
   <modIconPath IgnoreIfNoMatchingField="True">LevelUp/Icon</modIconPath>
   <description>Level up notifications!</description>
   <url>https://github.com/krafs/LevelUp</url>
@@ -12,6 +12,7 @@
     <li>1.4</li>
     <li>1.5</li>
     <li>1.6</li>
+    <li>1.7</li>
   </supportedVersions>
   <modDependencies>
     <li>
